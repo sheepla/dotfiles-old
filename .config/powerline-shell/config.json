@@ -1,0 +1,20 @@
+{
+    "segments": [
+        "ssh", 
+        "cwd", 
+        "git", 
+        "hg", 
+        "jobs", 
+        "root"
+    ],
+
+    "cwd": {
+        "max_depth": 3
+    },
+
+    "theme": "~/.config/powerline-shell/themes/iceberg.py",
+
+    "vcs" : {
+        "show_symbol": false
+    }
+}

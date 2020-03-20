@@ -1,0 +1,120 @@
+!!    __  __  
+!!   /_ \/ /    ________  _________  __  _______________, _____
+!!     \  /    / ___/ _ \/ ___/ __ \/ / / / ___/ ___/ _ \/ ___/
+!!  _  /  \__ / /  /  __(__  ) /_/ / /_/ / /  / /__/  __(__  ) 
+!! [_]/_/\__//_/   \___/____/\____/\__,_/_/   \___/\___/____/  
+
+!! ============================================================
+!! rxvt-unicode terminal (urxvt)
+!! ============================================================
+
+!! Title
+!URxvt.title: Terminal
+
+!! Window
+URxvt.secondaryScreen: 1
+URxvt.geometry: 100x28
+
+!! Scroll
+URxvt.secondaryScroll: 0
+URxvt.secondaryWheel: 1
+URxvt.scrollBar: false
+URxvt.scrollstyle: plain
+
+!! darken window when unfocused
+! URxvt.fading: 10
+
+!! Cursor
+URxvt.cursorBlink: true
+URxvt.cursorColor: #84a0c6
+
+!! Font
+URxvt.font: xft:HackGen Console for Powerline:size=12
+URxvt.letterSpace: -1
+!URxvt.lineSpace: -1
+
+!! Prevent TUI applications from slowing down
+URxvt*skipBuiltinGlyphs: true
+
+!! Colorscheme (Iceberg) -----------------------------------
+!! NOTE: format is
+!!     [opacity]#rrggbb
+
+URxvt.depth:                32
+
+!! Base colors ---------------
+URxvt.foreground:  [100]#9ea3c6
+URxvt.background:  [100]#161821
+
+!! Highlight text colors -----
+URxvt.colorIT: [100]#9ea3c6
+URxvt.colorBD: [100]#9ea3c6
+URxvt.colorUL: [100]#9ea3c6
+
+!! Colorscheme -----------
+!! color0 - color7:  normal colors
+!! color8 - color15: normal colors
+! black
+URxvt.color0:  [100]#161821
+URxvt.color8:  [100]#444b71
+! red
+URxvt.color1:  [100]#e27878
+URxvt.color9:  [100]#e27878
+! green
+URxvt.color2:  [100]#b4be82
+URxvt.color10: [100]#b4be82
+! yellow
+URxvt.color3:  [100]#e2a478
+URxvt.color11: [100]#e2a478
+! blue
+URxvt.color4:  [100]#84a0c6
+URxvt.color12: [100]#84a0c6
+! purple
+URxvt.color5:  [100]#a093c7
+URxvt.color13: [100]#a093c7
+! cyan
+URxvt.color6:  [100]#89b8c2
+URxvt.color14: [100]#89b8c2
+! white
+URxvt.color7:  [100]#c6c8d1
+URxvt.color15: [100]#d2d4de
+
+!! Other colors  -------------
+URxvt.scrollColor: [100]#6b7089
+URxvt.troughColor: [100]#6b7089
+
+!! Perl extentions ---------------------------------------
+!URxvt.perl-ext: default,resize-font
+URxvt.perl-ext-common: resize-font,xim-onthespot,keyboard-select,url-select
+
+!! Desable Ctrl-Shift keybindings
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
+!! resize-font
+URxvt.resize-font.step: 2
+URxvt.keysym.C-Down: resize-font:smaller
+URxvt.keysym.C-Up:   resize-font:bigger
+URxvt.keysym.C-J:    resize-font:smaller
+URxvt.keysym.C-K:    resize-font:bigger
+
+!! xim-onthespot (input method)
+URxvt.inputMethod: fcitx
+URxvt.preeditType: OnTheSpot
+
+!! keyboard-select
+URxvt.keyboard-select.clipboard: true
+URxvt.keysym.C-colon: perl:keyboard-select:activate
+URxvt.keysym.C-R: perl:keyboard-select:search
+
+!! url-select
+urxvt.keysym.C-U: perl:url-select:select_next
+URxvt.url-select.underline: true
+
+!! tabbed (https://github.com/gryf/tabbed)
+!URxvt.tabbed.tabbar-fg: 7
+!URxvt.tabbed.tabbar-bg: 8
+!URxvt.tabbed.tab-fg: 0
+!URxvt.tabbed.tab-bg: 4
+!URxvt.tabbed.new-button: false
+!URxvt.tabbed.tab-numbers: false
