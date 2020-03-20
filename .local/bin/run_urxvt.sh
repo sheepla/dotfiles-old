@@ -1,7 +1,5 @@
 #!/bin/sh
 
-#xrdb $HOME/.Xresources
-
 urxvtc "$@"
 
 if [ $? -eq 2 ]; then

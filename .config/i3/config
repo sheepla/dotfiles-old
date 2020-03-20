@@ -24,7 +24,7 @@ exec --no-startup-id "xset r rate 280 40"
 exec --no-startup-id "xrdb $HOME/.Xresources"
 
 # Launch URxvt terminal daemon (if not already running)
-exec --no-startup-id "urxvtd -q -o -f"
+# exec --no-startup-id "urxvtd -q -o -f"
 
 # }}}
 
@@ -74,7 +74,7 @@ font pango:Capella Regular 12
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id "$HOME/bin/run_urxvt.sh"
+bindsym $mod+Return exec --no-startup-id "$HOME/.local/bin/run_urxvt.sh"
 
 # kill focused window
 bindsym $mod+Shift+q kill

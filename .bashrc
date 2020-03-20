@@ -117,10 +117,6 @@ fi
 # My Settings
 # ===================================================
 
-# PATH
-export PATH=$PATH:$HOME/bin
-export PATH=$PATH:$HOME/.local/bin/
-
 # Aliases ---------------------------------- {{{
 # ls
 # clear
@@ -219,13 +215,6 @@ alias tclock='tty-clock -s -c -C 4'
 # screenfetch
 alias sfetch='screenfetch 2>/dev/null'
 
-# Grep
-export GREP_COLOR="1;32"
-
-# Less
-export LESS='-R'
-export LESSOPEN='| $HOME/bin/src-hilite-lesspipe.sh %s'
-
 # man wrapper
 # https://wiki.archlinux.jp/index.php/%E3%82%B3%E3%83%B3%E3%82%BD%E3%83%BC%E3%83%AB%E3%81%AE%E3%82%AB%E3%83%A9%E3%83%BC%E5%87%BA%E5%8A%9B#man
 # ---------------------------
@@ -246,26 +235,17 @@ man() {
 
 # Powerline-shell
 # https://github.com/b-ryan/powerline-shell#bash
-function _update_ps1() {
-    PS1=$($HOME/.local/bin/powerline-shell $?)
-}
-if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]]; then
-    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
-fi
+# function _update_ps1() {
+#     PS1=$($HOME/.local/bin/powerline-shell $?)
+# }
+# if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]]; then
+#     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+# fi
 
 # ddgr
-export BROWSER=w3m ddgr query
-export DDGR_COLORS=dEfdxY
 function bang() {
     ddgr --noprompt \!${1} ${@:2}
 }
-
-# tldr
-export TLDR_HEADER='blue bold'
-export TLDR_QUOTE='green'
-export TLDR_DESCRIPTION='normal'
-export TLDR_CODE='yellow'
-export TLDR_PARAM='magenta'
 
 # fzf
 # [ -f ~/.fzf.bash ] && source ~/.fzf.bash
