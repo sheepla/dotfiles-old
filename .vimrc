@@ -343,7 +343,10 @@ cabbrev light    set background=light
 
 if has('gui_running')
     " Fullscreen
-    " autocmd GUIEnter * simalt ~x
+    "autocmd GUIEnter * simalt ~x
+
+    " Colorsceme
+    colorscheme iceberg
     
     " Hide GUI elements
     set guioptions-=T
