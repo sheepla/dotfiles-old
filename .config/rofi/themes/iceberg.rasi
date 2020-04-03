@@ -15,12 +15,12 @@
     scrollbar: true;
 
     /* Color palette
-     * inspired by: https://github.com/cocopon/iceberg.vim)
+     * inspired by: https://github.com/cocopon/iceberg.vim
      */
     iceberg-bg0:     #161821;
     iceberg-bg1:     #1e2132;
     iceberg-bg3:     #444b71;
-    iceberg-fg0:     #daddeb;
+    iceberg-fg0:     #c6c8d1;
     iceberg-fg1:     #aeb4cc;
     iceberg-red:     #e27878;
     iceberg-green:   #b4be82;
@@ -44,17 +44,17 @@
     selected-normal-foreground:  @iceberg-fg0;
 
     /* Active window colors */
-    active-background:           @iceberg-blue;
-    active-foreground:           @normal-background;
-    alternate-active-background: @active-background;
+    active-background:           @normal-background;
+    active-foreground:           @iceberg-blue;
+    alternate-active-background: @alternate-normal-background;
     alternate-active-foreground: @active-foreground;
-    selected-active-background:  @selected-normal-background;
-    selected-active-foreground:  @selected-normal-foreground;
+    selected-active-background:  @iceberg-blue;
+    selected-active-foreground:  @normal-background;
 
     /* Urgent colors */
     urgent-background:           @background;
     urgent-foreground:           @iceberg-yellow;
-    alternate-urgent-background: @urgent-background;
+    alternate-urgent-background: @alternate-normal-background;
     alternate-urgent-foreground: @urgent-foreground;
     selected-urgent-background:  @urgent-foreground;
     selected-urgent-foreground:  @normal-background;
