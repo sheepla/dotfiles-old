@@ -3,7 +3,6 @@
 !!     \  /    / ___/ _ \/ ___/ __ \/ / / / ___/ ___/ _ \/ ___/
 !!  _  /  \__ / /  /  __(__  ) /_/ / /_/ / /  / /__/  __(__  ) 
 !! [_]/_/\__//_/   \___/____/\____/\__,_/_/   \___/\___/____/  
-
 !! ============================================================
 !! rxvt-unicode terminal (urxvt)
 !! ============================================================
@@ -13,7 +12,7 @@
 
 !! Window
 URxvt.secondaryScreen: 1
-URxvt.geometry: 100x28
+!URxvt.geometry: 100x28
 
 !! Scroll
 URxvt.secondaryScroll: 0
@@ -29,9 +28,10 @@ URxvt.cursorBlink: true
 URxvt.cursorColor: #84a0c6
 
 !! Font
-URxvt.font: xft:HackGen Console for Powerline:size=12
+URxvt.font: xft:HackGen Console for Powerline:size=12, xft:Cica:size=12, xft:Noto Color Emoji:size=12
+!URxvt.font: xft:monospace:size=12
 URxvt.letterSpace: -1
-!URxvt.lineSpace: -1
+URxvt.lineSpace: -2
 
 !! Prevent TUI applications from slowing down
 URxvt*skipBuiltinGlyphs: true
@@ -43,19 +43,19 @@ URxvt*skipBuiltinGlyphs: true
 URxvt.depth:                32
 
 !! Base colors ---------------
-URxvt.foreground:  [100]#9ea3c6
-URxvt.background:  [100]#161821
+URxvt.foreground:  [100]#abb0c9
+URxvt.background:  [80]#161821
 
 !! Highlight text colors -----
-URxvt.colorIT: [100]#9ea3c6
-URxvt.colorBD: [100]#9ea3c6
-URxvt.colorUL: [100]#9ea3c6
+URxvt.colorIT: [100]#abb0c9
+URxvt.colorBD: [100]#abb0c9
+URxvt.colorUL: [100]#abb0c9
 
 !! Colorscheme -----------
 !! color0 - color7:  normal colors
 !! color8 - color15: normal colors
 ! black
-URxvt.color0:  [100]#161821
+URxvt.color0:  [100]#2e3244
 URxvt.color8:  [100]#444b71
 ! red
 URxvt.color1:  [100]#e27878
@@ -76,8 +76,8 @@ URxvt.color13: [100]#a093c7
 URxvt.color6:  [100]#89b8c2
 URxvt.color14: [100]#89b8c2
 ! white
-URxvt.color7:  [100]#c6c8d1
-URxvt.color15: [100]#d2d4de
+URxvt.color7:  [100]#abb0c9
+URxvt.color15: [100]#abb0c9
 
 !! Other colors  -------------
 URxvt.scrollColor: [100]#6b7089
@@ -92,7 +92,7 @@ URxvt.iso14755: false
 URxvt.iso14755_52: false
 
 !! resize-font
-URxvt.resize-font.step: 2
+URxvt.resize-font.step: 1
 URxvt.keysym.C-Down: resize-font:smaller
 URxvt.keysym.C-Up:   resize-font:bigger
 URxvt.keysym.C-J:    resize-font:smaller
