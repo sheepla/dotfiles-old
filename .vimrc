@@ -1,3 +1,4 @@
+" !/usr/bin/vim
 "     __  ___     _    ___                    
 "    /  |/  /_  _| |  / (_)___ ___  __________
 "   / /|_/ / / / / | / / / __ `__ \/ ___/ ___/
@@ -5,9 +6,7 @@
 " /_/  /_/\__, / |___/_/_/ /_/ /_/_/   \___/  
 "        /____/                               
 " ////////////////////////////////////////////////////////////////////////
-
-" Encoding
-set encoding=utf-8 
+" Encoding set encoding=utf-8 
 scriptencoding utf-8
 
 " Desable sound
@@ -30,12 +29,11 @@ map <Space> <Leader>
 
 " BackSpace
 set backspace=indent,eol,start
-
 " Key bindings at INSERT mode
-inoremap jj    <Esc><Esc>
+inoremap jj <Esc><Esc>
 inoremap <Esc> <Esc><Esc>
 inoremap <C-d> <Del>
-inoremap <C-h>  <BS>
+inoremap <C-h> <BS>
 inoremap <C-b> <Left>
 inoremap <C-s> <C-o>:<C-u>w<CR>
 inoremap <C-l> <C-o>:set nohlsearch!<CR>
@@ -57,9 +55,8 @@ nnoremap <C-j> J
 nnoremap <C-k> K
 
 " New line
-nnoremap <CR>   o<Esc>
-nnoremap <S-CR> O<Esc>
-
+nnoremap <CR>   A<CR><Esc>
+nnoremap <S-CR> I<CR><Esc>
 
 " Replace
 nnoremap S :<C-u>%s///cg<Left><Left><Left><Left>
@@ -261,6 +258,9 @@ if dein#load_state('$HOME/.cache/dein')
     call dein#add('fcpg/vim-orbital')
     call dein#add('morhetz/gruvbox')
 
+    " Color preview
+    call dein#add('gorodinskiy/vim-coloresque')
+
     " Status Line
 	call dein#add('itchyny/lightline.vim')
 	call dein#add('gkeep/iceberg-dark')
@@ -336,43 +336,9 @@ endfunction
 " Appearance ----------------------------- {{{
 
 " Coloschemes ---------------------------- {{{
-" FIXME Can't set lightline color scheme
-function! Iceberg()
-    set background=dark
-    colorscheme iceberg
-    let g:LightlineColorscheme='icebergDark'
-endfunction
-
-function! Solarized()
-    colorscheme solarized
-    if has('gui_running')
-        set background=light
-    else
-        set background=dark   
-    endif
-    let g:LightlineColorscheme='solarized'
-endfunction
-
-function! GruvDark()
-    colorscheme gruvbox
-    set background=dark
-    let g:LightlineColorscheme='gruvbox'
-endfunction
-
-function! GruvLight()
-    colorscheme gruvbox
-    set background=light
-    let g:LightlineColorscheme='gruvbox'
-endfunction
-
-" Theme command aliases
+" Alias of background theme
 cabbrev dark     set background=dark
 cabbrev light    set background=light
-cabbrev color    colorscheme=
-
-
-" Set default scheme
-call Iceberg()
 " }}}
 
 if has('gui_running')
@@ -407,9 +373,9 @@ if has('gui_running')
     set guiheadroom=0
 else
     " If terminal running:
-    colorscheme iceberg
-    autocmd ColorScheme * highlight Normal ctermbg=none
-    autocmd ColorScheme * highlight LineNr ctermbg=none
+    colorscheme nord
+    " autocmd ColorScheme * highlight Normal ctermbg=none
+    " autocmd ColorScheme * highlight LineNr ctermbg=none
 endif
 " }}}
 
