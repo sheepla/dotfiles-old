@@ -137,7 +137,6 @@ stty -ixon
 # Basic commands
 alias c='clear'
 alias mkd='mkdir -pv'
-alias g='git'
 alias py3='python3'
 # Setting files
 alias rebash='source ~/.bashrc'
@@ -147,7 +146,16 @@ alias reprofile='source ~/.profile'
 alias vimrc='vim ~/.vimrc'
 alias path='echo $PATH | tr ":" "\n"'
 
-# w3m
+# Git
+alias g='git'
+alias ga='git add'
+alias gst='git status'
+alias gl='git log --decorate --oneline'
+alias glg='git log --decorate --oneline --graph'
+alias gcm='git commit'
+alias gdf='git diff'
+
+# W3m
 alias w3mg='w3m www.google.com'
 alias w3md='w3m www.duckduckgo.com'
 

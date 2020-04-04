@@ -71,7 +71,7 @@ font pango:Capella Regular 12
 # font, it doesn’t scale on retina/hidpi displays.
 
 # Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
+floating_modifier Ctrl
 
 # start a terminal
 bindsym $mod+Return exec --no-startup-id "$HOME/.local/bin/run_urxvt.sh"
@@ -144,9 +144,9 @@ bindsym $mod+a focus parent
 #   󿲵󿮶󿨈󿫮
 #   󿢠󿢣󿢦󿢩󿢬󿢯󿢲󿢵󿢸󿢻󿢾
 #   󿢢󿢥󿢨󿢫󿢮󿢱󿢴󿢷󿢺󿢽󿣀
-set $ws1 "01 󿲵"
-set $ws2 "02 "
-set $ws3 "03 "
+set $ws1 "01"
+set $ws2 "02"
+set $ws3 "03"
 set $ws4 "04"
 set $ws5 "05"
 set $ws6 "06"
@@ -215,12 +215,12 @@ bar {
     # format:
     #     bumblebee-status -m <modules...> -p <params...> -t <theme>
 	status_command $HOME/.local/bin/bumblebee-status \
-        -m memory battery date time\
+        -m cpu battery date time\
         -p time.format="%H:%M" date.format="%m/%d"\
         -t iceberg-dark-powerline
 
 	font pango:Cica 12
-	position bottom
+	position top
 
     colors {
         # <class>          <border>   <bg>     <fg>
@@ -277,7 +277,7 @@ client.unfocused        $bg2     $bg          $gray        $gray       $bg2
 client.urgent           $bg2     $red         $bg          $gray       $bg2
 client.placeholder      $bg2     $green       $bg          $gray       $bg2
 client.background $bg
-title_align center
+#title_align center
 
 # Sound volume
 bindsym $mod+plus     exec --no-startup-id "amixer -q sset Master 5%+ unmute"
