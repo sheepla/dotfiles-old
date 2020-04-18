@@ -376,7 +376,7 @@ if has('gui_running')
     set guiheadroom=0
 else
     " If terminal running:
-    colorscheme nord
+    colorscheme iceberg
     " autocmd ColorScheme * highlight Normal ctermbg=none
     " autocmd ColorScheme * highlight LineNr ctermbg=none
 endif

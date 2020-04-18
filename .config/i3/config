@@ -7,25 +7,13 @@
 
 # Launch processes -------------------- {{{
 # Set wallpaper
-exec --no-startup-id "$HOME/.fehbg"
-
-# Window transparency (compton)
-exec --no-startup-id "compton -cbm 0.75"
-
-# Enable nortification
-exec --no-startup-id "dunst"
-
-# Set key repeat rate
-# format:
-#     xset r rate <delay> [<rate>]
-exec --no-startup-id "xset r rate 280 40"
+exec --no-startup-id "nitrogen --restore &"
 
 # Reload ~/.Xresources
-exec --no-startup-id "xrdb $HOME/.Xresources"
+exec --no-startup-id "xrdb $HOME/.Xresources &"
 
-# Launch URxvt terminal daemon (if not already running)
-# exec --no-startup-id "urxvtd -q -o -f"
-
+# Window transparency and shadow (compton)
+exec --no-startup-id "compton --shadow --daemon &"
 # }}}
 
 
@@ -74,7 +62,7 @@ font pango:Capella Regular 12
 floating_modifier Ctrl
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id "$HOME/.local/bin/run_urxvt.sh"
+bindsym $mod+Return exec --no-startup-id "$HOME/bin/run_urxvt.sh"
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -247,27 +235,27 @@ bindsym $mod+q       kill
 # https://github.com/Airblader/i
 for_window [class=".*"] border pixel 2
 
-# Set default gaps value
-# set $default_inner_gaps 20
-# set $default_outer_gaps 5
-# gaps inner $default_inner_gaps
-# gaps outer $default_outer_gaps
-# 
-# bindsym $mod+g mode "gaps"
-# mode "gaps" {
-#         bindsym k     gaps inner current plus  5
-#         bindsym j     gaps inner current minus 5
-#         bindsym h     gaps outer current plus  5
-#         bindsym l     gaps outer current minus 5
-#         bindsym g     gaps inner current set $default_inner_gaps\
-#                            gaps outer current set $default_outer_gaps\
-#                            mode "default"
-# 
-#         # back to normal: Enter or Escape
-#         bindsym Return     mode "default"
-#         bindsym Escape     mode "default"
-# }
-# # }}}
+# Define default gaps value
+set $default_inner_gaps 20
+set $default_outer_gaps 5
+gaps inner $default_inner_gaps
+gaps outer $default_outer_gaps
+
+bindsym $mod+g mode "gaps"
+mode "gaps" {
+        bindsym k     gaps inner current plus  5
+        bindsym j     gaps inner current minus 5
+        bindsym h     gaps outer current plus  5
+        bindsym l     gaps outer current minus 5
+        bindsym g     gaps inner current set $default_inner_gaps\
+                           gaps outer current set $default_outer_gaps\
+                           mode "default"
+
+        # back to normal: Enter or Escape
+        bindsym Return     mode "default"
+        bindsym Escape     mode "default"
+}
+# }}}
 
 # Window
 # <class>               <border> <background> <foreground> <indicator> <child_border>

@@ -44,7 +44,7 @@ URxvt.depth:                32
 
 !! Base colors ---------------
 URxvt.foreground:  [100]#abb0c9
-URxvt.background:  [80]#161821
+URxvt.background:  [95]#161821
 
 !! Highlight text colors -----
 URxvt.colorIT: [100]#abb0c9
@@ -84,8 +84,10 @@ URxvt.scrollColor: [100]#6b7089
 URxvt.troughColor: [100]#6b7089
 
 !! Perl extentions ---------------------------------------
+URxvt.perl-lib: ~/.urxvt/ext/urxvt-perls/,~/.urxvt/ext/urxvt-perls/deprecated/,~/.urxvt/ext/urxvt-resize-font/resize-font
+
 !URxvt.perl-ext: default,resize-font
-URxvt.perl-ext-common: resize-font,xim-onthespot,keyboard-select,url-select
+URxvt.perl-ext-common: resize-font,xim-onthespot,keyboard-select
 
 !! Desable Ctrl-Shift keybindings
 URxvt.iso14755: false
@@ -108,8 +110,8 @@ URxvt.keysym.C-colon: perl:keyboard-select:activate
 URxvt.keysym.C-R: perl:keyboard-select:search
 
 !! url-select
-urxvt.keysym.C-U: perl:url-select:select_next
-URxvt.url-select.underline: true
+!urxvt.keysym.C-U: perl:url-select:select_next
+!URxvt.url-select.underline: true
 
 !! tabbed (https://github.com/gryf/tabbed)
 !URxvt.tabbed.tabbar-fg: 7
