@@ -1,0 +1,62 @@
+#!/bin/bash
+
+# Basic commands
+alias c='clear'
+alias mkd='mkdir -pv'
+alias py3='python3'
+# Setting files
+alias rebash='source ~/.bashrc'
+alias bashrc='vim ~/.bashrc'
+alias profile='vim ~/.profile'
+alias reprofile='source ~/.profile'
+alias vimrc='vim ~/.vimrc'
+alias path='echo $PATH | tr ":" "\n"'
+
+# Git
+alias g='git'
+alias ga='git add'
+alias gst='git status'
+alias gl='git log --decorate --oneline'
+alias glg='git log --decorate --oneline --graph'
+alias gcm='git commit'
+alias gdf='git diff'
+
+# W3m
+alias w3mg='w3m www.google.com'
+alias w3md='w3m www.duckduckgo.com'
+
+# terminal
+alias xfterm='xfce4-terminal'
+alias terminalrc='vim ~/.config/xfce4/terminal/terminalrc'
+
+# tar
+alias mktar='tar -cvf'
+alias extar='tar -xvf'
+alias mktargz='tar -zxcf'
+alias extargz='tar -zxvf'
+alias mktarxz='tar -Jcvf'
+alias extarxz='tar -Jxvf'
+
+# translate-shell(trans)
+alias en2ja='trans en:ja -brief -shell -e google'
+alias ja2en='trans ja:en -brief -shell -e google'
+alias eiwa='trans en:ja -dictionary -e google'
+alias waei='trans ja:en -dictionary -e google'
+
+# Other
+alias r='ranger'
+alias fontlist="fc-list | awk -F '[:,]' '{print $2}' | sort | uniq"
+# }}}
+
+# fuzzy finder ------------------------------------ {{{
+alias fzd='find . -type d | fzf | sed "s/ /\\ /g"'
+
+# bat -----------------------------------
+alias rebat='bat cache --build'
+alias bat='bat --wrap auto'
+
+# exa
+alias l='exa --all --icons'
+alias ls='exa --icons'
+alias ll='exa --long --all --git --icons'
+alias lt='exa --long --all --git --icons --tree'
