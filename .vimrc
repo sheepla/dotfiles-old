@@ -346,6 +346,7 @@ if has('gui_running')
 
     " Colorsceme
     colorscheme iceberg
+    set background=dark
     
     " Hide GUI elements
     set guioptions-=T
@@ -366,8 +367,8 @@ if has('gui_running')
     if has('win32') || has('win64')
         set guifont=HackGen\ Console\ for\ Powerline:h12:cDEFAULT
     elseif has('unix')
-        set guifont=HackGenConsole\ for\ Powerline\ 12
-        set guifontwide=HackGenConsole\ for\ Powerline\ 12
+        set guifont=HackGenNerd\ 12
+        set guifontwide=HackGenNerd\ 12
     endif
     " set ambiwidth=double
 
