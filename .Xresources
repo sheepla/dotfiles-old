@@ -28,9 +28,9 @@ URxvt.cursorBlink: true
 URxvt.cursorColor: #84a0c6
 
 !! Font
-URxvt.font: xft:HackGen Console for Powerline:size=12, xft:Cica:size=12, xft:Noto Color Emoji:size=12
+URxvt.font: xft:HackGenNerd:size=12, xft:Noto Color Emoji:size=12
 !URxvt.font: xft:monospace:size=12
-URxvt.letterSpace: -1
+URxvt.letterSpace: -2
 URxvt.lineSpace: -2
 
 !! Prevent TUI applications from slowing down
