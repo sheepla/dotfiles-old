@@ -93,8 +93,8 @@ nnoremap sE :<C-u>tabedit<Space>
 
 " Tab
 nnoremap st :<C-u>tabnew<CR>
-nnoremap <C-Tab>   :<C-u>tabnext<CR>
-nnoremap <C-S-Tab> :<C-u>tabprevious<CR>
+nnoremap <C-Tab>   :<C-u>bnext<CR>
+nnoremap <C-S-Tab> :<C-u>bprevious<CR>
 nnoremap s[ :<C-u>tabprevious<CR>
 nnoremap s] :<C-u>tabnext<CR>
 nnoremap s{ :<C-u>tabmove -<CR>
@@ -199,7 +199,7 @@ set hlsearch
 " Toggle highlight search
 nnoremap <Esc><Esc> :<C-u>set nohlsearch!<CR>
 " Redraw console and toggle highlight search
-nnoremap <C-l> <C-l>:<C-u>set nohlsearch!<CR>
+nnoremap <C-l>       <C-l>:<C-u>set nohlsearch!<CR>
 " }}}
 
 " Appearance----------------------------- {{{
@@ -334,20 +334,14 @@ endfunction
 
 " Appearance ----------------------------- {{{
 
-" Coloschemes ---------------------------- {{{
-" Alias of background theme
-cabbrev dark     set background=dark
-cabbrev light    set background=light
-" }}}
+" Colorsceme
+colorscheme iceberg
+set background=dark
 
 if has('gui_running')
     " Fullscreen
     "autocmd GUIEnter * simalt ~x
 
-    " Colorsceme
-    colorscheme iceberg
-    set background=dark
-    
     " Hide GUI elements
     set guioptions-=T
     set guioptions-=l

@@ -28,10 +28,11 @@ URxvt.cursorBlink: true
 URxvt.cursorColor: #84a0c6
 
 !! Font
-URxvt.font: xft:HackGenNerd:size=12, xft:Noto Color Emoji:size=12
+URxvt*font: xft:HackGenNerd Console:size=11
+!URxvt*font:     xft:monospace:medium:size=10
 !URxvt.font: xft:monospace:size=12
-URxvt.letterSpace: -2
-URxvt.lineSpace: -2
+URxvt.letterSpace: -1
+URxvt.lineSpace: -4
 
 !! Prevent TUI applications from slowing down
 URxvt*skipBuiltinGlyphs: true
@@ -44,7 +45,7 @@ URxvt.depth:                32
 
 !! Base colors ---------------
 URxvt.foreground:  [100]#abb0c9
-URxvt.background:  [95]#161821
+URxvt.background:  [83]#161821
 
 !! Highlight text colors -----
 URxvt.colorIT: [100]#abb0c9
@@ -84,7 +85,6 @@ URxvt.scrollColor: [100]#6b7089
 URxvt.troughColor: [100]#6b7089
 
 !! Perl extentions ---------------------------------------
-URxvt.perl-lib: ~/.urxvt/ext/urxvt-perls/,~/.urxvt/ext/urxvt-perls/deprecated/,~/.urxvt/ext/urxvt-resize-font/resize-font
 
 !URxvt.perl-ext: default,resize-font
 URxvt.perl-ext-common: resize-font,xim-onthespot,keyboard-select
