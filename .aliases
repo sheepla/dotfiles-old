@@ -60,3 +60,7 @@ alias l='exa --all --icons'
 alias ls='exa --icons'
 alias ll='exa --long --all --git --icons'
 alias lt='exa --long --all --git --icons --tree'
+
+alias soundvol='amixer sget Master | grep 'Right:' | awk -F'[][]' '{ print $2 }' | tr -d "%"''
+
+
