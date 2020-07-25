@@ -61,7 +61,7 @@ bindsym $mod+Shift+Return split v exec $terminal_command
 bindsym $mod+Ctrl+Return  exec --no-startup-id "urxvt -e ranger"
 
 # Rofi
-bindsym $mod+d    exec --no-startup-id "rofi -combi -modi drun,run -show drun"
+bindsym $mod+d    exec --no-startup-id "rofi -combi drun,run -modi drun,run -show drun"
 bindsym $mod+Tab  exec --no-startup-id "rofi -show window"
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
@@ -217,7 +217,7 @@ bar {
         -p time.format="%H:%M" date.format="%m/%d" memory.format="{percent:05.02f}%"\
         -t iceberg-dark-powerline
 
-	font pango:Cica 12
+	font pango:Iosevka Term Curly, pango:Cica 11
 	position top
 
     colors {
@@ -227,7 +227,7 @@ bar {
         active_workspace   $bg       $bg3      $fg
         inactive_workspace $bg       $bg3      $fg
         urgent_workspace   $bg       $red      $bg
-        binding_mode       $bg       $green    $bg
+        binding_mode       $bg       $purple   $bg
     }
 }
 # }}} 
