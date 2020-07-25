@@ -1,3 +1,5 @@
 rofi.theme: ./themes/iceberg.rasi
-rofi.font: HackGenNerd 13
+rofi.font: Iosevka Term Curly Medium 12
 rofi.columns: 2
+rofi.icon-theme: "Paper", "Papylus"
+rofi.show-icons: true
