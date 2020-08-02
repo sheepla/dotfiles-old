@@ -34,7 +34,7 @@ inoremap <Esc> <Esc><Esc>
 inoremap <C-d> <Del>
 inoremap <C-h> <BS>
 inoremap <C-b> <Left>
-inoremap <C-s> <C-o>:<C-u>w<CR>
+"inoremap <C-s> <C-o>:<C-u>w<CR>
 inoremap <C-l> <C-o>:set nohlsearch!<CR>
 
 " Brackets
@@ -58,7 +58,7 @@ nnoremap <CR>   A<CR><Esc>
 nnoremap <S-CR> I<CR><Esc>
 
 " Replace
-nnoremap S :<C-u>%s///cg<Left><Left><Left><Left>
+nnoremap S :<C-u>%s___cg<Left><Left><Left><Left>
 
 " Window --------------------------------- {{{
 let g:window_leader_key = 's'
@@ -74,8 +74,8 @@ nnoremap sJ <C-w>J
 nnoremap sK <C-w>K
 nnoremap sL <C-w>L
 " Resize
-nnoremap <S-Up> 5<C-w>+
-nnoremap <S-Down> 5<C-w>-
+nnoremap <S-Up> 2<C-w>+
+nnoremap <S-Down> 2<C-w>-
 nnoremap <S-Left> 10<C-w><
 nnoremap <S-Right> 10<C-w>>
 nnoremap ss <C-w><C-w>
@@ -144,6 +144,7 @@ nnoremap sd    "+d
 nnoremap sp    "+gp
 nnoremap sP    "+gP
 vmap <Leader>y "+y
+vmap Y "+y
 vmap <Leader>d "+d
 vmap <Leader>p "+gp
 vmap <Leader>P "+gP
@@ -393,5 +394,8 @@ nnoremap <Leader>r        :<C-u>Unite<Space>register<CR>
 nnoremap <Leader>s        :<C-u>Unite<Space>source<CR>
 " }}}
 
+
+" Local vimrc
+source ~/.vimrc.local
 " End of Vimrc ///////////////////////////////////////////////////////////
 

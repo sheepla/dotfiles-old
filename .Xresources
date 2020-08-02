@@ -28,7 +28,7 @@ URxvt.cursorBlink: true
 URxvt.cursorColor: #84a0c6
 
 !! Font
-URxvt*font: xft:HackGenNerd Console:size=11
+URxvt*font: xft:HackGenNerd Console:size=11, xft:Cica:size=11
 !URxvt*font:     xft:monospace:medium:size=10
 !URxvt.font: xft:monospace:size=12
 URxvt.letterSpace: -1
@@ -45,7 +45,7 @@ URxvt.depth:                32
 
 !! Base colors ---------------
 URxvt.foreground:  [100]#abb0c9
-URxvt.background:  [83]#161821
+URxvt.background:  [85]#161821
 
 !! Highlight text colors -----
 URxvt.colorIT: [100]#abb0c9
