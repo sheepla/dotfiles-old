@@ -12,29 +12,40 @@ scriptencoding utf-8
 set belloff=all
 
 " File ----------------------------------- {{{
-set nobackup
-set noswapfile
-set noundofile
+"set nobackup
+"set noswapfile
+"set noundofile
 set autoread
 set hidden
 " }}} 
+
 " Key bindings --------------------------- {{{
 
 " Leader
 " let mapleader = '\<Space>'
 map <Space> <Leader>
 
-" TODO Define prefix key (window, tab, commands)
+" Normal mode
+nnoremap H ^
+nnoremap L $
+nnoremap <C-j> J
+nnoremap <C-k> K
 
+" New line
+nnoremap <CR>   o
+nnoremap <S-CR> O
+
+" Insert mode
 " BackSpace
 set backspace=indent,eol,start
-" Key bindings at INSERT mode
-inoremap jj <Esc><Esc>
-inoremap <Esc> <Esc><Esc>
+inoremap jj <Esc>
 inoremap <C-d> <Del>
 inoremap <C-h> <BS>
 inoremap <C-b> <Left>
-"inoremap <C-s> <C-o>:<C-u>w<CR>
+inoremap <C-a> <Home>
+inoremap <C-e> <End>
+inoremap <C-f> <Right>
+inoremap <C-b> <Left>
 inoremap <C-l> <C-o>:set nohlsearch!<CR>
 
 " Brackets
@@ -47,15 +58,6 @@ inoremap '     ''<Left>
 inoremap ''    ''<Left>
 inoremap ""    ""<Left>
 inoremap ()    ()<Left>
-
-nnoremap H ^
-nnoremap L $
-nnoremap <C-j> J
-nnoremap <C-k> K
-
-" New line
-nnoremap <CR>   A<CR><Esc>
-nnoremap <S-CR> I<CR><Esc>
 
 " Replace
 nnoremap S :<C-u>%s___cg<Left><Left><Left><Left>
@@ -362,8 +364,8 @@ if has('gui_running')
     if has('win32') || has('win64')
         set guifont=HackGen\ Console\ for\ Powerline:h12:cDEFAULT
     elseif has('unix')
-        set guifont=HackGenNerd\ 12
-        set guifontwide=HackGenNerd\ 12
+        set guifont=HackGenNerd\ 11
+        set guifontwide=HackGenNerd\ 11
     endif
     " set ambiwidth=double
 
@@ -382,7 +384,7 @@ nnoremap <Leader>t :<C-u>NERDTreeToggle<CR>
 " }}}
 
 " Unite ------------------------------------ {{{
-" TODO fix more good keybindings
+" TODO: fix more good keybindings
 nnoremap <Leader>b        :<C-u>Unite<Space>buffer<CR>
 nnoremap <Leader>c        :<C-u>Unite<Space>command<CR>
 nnoremap <Leader>d        :<C-u>Unite<Space>dein<CR>
