@@ -120,3 +120,9 @@ URxvt.keysym.C-R: perl:keyboard-select:search
 !URxvt.tabbed.tab-bg: 4
 !URxvt.tabbed.new-button: false
 !URxvt.tabbed.tab-numbers: false
+
+! sxiv ------------------------------- {{{
+Sxiv.foreground: #84a0c6
+Sxiv.background: #161821
+Sxiv.font: monospace 9
+! }}}
