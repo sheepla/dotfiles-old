@@ -12,6 +12,17 @@ alias reprofile='source ~/.profile'
 alias vimrc='vim ~/.vimrc'
 alias path='echo $PATH | tr ":" "\n"'
 
+# Man
+man() {
+    LESS_TERMCAP_md=$'\e[01;34m' \
+    LESS_TERMCAP_me=$'\e[0m' \
+    LESS_TERMCAP_se=$'\e[0m' \
+    LESS_TERMCAP_so=$'\e[01;44;30m' \
+    LESS_TERMCAP_ue=$'\e[0m' \
+    LESS_TERMCAP_us=$'\e[01;35m' \
+    command man "$@"
+}
+
 # Git
 alias g='git'
 alias ga='git add'
@@ -21,13 +32,13 @@ alias glg='git log --decorate --oneline --graph'
 alias gcm='git commit'
 alias gdf='git diff'
 
+clone() {
+    git clone https://github.com/"$1"/"$2".git
+}
+
 # W3m
 alias w3mg='w3m www.google.com'
 alias w3md='w3m www.duckduckgo.com'
-
-# terminal
-alias xfterm='xfce4-terminal'
-alias terminalrc='vim ~/.config/xfce4/terminal/terminalrc'
 
 # tar
 alias mktar='tar -cvf'
@@ -48,7 +59,7 @@ alias r='ranger'
 alias fontlist="fc-list | awk -F '[:,]' '{print $2}' | sort | uniq"
 # }}}
 
-# fuzzy finder ------------------------------------ {{{
+# fzf
 alias fzd='find . -type d | fzf | sed "s/ /\\ /g"'
 
 # bat -----------------------------------
@@ -56,8 +67,13 @@ alias rebat='bat cache --build'
 alias bat='bat --wrap auto'
 
 # exa
-alias l='exa --all --icons'
-alias ls='exa --icons'
-alias ll='exa --long --all --git --icons'
-alias lt='exa --long --all --git --icons --tree'
+#alias l='exa --all --icons'
+#alias ls='exa --icons'
+#alias ll='exa --long --all --git --icons'
+#alias lt='exa --long --all --git --icons --tree'
+
+alias l='exa --classify'
+alias la='exa --all --classify'
+alias ll='exa --long --all --git --classify'
+alias lt='exa --long --all --git --tree --classify'
 
