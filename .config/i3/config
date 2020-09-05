@@ -10,29 +10,37 @@
 # Reload ~/.Xresources
 exec --no-startup-id "xrdb $HOME/.Xresources &"
 
-# Window transparency and shadow (picom)
-#exec --no-startup-id "picom --config /dev/null &"
+# Screen Layout
+exec_always --no-startup-id "$HOME/.screenlayout/layout.sh &"
 
 # Set wallpaper
-exec --no-startup-id "nitrogen --restore &"
+exec_always --no-startup-id "nitrogen --restore &"
 
-# Screen Layout
-exec --no-startup-id "~/.screenlayout/layout.sh"
+# Window transparency and shadow (picom)
+exec_always --no-startup-id "pkill picom ; picom --daemon --config ~/.config/picom/picom.conf &"
+
+# Sound volume icon on status bar
+exec --no-startup-id "volumeicon &"
+
+# Clipboard manager
+exec --no-startup-id "greenclip daemon &"
+
 # }}}
 
 
-# Colorscheme 
-set $bg      "#161821"
+# colorscheme 
 set $fg      "#c6c8d1"
+set $fg2     "#444b71"
+set $bg      "#161821"
+set $bg2     "#1e2132"
+set $bg3     "#262939"
+set $bg4     "#3f465f"
 set $red     "#e27878"
 set $yellow  "#e2a478"
 set $green   "#b4be82"
 set $cyan    "#89b8c2"
 set $blue    "#84a0c6"
 set $purple  "#a093c7"
-set $bg2     "#1e2132"
-set $fg2     "#444b71"
-set $bg3     "#262939"
 set $gray    "#818596"
 
 set $mod Mod1
@@ -62,10 +70,20 @@ bindsym $mod+Ctrl+Return  exec --no-startup-id $terminal -e ranger
 bindsym $mod+d    exec --no-startup-id "rofi -combi drun,run -modi drun,run -show drun"
 bindsym $mod+Tab  exec --no-startup-id "rofi -show window"
 
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+# RofiMoji
+bindsym $mod+shift+semicolon exec --no-startup-id "rofimoji --copy-only"
+
+# ArandR
+bindsym $mod+Ctrl+p exec --no-startup-id "$HOME/bin/arandrmenu"
+
+# Screenshot
+bindsym $mod+shift+p exec --no-startup-id "$HOME/bin/i3scrotmenu"
+
+# Clipboard manager
+bindsym $mod+semicolon exec --no-startup-id rofi -modi "clipboard:greenclip print" -show clipboard
+
+# i3 Layout menu
+bindsym $mod+o exec --no-startup-id "$HOME/bin/i3layoutmenu"
 
 # i3 Layout menu
 bindsym $mod+o exec --no-startup-id "$HOME/bin/i3layoutmenu"
@@ -100,8 +118,8 @@ bindsym $mod+v split v exec "notify-send 'Vertical Layout'"
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+Shift+s layout stacking
-bindsym $mod+w layout tabbed exec "notify-send 'Tabbed Layout'"
+bindsym $mod+Shift+s layout stacking exec --no-startup-id "notify-send 'Stacking Layout'"
+bindsym $mod+w layout tabbed         exec --no-startup-id "notify-send 'Tabbed Layout'"
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -109,10 +127,15 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # Auto floating window
-for_window [window_role="pop-up"]       floating enable
-for_window [window_role="task_dialog"]  floating enable
-for_window [class="lxappearance"]       floating enable
-for_window [class="nitrogen"]           floating enable
+for_window [window_role="pop-up"]             floating enable border normal
+for_window [window_role="task_dialog"]        floating enable border normal
+for_window [class="Lxappearance"]             floating enable border normal sticky disable
+for_window [class="Nitrogen"]                 floating enable border normal sticky disable
+for_window [class="gcolor2"]                  floating enable border normal sticky enable
+for_window [class="Pavucontrol"]              floating enable border normal sticky enable
+for_window [class="pulseaudio-equalizer-gtk"] floating enable border normal sticky disable
+for_window [class="Pamac-manager"]            floating enable border normal sticky disable
+for_window [class="Manjaro Settings Manager"] floating enable border normal sticky disable
 
 # focus the parent container
 bindsym $mod+a focus parent exec "notify-send 'Focused parent window'"
@@ -176,16 +199,15 @@ set $default_outer_gaps 5
 gaps inner $default_inner_gaps
 gaps outer $default_outer_gaps
 
-bindsym $mod+g mode "gaps"
 # }}}
 
 mode "resize" {
 
     # Resize
-    bindsym h resize shrink width 5 px or 5 ppt
+    bindsym h resize shrink width  5 px or 5 ppt
     bindsym j resize grow   height 5 px or 5 ppt
     bindsym k resize shrink height 5 px or 5 ppt
-    bindsym l resize grow   width 5 px or 5 ppt
+    bindsym l resize grow   width  5 px or 5 ppt
 
     bindsym Left  resize shrink width  5 px or 5 ppt
     bindsym Down  resize grow   height 5 px or 5 ppt
@@ -212,15 +234,17 @@ mode "resize" {
 bindsym $mod+r mode "resize" exec --no-startup-id "notify-send 'Resize Mode'"
 
 # Status Bar ---------------------------------------------------{{{
+# Polybar --- {{{
 #exec --no-startup-id "~/.config/polybar/launch.sh"
+# }}}
 
+# bumblebee-status --------------------------------------------- {{{
 bar {
 
-    # bumblebee-status ---------------------------------------------
     # format:
     #     bumblebee-status -m <modules...> -p <params...> -t <theme>
 	status_command bumblebee-status \
-        -m title amixer cpu memory battery date time\
+        -m title cmus amixer cpu memory battery date time\
         -p time.format="%H:%M" date.format="%m/%d" memory.format="{percent:05.02f}%" title.max=30 title.scroll=True\
         -t iceberg-dark-powerline
 
@@ -237,21 +261,26 @@ bar {
         binding_mode       $bg       $purple   $bg
     }
 }
+
+# }}}
 # }}} 
 
-## $mod+[, $mod+] -> switch workspace prev/next
-## $mod+{, $mod+} -> move   workspace prev/next
+# $mod+[, $mod+] -> switch workspace prev/next
+# $mod+{, $mod+} -> move   workspace prev/next
 bindsym $mod+braceleft          workspace prev
 bindsym $mod+braceright         workspace next
 bindsym $mod+shift+bracketleft  move container to workspace prev
 bindsym $mod+shift+bracketright move container to workspace next
+# $mod+Mouse wheel up/down -> switch workspace prev/next
+bindsym $mod+button4 workspace prev
+bindsym $mod+button5 workspace next
 
 # Kill focused window
 bindsym $mod+q       kill
 bindsym $mod+Shift+q kill
 
 # exit-menu
-bindsym ctrl+$mod+e exec --no-startup-id "~/bin/exit-menu.sh"
+bindsym ctrl+$mod+e exec --no-startup-id "~/bin/exitmenu"
 
 # Window
 # <class>               <border> <background> <foreground> <indicator> <child_border>
@@ -261,7 +290,7 @@ client.unfocused        $bg2     $bg          $gray        $gray       $bg2
 client.urgent           $bg2     $red         $bg          $gray       $bg2
 client.placeholder      $bg2     $green       $bg          $gray       $bg2
 client.background $bg
-#title_align center
+title_align center
 
 # Sound volume
 bindsym $mod+plus     exec --no-startup-id "amixer -q sset Master 4%+ unmute"
