@@ -51,11 +51,12 @@ font pango:Iosevka Term Curly, pango:Cica 11
 floating_modifier $mod
 
 # Terminal
-set $terminal_command "urxvtc; if [ $? -eq 2 ]; then urxvtd --quiet --opendisplay --fork; urxvtc; fi"
+#set $terminal "urxvtc; if [ $? -eq 2 ]; then urxvtd --quiet --opendisplay --fork; urxvtc; fi"
+set $terminal "st"
 
-bindsym $mod+Return       split h exec $terminal_command
-bindsym $mod+Shift+Return split v exec $terminal_command
-bindsym $mod+Ctrl+Return  exec --no-startup-id "urxvt -e ranger"
+bindsym $mod+Return       split h exec $terminal
+bindsym $mod+Shift+Return split v exec $terminal
+bindsym $mod+Ctrl+Return  exec --no-startup-id $terminal -e ranger
 
 # Rofi
 bindsym $mod+d    exec --no-startup-id "rofi -combi drun,run -modi drun,run -show drun"
@@ -65,6 +66,9 @@ bindsym $mod+Tab  exec --no-startup-id "rofi -show window"
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+
+# i3 Layout menu
+bindsym $mod+o exec --no-startup-id "$HOME/bin/i3layoutmenu"
 
 # change focus
 bindsym $mod+h focus left
