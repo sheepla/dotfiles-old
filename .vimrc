@@ -141,6 +141,8 @@ nnoremap s, :<C-w>bprev<CR>
 nnoremap sa :<C-u>append!<CR>
 nnoremap si :<C-u>insert!<CR>
 " Yank/Cut/Paste
+nmap Y     "+y
+nnoremap YY    "+yy
 nnoremap sy    "+y
 nnoremap sd    "+d
 nnoremap sp    "+gp
@@ -225,6 +227,8 @@ cnoremap <C-d> <Del>
 " Visual Mode -------------------------- {{{
 " vv -> visual select to line end
 vnoremap v $h
+vnoremap > >gv
+vnoremap < <gv
 " }}}
 
 " Help ----------------------------------- {{{

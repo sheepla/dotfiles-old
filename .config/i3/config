@@ -59,11 +59,12 @@ font pango:Iosevka Term Curly, pango:Cica 11
 floating_modifier $mod
 
 # Terminal
-set $terminal_command "urxvtc; if [ $? -eq 2 ]; then urxvtd --quiet --opendisplay --fork; urxvtc; fi"
+#set $terminal "urxvtc; if [ $? -eq 2 ]; then urxvtd --quiet --opendisplay --fork; urxvtc; fi"
+set $terminal "st"
 
-bindsym $mod+Return       split h exec $terminal_command
-bindsym $mod+Shift+Return split v exec $terminal_command
-bindsym $mod+Ctrl+Return  exec --no-startup-id "urxvt -e ranger"
+bindsym $mod+Return       split h exec $terminal
+bindsym $mod+Shift+Return split v exec $terminal
+bindsym $mod+Ctrl+Return  exec --no-startup-id $terminal -e ranger
 
 # Rofi
 bindsym $mod+d    exec --no-startup-id "rofi -combi drun,run -modi drun,run -show drun"
@@ -80,6 +81,9 @@ bindsym $mod+shift+p exec --no-startup-id "$HOME/bin/i3scrotmenu"
 
 # Clipboard manager
 bindsym $mod+semicolon exec --no-startup-id rofi -modi "clipboard:greenclip print" -show clipboard
+
+# i3 Layout menu
+bindsym $mod+o exec --no-startup-id "$HOME/bin/i3layoutmenu"
 
 # change focus
 bindsym $mod+h focus left
