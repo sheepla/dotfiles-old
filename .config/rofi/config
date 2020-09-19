@@ -1,5 +1,6 @@
 rofi.font: Iosevka Term Curly Medium 12
 rofi.columns: 2
-rofi.icon-theme: "Paper", "Papylus"
 rofi.show-icons: true
-rofi.theme: /home/main/.config/rofi/themes/iceberg.rasi
+rofi.kb-mode-next: Control+o
+rofi.kb-mode-previous: Control+i
+rofi.theme: /home/main/.config/rofi/themes/iceberg3.rasi
