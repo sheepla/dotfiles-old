@@ -278,8 +278,14 @@ if dein#load_state('$HOME/.cache/dein')
 	call dein#add('Shougo/unite.vim') 
     call dein#add('junegunn/fzf.vim')
 
-    " Filer
+    " File Manager
 	call dein#add('preservim/nerdtree')
+
+    " i3-wm
+    call dein#add('mboughaba/i3config.vim')
+
+    " Python
+    call dein#add('davidhalter/jedi-vim')
 
     " }}}
 	" ======================================================================
@@ -399,9 +405,13 @@ nnoremap <Leader>l        :<C-u>Unite<Space>launcher<CR>
 nnoremap <Leader>r        :<C-u>Unite<Space>register<CR>
 nnoremap <Leader>s        :<C-u>Unite<Space>source<CR>
 " }}}
+"
+" i3-config.vim ------------------------------ {{{
+aug i3config_ft_detection
+  au!
+  au BufNewFile,BufRead ~/.config/i3/config set filetype=i3config
+aug end
+" }}}
 
-
-" Local vimrc
-source ~/.vimrc.local
 " End of Vimrc ///////////////////////////////////////////////////////////
 
