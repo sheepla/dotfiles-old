@@ -60,33 +60,33 @@ floating_modifier $mod
 
 # Terminal
 #set $terminal "urxvtc; if [ $? -eq 2 ]; then urxvtd --quiet --opendisplay --fork; urxvtc; fi"
-set $terminal "st"
+set $terminal st
 
-bindsym $mod+Return       split h exec $terminal
-bindsym $mod+Shift+Return split v exec $terminal
-bindsym $mod+Ctrl+Return  exec --no-startup-id $terminal -e ranger
+bindsym $mod+Return       split h exec --no-startup-id $terminal
+bindsym $mod+Shift+Return split v exec --no-startup-id $terminal
+bindsym $mod+Ctrl+Return  exec --no-startup-id st -e ranger
 
 # Rofi
-bindsym $mod+d    exec --no-startup-id "rofi -combi drun,run -modi drun,run -show drun"
-bindsym $mod+Tab  exec --no-startup-id "rofi -show window"
+bindsym $mod+d    exec --no-startup-id "rofi -combi drun,run -modi drun,run -show drun &"
+bindsym $mod+Tab  exec --no-startup-id "rofi -show window &"
 
 # RofiMoji
-bindsym $mod+shift+semicolon exec --no-startup-id "rofimoji --copy-only"
+bindsym $mod+m exec --no-startup-id "rofimoji --copy-only &"
 
 # ArandR
 bindsym $mod+Ctrl+p exec --no-startup-id "$HOME/bin/arandrmenu"
 
 # Screenshot
-bindsym $mod+shift+p exec --no-startup-id "$HOME/bin/i3scrotmenu"
+bindsym $mod+p exec --no-startup-id "$HOME/bin/i3scrotmenu"
 
 # Clipboard manager
-bindsym $mod+semicolon exec --no-startup-id rofi -modi "clipboard:greenclip print" -show clipboard
+bindsym $mod+i exec --no-startup-id rofi -modi "clipboard:greenclip print" -show clipboard &
 
 # i3 Layout menu
-bindsym $mod+o exec --no-startup-id "$HOME/bin/i3layoutmenu"
+bindsym $mod+o exec --no-startup-id "$HOME/bin/i3layoutmenu &"
 
-# i3 Layout menu
-bindsym $mod+o exec --no-startup-id "$HOME/bin/i3layoutmenu"
+# Calculate
+bindsym $mod+n exec --no-startup-id "rofi -show calc -modi calc -no-show-match -no-sort &"
 
 # change focus
 bindsym $mod+h focus left
