@@ -156,7 +156,7 @@ vmap <Leader>P "+gP
 " Other commands
 nnoremap s/ :<C-u>%s///cg<Left><Left><Left><Left>
 nnoremap sr :<C-u>read!<Space>
-nnoremap sT :<C-u>terminal ++close<CR>
+nnoremap sT :<C-u>terminal<CR>
 nnoremap sN :<C-u>setlocal relativenumber!<CR>
 nnoremap s? :<C-u>help<Space>
 nnoremap sf :<C-u>set filetype=
@@ -236,11 +236,12 @@ cabbrev help tab help
 " {{{
 
 " Terminal ------------------------------- {{{
+tnoremap <silent> <Esc><Esc> <C-\><C-n>
 " }}}
 
 " Dein Scripts ======================================================== {{{
 if &compatible
-	set nocompatible               " Be iMproved
+    set nocompatible               " Be iMproved
 endif
 
 " Required:
@@ -248,18 +249,18 @@ set runtimepath+=$HOME/.cache/dein/repos/github.com/Shougo/dein.vim
 
 " Required:
 if dein#load_state('$HOME/.cache/dein')
-	call dein#begin('$HOME/.cache/dein')
+    call dein#begin('$HOME/.cache/dein')
 
-	" Let dein manage dein
-	" Required:
-	call dein#add('$HOME/.cache/dein/repos/github.com/Shougo/dein.vim')
+    " Let dein manage dein
+    " Required:
+    call dein#add('$HOME/.cache/dein/repos/github.com/Shougo/dein.vim')
 
-	" Add or remove your plugins here: =====================================
+    " Add or remove your plugins here: =====================================
     " {{{
 
     " Colorscheme
-	call dein#add('cocopon/iceberg.vim')
-	call dein#add('arcticicestudio/nord-vim')
+    call dein#add('cocopon/iceberg.vim')
+    call dein#add('arcticicestudio/nord-vim')
     call dein#add('altercation/vim-colors-solarized')
     call dein#add('fcpg/vim-orbital')
     call dein#add('morhetz/gruvbox')
@@ -268,18 +269,18 @@ if dein#load_state('$HOME/.cache/dein')
     call dein#add('gorodinskiy/vim-coloresque')
 
     " Status Line
-	call dein#add('itchyny/lightline.vim')
-	call dein#add('gkeep/iceberg-dark')
+    call dein#add('itchyny/lightline.vim')
+    call dein#add('gkeep/iceberg-dark')
 
     " Text Edit
     call dein#add('tpope/vim-surround')
 
     " Interface
-	call dein#add('Shougo/unite.vim') 
+    call dein#add('Shougo/unite.vim') 
     call dein#add('junegunn/fzf.vim')
 
     " File Manager
-	call dein#add('preservim/nerdtree')
+    call dein#add('preservim/nerdtree')
 
     " i3-wm
     call dein#add('mboughaba/i3config.vim')
@@ -288,13 +289,13 @@ if dein#load_state('$HOME/.cache/dein')
     call dein#add('davidhalter/jedi-vim')
 
     " }}}
-	" ======================================================================
+    " ======================================================================
 
-	" You can specify revision/branch/tag.
-	call dein#add('Shougo/deol.nvim', { 'rev': '01203d4c9' })
+    " You can specify revision/branch/tag.
+    call dein#add('Shougo/deol.nvim', { 'rev': '01203d4c9' })
 
-	" Required:
-	call dein#end()
+    " Required:
+    call dein#end()
     call dein#save_state()
 endif
 
@@ -304,7 +305,7 @@ syntax enable
 
 " If you want to install not installed plugins on startup.
 if dein#check_install()
-	call dein#install()
+    call dein#install()
 endif
 
 " End Dein Scripts ========================================================
@@ -319,17 +320,17 @@ cabbrev dupdate   call dein#update()
 set laststatus=2
 set noshowmode
 let g:lightline = {
-      \ 'colorscheme': 'icebergDark',
-      \ 'component': {
-      \   'lineinfo': ' %3l:%-2v',
-      \ },
-      \ 'component_function': {
-      \   'readonly': 'LightlineReadonly',
-      \   'fugitive': 'LightlineFugitive'
-      \ },
-      \ 'separator': { 'left': '', 'right': '' },
-      \ 'subseparator': { 'left': '', 'right': '' }
-      \ }
+            \ 'colorscheme': 'icebergDark',
+            \ 'component': {
+            \   'lineinfo': ' %3l:%-2v',
+            \ },
+            \ 'component_function': {
+            \   'readonly': 'LightlineReadonly',
+            \   'fugitive': 'LightlineFugitive'
+            \ },
+            \ 'separator': { 'left': '', 'right': '' },
+            \ 'subseparator': { 'left': '', 'right': '' }
+            \ }
 
 function! LightlineReadonly()
     return &readonly ? '' : ''
@@ -377,12 +378,12 @@ if has('gui_running')
         set guifont=HackGenNerd\ 11
         set guifontwide=HackGenNerd\ 11
     endif
+
     " set ambiwidth=double
 
     set cursorline
     set guiheadroom=0
 else
-    " If terminal running:
     colorscheme iceberg
     " autocmd ColorScheme * highlight Normal ctermbg=none
     " autocmd ColorScheme * highlight LineNr ctermbg=none
@@ -407,10 +408,10 @@ nnoremap <Leader>s        :<C-u>Unite<Space>source<CR>
 " }}}
 "
 " i3-config.vim ------------------------------ {{{
-aug i3config_ft_detection
-  au!
-  au BufNewFile,BufRead ~/.config/i3/config set filetype=i3config
-aug end
+augroup i3config_ft_detection
+    autocmd!
+    autocmd BufNewFile,BufRead ~/.config/i3/config set filetype=i3config
+augroup end
 " }}}
 
 " End of Vimrc ///////////////////////////////////////////////////////////
