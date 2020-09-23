@@ -15,7 +15,7 @@ export GREP_COLOR="1;32"
 #export LESSOPEN='| $HOME/.local/bin/src-hilite-lesspipe.sh %s'
 
 # Editor
-export EDITOR=vim
+export EDITOR=nvim
 
 # ddgr
 export BROWSER=w3m ddgr query
