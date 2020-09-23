@@ -9,6 +9,7 @@ mkcd() {
 }
 
 alias py3='python3'
+
 # Setting files
 alias rebash='source ~/.bashrc'
 alias bashrc='vim ~/.bashrc'
@@ -16,6 +17,10 @@ alias profile='vim ~/.profile'
 alias reprofile='source ~/.profile' 
 alias vimrc='vim ~/.vimrc'
 alias path='echo $PATH | tr ":" "\n"'
+
+# Vim
+alias v='nvim'
+alias gvim='nvim-qt'
 
 # Man
 man() {
@@ -46,12 +51,31 @@ alias w3mg='w3m www.google.com'
 alias w3md='w3m www.duckduckgo.com'
 
 # tar
-alias mktar='tar -cvf'
-alias extar='tar -xvf'
-alias mktargz='tar -zxcf'
-alias extargz='tar -zxvf'
-alias mktarxz='tar -Jcvf'
-alias extarxz='tar -Jxvf'
+
+# # archive extractor
+# # usage: ex <file>
+extract()
+{
+    if [ -f $1 ] ; then
+        case $1 in
+            *.tar.bz2)   tar xjf $1   ;;
+            *.tar.gz)    tar xzf $1   ;;
+            *.bz2)       bunzip2 $1   ;;
+            *.rar)       unrar x $1     ;;
+            *.gz)        gunzip $1    ;;
+            *.tar)       tar xf $1    ;;
+            *.tbz2)      tar xjf $1   ;;
+            *.tgz)       tar xzf $1   ;;
+            *.zip)       unzip $1     ;;
+            *.Z)         uncompress $1;;
+            *.7z)        7z x $1      ;;
+            *)           echo "'$1' cannot be extracted via ex()" ;;
+        esac
+    else
+        echo "'$1' is not a valid file"
+    fi
+}
+
 
 # translate-shell(trans)
 alias en2ja='trans en:ja -brief -shell -e google'
@@ -72,7 +96,7 @@ alias rebat='bat cache --build'
 alias bat='bat --wrap auto'
 
 # exa
-alias l='exa --all --icons'
+alias l='exa --all --icons --classify'
 alias ls='exa --icons'
 alias ll='exa --long --all --git --icons'
 alias lt='exa --long --all --git --icons --tree'
@@ -81,3 +105,19 @@ alias lt='exa --long --all --git --icons --tree'
 #alias la='exa --all --classify'
 #alias ll='exa --long --all --git --classify'
 #alias lt='exa --long --all --git --tree --classify'
+
+# pacman
+if command -v pacman >/dev/null && command -v fzf >/dev/null
+then
+
+    # Show package info with preview
+    pacpreview() {
+        pacman -Qq | fzf --preview 'pacman -Qil {}' \
+            --layout=reverse \
+            --bind 'enter:execute(pacman -Qil {} | less)'
+    }
+
+    pacshowdisc() {
+        LANG=C pacman -Qi | awk '/^Name/{name=$3} /^Installed Size/{print $4$5, name}' | sort -h
+    }
+fi
