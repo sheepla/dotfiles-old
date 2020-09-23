@@ -24,7 +24,6 @@ exec --no-startup-id "volumeicon &"
 
 # Clipboard manager
 exec --no-startup-id "greenclip daemon &"
-
 # }}}
 
 
@@ -68,7 +67,7 @@ bindsym $mod+Ctrl+Return  exec --no-startup-id st -e ranger
 
 # Rofi
 bindsym $mod+d    exec --no-startup-id "rofi -combi drun,run -modi drun,run -show drun &"
-bindsym $mod+Tab  exec --no-startup-id "rofi -show window &"
+bindsym $mod+Tab  exec --no-startup-id "rofi -show window -modi window,drun,run &"
 
 # RofiMoji
 bindsym $mod+m exec --no-startup-id "rofimoji --copy-only &"
@@ -87,6 +86,9 @@ bindsym $mod+o exec --no-startup-id "$HOME/bin/i3layoutmenu &"
 
 # Calculate
 bindsym $mod+n exec --no-startup-id "rofi -show calc -modi calc -no-show-match -no-sort &"
+
+# exit-menu
+bindsym ctrl+$mod+e exec --no-startup-id "~/bin/exitmenu"
 
 # change focus
 bindsym $mod+h focus left
@@ -136,9 +138,12 @@ for_window [class="Pavucontrol"]              floating enable border normal stic
 for_window [class="pulseaudio-equalizer-gtk"] floating enable border normal sticky disable
 for_window [class="Pamac-manager"]            floating enable border normal sticky disable
 for_window [class="Manjaro Settings Manager"] floating enable border normal sticky disable
+for_window [class="firefox"]                  move container to workspace $ws3, workspace $ws3, layout tabbed
+for_window [class="gvim"]                     move container to workspace $ws2, workspace $ws2, layout tabbed
+for_window [class="nvim-qt"]                  move container to workspace $ws2, workspace $ws2, layout tabbed
 
 # focus the parent container
-bindsym $mod+a focus parent exec "notify-send 'Focused parent window'"
+bindsym $mod+a focus parent exec --no-startup-id "notify-send 'Focused parent window'"
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -279,8 +284,6 @@ bindsym $mod+button5 workspace next
 bindsym $mod+q       kill
 bindsym $mod+Shift+q kill
 
-# exit-menu
-bindsym ctrl+$mod+e exec --no-startup-id "~/bin/exitmenu"
 
 # Window
 # <class>               <border> <background> <foreground> <indicator> <child_border>
