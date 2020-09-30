@@ -12,10 +12,10 @@ alias py3='python3'
 
 # Setting files
 alias rebash='source ~/.bashrc'
-alias bashrc='vim ~/.bashrc'
-alias profile='vim ~/.profile'
+alias bashrc='$EDITOR ~/.bashrc'
+alias profile='$EDITOR ~/.profile'
 alias reprofile='source ~/.profile' 
-alias vimrc='vim ~/.vimrc'
+alias vimrc='$EDITOR ~/.vimrc'
 alias path='echo $PATH | tr ":" "\n"'
 
 # Vim
