@@ -375,8 +375,8 @@ if has('gui_running')
     if has('win32') || has('win64')
         set guifont=HackGen\ Console\ for\ Powerline:h12:cDEFAULT
     elseif has('unix')
-        set guifont=HackGenNerd\ 11
-        set guifontwide=HackGenNerd\ 11
+        set guifont=HackGenNerd\ 10
+        set guifontwide=HackGenNerd\ 10
     endif
 
     " set ambiwidth=double
