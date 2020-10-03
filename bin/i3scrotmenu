@@ -1,0 +1,29 @@
+#!/bin/bash
+
+delay='5'
+
+if command -v rofi &>/dev/null; then
+    menu='rofi -dmenu'
+elif command -v dmenu &>/dev/null; then
+    menu='dmenu'
+fi
+
+mode=$(
+cat << 'EOF' | $menu -p 'Screenshot: '
+full-screen
+active-window
+selection
+EOF
+)
+
+case $mode in
+    full-screen)
+        i3-scrot --desk $delay
+    ;;
+    active-window)
+        i3-scrot --window $delay
+    ;;
+    selection)
+        i3-scrot --select $delay
+    ;;
+esac

@@ -1,0 +1,16 @@
+#!/bin/bash
+
+layoutdir="$HOME/.screenlayout/"
+
+if command -v rofi &>/dev/null; then
+    menu='rofi -dmenu'
+elif command -v dmenu; then
+    menu='dmenu'
+fi
+
+[ -f $layoutdir/* ] || {
+        echo "Please place scripts to set the layout to $layoutdir"
+}
+
+# Select layout script and set layout
+find $layoutdir -type f | $menu | bash
