@@ -19,8 +19,10 @@ alias vimrc='$EDITOR ~/.vimrc'
 alias path='echo $PATH | tr ":" "\n"'
 
 # Vim
-alias v='nvim'
+command -v nvim &>/dev/null && alias v='nvim'
 alias gvim='nvim-qt'
+
+alias e="$EDITOR"
 
 # Man
 man() {
