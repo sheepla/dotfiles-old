@@ -1,0 +1,40 @@
+#!/bin/bash
+# Exit menu with rofi or dmenu
+
+wm=$(echo $XDG_SESSION_TYPE)
+
+if command -v rofi; then
+    menu='rofi -dmenu'
+elif command -v dmenu; then
+    menu='dmenu'
+fi
+
+selection=$(
+cat << 'EOF' | $menu -p "Exit: "
+logout
+shutdown
+reboot
+suspend
+lock
+EOF
+)
+
+case "$selection" in
+    logout)
+        if [ "$wm" == "i3" ]; then
+            i3-msg exit
+        fi
+    ;;
+    shutdown)
+        shutdown -h now
+    ;;
+    reboot)
+        reboot
+    ;;
+    suspend)
+        systemctl suspend
+    ;;
+    lock)
+        light-locker
+    ;;
+esac
