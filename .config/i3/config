@@ -243,9 +243,9 @@ bindsym $mod+r mode "resize" exec --no-startup-id "notify-send 'Resize Mode'"
 #exec --no-startup-id "~/.config/polybar/launch.sh"
 # }}}
 
-# bumblebee-status --------------------------------------------- {{{
 bar {
 
+# bumblebee-status --------------------------------------------- {{{
     # format:
     #     bumblebee-status -m <modules...> -p <params...> -t <theme>
 	status_command bumblebee-status \
@@ -253,6 +253,11 @@ bar {
         -p time.format="%H:%M" date.format="%m/%d" memory.format="{percent:05.02f}%" title.max=30 title.scroll=True\
         -t iceberg-dark-powerline
 
+# }}}
+
+# tint2 -------------------------------------------------------- {{{
+
+#}}}
 	font pango:Iosevka Term Curly Medium, pango:Cica 11
 	position top
 
@@ -267,7 +272,6 @@ bar {
     }
 }
 
-# }}}
 # }}} 
 
 # $mod+[, $mod+] -> switch workspace prev/next
