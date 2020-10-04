@@ -277,7 +277,8 @@ if dein#load_state('$HOME/.cache/dein')
 
     " Interface
     call dein#add('Shougo/unite.vim') 
-    call dein#add('junegunn/fzf.vim')
+    " call dein#add('junegunn/fzf.vim')
+    call dein#add('ctrlpvim/ctrlp.vim')
 
     " File Manager
     call dein#add('preservim/nerdtree')
@@ -413,6 +414,9 @@ augroup i3config_ft_detection
     autocmd BufNewFile,BufRead ~/.config/i3/config set filetype=i3config
 augroup end
 " }}}
+
+" Rofi config file syntax
+autocmd BufNewFile,BufRead /*.rasi setfiletype css
 
 " End of Vimrc ///////////////////////////////////////////////////////////
 
