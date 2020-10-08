@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+if command -v rofi &>/dev/null; then
+    menu='rofi -dmenu'
+elif command -v dmenu &>/dev/null; then
+    menu='dmenu'
+fi
+
+i3command=$(
+cat << 'EOF' | $menu -p "i3 layout: "
+layout tabbed
+layout stacking
+layout toggle
+split toggle
+split horizontal
+split vertical
+floating toggle
+floating enable
+floating disable
+EOF
+)
+
+i3-msg $i3command
