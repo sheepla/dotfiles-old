@@ -1,7 +1,7 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Exit menu with rofi or dmenu
 
-wm=$(echo $XDG_SESSION_TYPE)
+wm=$(echo $XDG_CURRENT_DESKTOP)
 
 if command -v rofi; then
     menu='rofi -dmenu'
