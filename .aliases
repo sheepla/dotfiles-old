@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # Basic commands
 alias c='clear'
 alias mkd='mkdir -pv'
@@ -19,12 +17,15 @@ alias vimrc='$EDITOR ~/.vimrc'
 alias path='echo $PATH | tr ":" "\n"'
 
 # Vim
-command -v nvim &>/dev/null && alias v='nvim'
-alias gvim='nvim-qt'
+if command -v nvim &>/dev/null
+then
+    alias vim='nvim'
+    alias gvim='nvim-qt'
+fi
 
-alias e="$EDITOR"
+alias v="$EDITOR"
 
-# Man
+# manpager wrapper with color
 man() {
     LESS_TERMCAP_md=$'\e[01;34m' \
     LESS_TERMCAP_me=$'\e[0m' \
@@ -41,21 +42,21 @@ alias ga='git add'
 alias gst='git status'
 alias gl='git log --decorate --oneline'
 alias glg='git log --decorate --oneline --graph'
-alias gcm='git commit'
+alias gcom='git commit'
 alias gdf='git diff'
 
 clone() {
     git clone https://github.com/"$1"/"$2".git
 }
 
-# W3m
-alias w3mg='w3m www.google.com'
-alias w3md='w3m www.duckduckgo.com'
+if command -v w3m &>/dev/null
+then
+    # W3m
+    alias w3mg='w3m www.google.com'
+    alias w3md='w3m www.duckduckgo.com'
+fi
 
-# tar
-
-# # archive extractor
-# # usage: ex <file>
+# archive extractor
 extract()
 {
     if [ -f $1 ] ; then
@@ -79,29 +80,36 @@ extract()
 }
 
 
-# translate-shell(trans)
-alias en2ja='trans en:ja -brief -shell -e google'
-alias ja2en='trans ja:en -brief -shell -e google'
-alias eiwa='trans en:ja -dictionary -e google'
-alias waei='trans ja:en -dictionary -e google'
+# translate-shell (trans)
+if command -v trans &>/dev/null
+then
+    alias en2ja='trans en:ja -brief -shell -e google'
+    alias ja2en='trans ja:en -brief -shell -e google'
+    alias eiwa='trans en:ja -dictionary -e google'
+    alias waei='trans ja:en -dictionary -e google'
+fi
 
-# Other
-alias r='ranger'
-alias fontlist="fc-list | awk -F '[:,]' '{print $2}' | sort | uniq"
-# }}}
+# bat - cat with syntax highlight
+if command -v bat &>/dev/null
+then
+    alias rebat='bat cache --build'
+    alias cat='bat --wrap auto'
+fi
 
-# fzf
-alias fzd='find . -type d | fzf | sed "s/ /\\ /g"'
-
-# bat -----------------------------------
-alias rebat='bat cache --build'
-alias bat='bat --wrap auto'
-
-# exa
-alias l='exa --all --icons --classify'
-alias ls='exa --icons'
-alias ll='exa --long --all --git --icons'
-alias lt='exa --long --all --git --icons --tree'
+# exa - alternative ls
+if command -v exa &>/dev/null
+then
+    alias l='exa --all --icons --classify'
+    alias la='exa --all --icons --classify'
+    alias ls='exa --icons'
+    alias ll='exa --long --all --git --icons'
+    alias lt='exa --long --all --git --icons --tree'
+else
+    alias l='ls -F --color=auto'
+    alias la='ls -aF --color=auto'
+    alias ls='ls --color=auto'
+    alias ll='ls -lF --color=auto'
+fi
 
 #alias l='exa --classify'
 #alias la='exa --all --classify'
@@ -109,7 +117,7 @@ alias lt='exa --long --all --git --icons --tree'
 #alias lt='exa --long --all --git --tree --classify'
 
 # pacman
-if command -v pacman >/dev/null && command -v fzf >/dev/null
+if command -v pacman &>/dev/null && command -v fzf &>/dev/null
 then
 
     # Show package info with preview
