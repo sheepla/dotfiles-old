@@ -113,8 +113,8 @@ bindsym $mod+Shift+Up    move up
 bindsym $mod+Shift+Right move right
 
 # Split
-bindsym $mod+s split h exec "notify-send 'Horizontal Layout'"
-bindsym $mod+v split v exec "notify-send 'Vertical Layout'"
+bindsym $mod+s split h exec --no-startup-id "notify-send 'Horizontal Layout'"
+bindsym $mod+v split v exec --no-startup-id "notify-send 'Vertical Layout'"
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
