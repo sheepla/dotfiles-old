@@ -105,10 +105,10 @@ then
     alias ll='exa --long --all --git --icons'
     alias lt='exa --long --all --git --icons --tree'
 else
-    alias l='ls -F --color=auto'
-    alias la='ls -aF --color=auto'
-    alias ls='ls --color=auto'
-    alias ll='ls -lF --color=auto'
+    alias l='ls -hF --color=auto'
+    alias ls='ls -hF --color=auto'
+    alias la='ls -ahF --color=auto'
+    alias ll='ls -alhF --color=auto'
 fi
 
 #alias l='exa --classify'
