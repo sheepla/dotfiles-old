@@ -50,18 +50,18 @@ class Color(DefaultColor):
     GIT_UNTRACKED_FG  = palette['white']
     GIT_UNTRACKED_BG  = palette['b_black']
     # * conflicted
-    GIT_CONFLICTED_FG = palette['black']
-    GIT_CONFLICTED_BG = palette['red']
-    GIT_AHEAD_FG      = palette['white']
-    GIT_AHEAD_BG      = palette['cyan']
-    GIT_BEHIND_FG     = palette['white']
-    GIT_BEHIND_BG     = palette['purple']
+    GIT_CONFLICTED_FG = palette['red']
+    GIT_CONFLICTED_BG = palette['black']
+    GIT_AHEAD_FG      = palette['cyan']
+    GIT_AHEAD_BG      = palette['black']
+    GIT_BEHIND_FG     = palette['purple']
+    GIT_BEHIND_BG     = palette['black']
     # (check-mark) staged
-    GIT_STAGED_FG     = palette['black']
-    GIT_STAGED_BG     = palette['green']
+    GIT_STAGED_FG     = palette['green']
+    GIT_STAGED_BG     = palette['black']
     # (pen) modified
-    GIT_NOTSTAGED_FG  = palette['black']
-    GIT_NOTSTAGED_BG  = palette['blue']
+    GIT_NOTSTAGED_FG  = palette['blue']
+    GIT_NOTSTAGED_BG  = palette['black']
 
     JOBS_FG = palette['white']
     JOBS_BG = palette['black']
@@ -73,7 +73,7 @@ class Color(DefaultColor):
     # >_$_> segment
     CMD_PASSED_FG = palette['white']
     CMD_PASSED_BG = palette['black']
-    CMD_FAILED_FG = palette['yellow'] 
+    CMD_FAILED_FG = palette['red'] 
     CMD_FAILED_BG = palette['black']
 
     SVN_CHANGES_BG = REPO_DIRTY_BG
