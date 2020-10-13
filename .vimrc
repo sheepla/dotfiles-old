@@ -366,8 +366,6 @@ if has('gui_running')
     set guioptions-=m
     set guioptions-=e
 
-    nnoremap sF :<C-u>set guifont=
-
     " Window size
     set lines=40
     set columns=150
