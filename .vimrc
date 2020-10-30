@@ -95,8 +95,8 @@ nnoremap sE :<C-u>tabedit<Space>
 
 " Tab
 nnoremap st :<C-u>tabnew<CR>
-nnoremap <C-Tab>   :<C-u>bnext<CR>
-nnoremap <C-S-Tab> :<C-u>bprevious<CR>
+nnoremap <C-Tab>   :<C-u>tabnext<CR>
+nnoremap <C-S-Tab> :<C-u>tabprevious<CR>
 nnoremap s[ :<C-u>tabprevious<CR>
 nnoremap s] :<C-u>tabnext<CR>
 nnoremap s{ :<C-u>tabmove -<CR>
@@ -218,10 +218,12 @@ set showtabline=2
 " Command Mode -------------------------- {{{
 set wildmenu
 
-" Key maps (bash like)
+" Emacs/readline like bindings
 cnoremap <C-f> <Right>
 cnoremap <C-b> <Left>
 cnoremap <C-d> <Del>
+cnoremap <C-a> <Home>
+cnoremap <C-e> <End>
 " }}}
 
 " Visual Mode -------------------------- {{{
@@ -237,6 +239,7 @@ cabbrev help tab help
 
 " Terminal ------------------------------- {{{
 tnoremap <silent> <Esc><Esc> <C-\><C-n>
+tnoremap <silent> <C-;>  <C-\><C-n>
 " }}}
 
 " Dein Scripts ======================================================== {{{
