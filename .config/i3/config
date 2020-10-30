@@ -73,13 +73,13 @@ bindsym $mod+Tab  exec --no-startup-id "rofi -show window -modi window,drun,run 
 bindsym $mod+m exec --no-startup-id "rofimoji --copy-only &"
 
 # ArandR
-bindsym $mod+Ctrl+p exec --no-startup-id "$HOME/bin/arandrmenu"
+bindsym $mod+Ctrl+p exec --no-startup-id "$HOME/bin/arandrmenu &"
 
 # Screenshot
-bindsym $mod+p exec --no-startup-id "$HOME/bin/i3scrotmenu"
+bindsym $mod+p exec --no-startup-id "$HOME/bin/i3scrotmenu &"
 
 # Clipboard manager
-bindsym $mod+i exec --no-startup-id rofi -modi "clipboard:greenclip print" -show clipboard &
+bindsym $mod+i exec --no-startup-id "rofi -modi 'clipboard:greenclip print' -show clipboard &"
 
 # i3 Layout menu
 bindsym $mod+o exec --no-startup-id "$HOME/bin/i3layoutmenu &"
@@ -305,3 +305,7 @@ bindsym $mod+minus    exec --no-startup-id "amixer -q sset Master 4%- unmute"
 bindsym $mod+slash    exec --no-startup-id "amixer -q sset Master toggle"
 
 # }}}
+
+# Import local config
+exec --no-startup-id importi3config ~/.config/i3/config.local
+
