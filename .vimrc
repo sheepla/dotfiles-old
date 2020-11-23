@@ -292,6 +292,12 @@ if dein#load_state('$HOME/.cache/dein')
     " Python
     call dein#add('davidhalter/jedi-vim')
 
+    " Go
+    call dein#add('fatih/vim-go')
+
+    " Complete
+    call dein#add('Shougo/deoplete.nvim')
+
     " }}}
     " ======================================================================
 
