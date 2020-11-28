@@ -59,7 +59,7 @@ floating_modifier $mod
 
 # Terminal
 #set $terminal "urxvtc; if [ $? -eq 2 ]; then urxvtd --quiet --opendisplay --fork; urxvtc; fi"
-set $terminal st
+set $terminal alacritty
 
 bindsym $mod+Return       split h exec --no-startup-id $terminal
 bindsym $mod+Shift+Return split v exec --no-startup-id $terminal
@@ -206,7 +206,8 @@ gaps outer $default_outer_gaps
 
 # }}}
 
-mode "resize" {
+set $resize_mode " RESIZE "
+mode $resize_mode {
 
     # Resize
     bindsym h resize shrink width  5 px or 5 ppt
@@ -236,7 +237,7 @@ mode "resize" {
 
 }
 
-bindsym $mod+r mode "resize" exec --no-startup-id "notify-send 'Resize Mode'"
+bindsym $mod+r mode $resize_mode exec --no-startup-id "notify-send 'Resize Mode'"
 
 # Status Bar ---------------------------------------------------{{{
 # Polybar --- {{{
@@ -268,7 +269,7 @@ bar {
         active_workspace   $bg       $bg3      $fg
         inactive_workspace $bg       $bg3      $fg
         urgent_workspace   $bg       $red      $bg
-        binding_mode       $bg       $purple   $bg
+        binding_mode       $bg       $green    $bg
     }
 }
 
