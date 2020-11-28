@@ -1,5 +1,6 @@
 # Basic commands
 alias c='clear'
+alias cls='clear'
 alias mkd='mkdir -pv'
 
 mkcd() {
@@ -96,7 +97,7 @@ then
     alias cat='bat --wrap auto'
 fi
 
-# exa - alternative ls
+# exa - ls alternative
 if command -v exa &>/dev/null
 then
     alias l='exa --all --icons --classify'
@@ -110,11 +111,13 @@ else
     alias la='ls -ahF --color=auto'
     alias ll='ls -alhF --color=auto'
 fi
-
 #alias l='exa --classify'
 #alias la='exa --all --classify'
 #alias ll='exa --long --all --git --classify'
 #alias lt='exa --long --all --git --tree --classify'
+
+# gomi - cli trash
+command -v gomi &>/dev/null && alias rm='gomi'
 
 # pacman
 if command -v pacman &>/dev/null && command -v fzf &>/dev/null
