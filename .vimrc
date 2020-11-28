@@ -46,6 +46,8 @@ inoremap <C-a> <Home>
 inoremap <C-e> <End>
 inoremap <C-f> <Right>
 inoremap <C-b> <Left>
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
 inoremap <C-l> <C-o>:set nohlsearch!<CR>
 
 " Brackets
@@ -60,7 +62,7 @@ inoremap ""    ""<Left>
 inoremap ()    ()<Left>
 
 " Replace
-nnoremap S :<C-u>%s___cg<Left><Left><Left><Left>
+" nnoremap S :<C-u>%s___cg<Left><Left><Left><Left>
 
 " Window --------------------------------- {{{
 let g:window_leader_key = 's'
@@ -285,6 +287,12 @@ if dein#load_state('$HOME/.cache/dein')
 
     " File Manager
     call dein#add('preservim/nerdtree')
+    call dein#add('lambdalisue/fern.vim')
+    " call dein#add('Shougo/defx.nvim')
+    " if !has('nvim')
+    "     call dein#add('roxma/nvim-yarp')
+    "     call dein#add('roxma/vim-hug-neovim-rpc')
+    " endif
 
     " i3-wm
     call dein#add('mboughaba/i3config.vim')
@@ -399,7 +407,15 @@ endif
 " }}}
 
 " NERDTree --------------------------------- {{{
-nnoremap <Leader>t :<C-u>NERDTreeToggle<CR>
+" nnoremap <Leader>t :<C-u>NERDTreeToggle<CR>
+" }}}
+
+" Fern ------------------------------------ {{{
+nnoremap <Leader>f :<C-u>Fern .<CR>
+" }}}
+
+" surround.vim ---------------------------- {{{
+nmap S ys
 " }}}
 
 " Unite ------------------------------------ {{{

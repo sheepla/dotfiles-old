@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-delay='5'
+delay='3'
 
 if command -v rofi &>/dev/null; then
     menu='rofi -dmenu'
