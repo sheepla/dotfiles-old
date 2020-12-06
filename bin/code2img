@@ -1,0 +1,88 @@
+#!/usr/bin/env bash
+
+# Check if the required command is vaild
+testcmd() {
+	command -v bat &>/dev/null || {
+		echo -e "Require bat.\n\thttps://github.com/sharkdp/bat" 1>&2
+		return 1
+	}
+	command -v textimg &>/dev/null || {
+		echo -e "Require textimg.\n\thttps://github.com/jiro4989/textimg" 1>&2
+		return 1
+	}
+	return 0
+}
+
+# Show how to use this command
+usage='
+Convert plain text file to image with color syntax highlighting.
+
+Usage:
+code2img [OPTIONS] <INPUT_FILE> <OUTPUT_IMAGE>
+Option:
+-f FONT
+    Set font path.
+-s FONT_SIZE
+    Set font size. (default: 20)
+-t THEME
+    Set syntax theme. (default: MonokaiExtended Bright)
+    To check list of themes, run `bat --list-themes`.
+-l LANGUAGE
+    Language for syntax highlighting.
+    To check list of languages, run `bat --list-languages`.
+--help
+    Show this help and exit.
+'
+
+# Main script ----------------------------------------------------------------
+testcmd || exit 1
+
+if [ $# -eq 0 -o "$1" = '--help' ]; then
+	echo $usage && exit 0
+fi
+
+# Set default paramaters
+fontfile="/usr/share/fonts/TTF/Inconsolata-Regular.ttf"
+outimg="$HOME/Pictures/$(date +%Y%m%d_%H%M%S).png"
+
+# Set options to array
+declare -a bat_options
+declare -a textimg_options
+bat_options+=("--color='always'")
+textimg_options+=("--out $outimg")
+
+# Parse arguments
+while getopts f:s:t:l: option; do
+	case $option in
+	f)
+		[ -f $OPTARG ] || {
+			echo "$OPTARG: Font file not found." 1>&2
+			exit 1
+		}
+		fontfile="$OPTARG"
+		;;
+	s)
+		# Set font size
+		textimg_options+=("-fontsize $OPTARG")
+		;;
+	l)
+		# Set language for syntax highlighting
+        bat_options+=("--language $OPTARG")
+		;;
+	*)
+        # Show usage and exit
+        echo $usage
+		exit 1
+		;;
+	esac
+done
+#shift $((OPTIND - 1))
+
+# To debug
+echo "bat options: $bat_options"
+echo "textimg options: $textimg_options"
+
+# Convert to image
+#echo bat --color="always"\
+#    \
+#	\| textimg -f $fontfile -o $outimg
