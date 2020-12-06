@@ -201,3 +201,7 @@ esac
 ##############################
 
 source ~/dotfiles/.aliases
+
+# Disable Ctrl-s, Ctrl-q
+stty -ixon
+
