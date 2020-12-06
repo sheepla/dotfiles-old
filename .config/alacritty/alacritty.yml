@@ -6,7 +6,7 @@
 # loaded earlier with those loaded later in the chain. The file itself will
 # always be loaded last.
 #import:
-#  - /path/to/alacritty.yml
+#  - ~/.config/alacritty/alacritty-iceberg-light.yml
 
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
@@ -177,7 +177,7 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
 
-# Colors (Tomorrow Night)
+# Colors (Iceberg)
 colors:
   # Default colors
   primary:
@@ -211,7 +211,7 @@ colors:
   # affected cell, or hexadecimal colors like #ff00ff.
   vi_mode_cursor:
     text: CellBackground
-    cursor: '#b4be82'
+    cursor: '#e2a478'
 
   # Selection colors
   #
@@ -226,19 +226,19 @@ colors:
   # Search colors
   #
   # Colors used for the search bar and match highlighting.
-  #search:
+  search:
     # Allowed values are CellForeground and CellBackground, which reference the
     # affected cell, or hexadecimal colors like #ff00ff.
-    #matches:
-    #  foreground: '#000000'
-    #  background: '#ffffff'
-    #focused_match:
-    #  foreground: CellBackground
-    #  background: CellForeground
+    matches:
+      foreground: CellBackground
+      background: '#84a0c6'
+    focused_match:
+      foreground: CellBackground
+      background: '#b4be82'
 
-    #bar:
-    #  background: '#c5c8c6'
-    #  foreground: '#1d1f21'
+    bar:
+      background: '#84a0c6'
+      #foreground: '#1d1f21'
 
   # Normal colors
   normal:
@@ -331,7 +331,7 @@ colors:
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 0.8
+background_opacity: 0.9
 
 #selection:
   # This string contains all characters that are used as separators for
@@ -668,9 +668,12 @@ key_bindings:
   - { key: Escape,                      mode: Vi, action: ClearSelection          }
   - { key: I,                           mode: Vi, action: ScrollToBottom          }
   - { key: I,                           mode: Vi, action: ToggleViMode            }
+  - { key: A,                           mode: Vi, action: ToggleViMode            }
   - { key: C,      mods: Control,       mode: Vi, action: ToggleViMode            }
   - { key: Y,      mods: Control,       mode: Vi, action: ScrollLineUp            }
   - { key: E,      mods: Control,       mode: Vi, action: ScrollLineDown          }
+  - { key: K,      mods: Shift,         mode: Vi, action: ScrollLineUp            }
+  - { key: J,      mods: Shift,         mode: Vi, action: ScrollLineDown          }
   - { key: G,                           mode: Vi, action: ScrollToTop             }
   - { key: G,      mods: Shift,         mode: Vi, action: ScrollToBottom          }
   - { key: B,      mods: Control,       mode: Vi, action: ScrollPageUp            }
@@ -683,7 +686,7 @@ key_bindings:
   - { key: V,                           mode: Vi, action: ToggleNormalSelection   }
   - { key: V,      mods: Shift,         mode: Vi, action: ToggleLineSelection     }
   - { key: V,      mods: Control,       mode: Vi, action: ToggleBlockSelection    }
-  - { key: V,      mods: Alt,           mode: Vi, action: ToggleSemanticSelection }
+  - { key: V,      mods: Shift|Control, mode: Vi, action: ToggleSemanticSelection }
   - { key: Return,                      mode: Vi, action: Open                    }
   - { key: K,                           mode: Vi, action: Up                      }
   - { key: J,                           mode: Vi, action: Down                    }
