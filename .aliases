@@ -2,12 +2,12 @@
 alias c='clear'
 alias cls='clear'
 alias mkd='mkdir -pv'
+mkcd() { mkdir -p "$1" && cd "$1" }
+mkfile() { mkdir -p "$(dirname "$1")" && touch "$1"; }
 
-mkcd() {
-    mkdir -p $1 && cd $1
-}
-
+# 
 alias py3='python3'
+alias ipy='ipython'
 
 # Setting files
 alias rebash='source ~/.bashrc'
@@ -73,7 +73,7 @@ extract()
             *.zip)       unzip $1     ;;
             *.Z)         uncompress $1;;
             *.7z)        7z x $1      ;;
-            *)           echo "'$1' cannot be extracted via ex()" ;;
+            *)           echo "'$1' cannot be extracted via extract()" ;;
         esac
     else
         echo "'$1' is not a valid file"
@@ -122,7 +122,6 @@ command -v gomi &>/dev/null && alias rm='gomi'
 # pacman
 if command -v pacman &>/dev/null && command -v fzf &>/dev/null
 then
-
     # Show package info with preview
     pacpreview() {
         pacman -Qq | fzf --preview 'pacman -Qil {}' \
@@ -130,7 +129,8 @@ then
             --bind 'enter:execute(pacman -Qil {} | less)'
     }
 
+    # Show installed size
     pacshowdisc() {
-        LANG=C pacman -Qi | awk '/^Name/{name=$3} /^Installed Size/{print $4$5, name}' | sort -h
+        LANG=C pacman -Qi | awk '/^Name/{name=$3} /^Installed Size/{print $4$5, name}' | sort -h | fzf
     }
 fi
