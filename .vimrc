@@ -30,6 +30,9 @@ nnoremap H ^
 nnoremap L $
 nnoremap <C-j> J
 nnoremap <C-k> K
+" Not save noname register with `x` and `s` command
+nnoremap x "_x
+"nnoremap s "_s
 
 " New line
 nnoremap <CR>   o
@@ -303,6 +306,10 @@ if dein#load_state('$HOME/.cache/dein')
     " Go
     call dein#add('fatih/vim-go')
 
+    " bash
+    call dein#add('itspriddle/vim-shellcheck')
+    call dein#add('z0mbix/vim-shfmt')
+
     " Complete
     call dein#add('Shougo/deoplete.nvim')
 
@@ -412,10 +419,44 @@ endif
 
 " Fern ------------------------------------ {{{
 nnoremap <Leader>f :<C-u>Fern .<CR>
+nnoremap <Leader>t :<C-u>Fern . -drawer -toggle -reveral=%<CR>
 " }}}
 
 " surround.vim ---------------------------- {{{
 nmap S ys
+" }}}
+
+" vim-go ---------------------------- {{{
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_build_constraints = 1
+let g:go_textobj_enabled = 1
+let g:go_auto_type_info = 1 " :GoInfo
+let g:go_auto_sameids = 0 " :GoSameIds
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
+let g:go_list_type = "quickfix"
+let g:go_fmt_command = "goimports"
+let g:syntastic_go_checkers = ['go', 'golint', 'govet', 'errcheck']
+" type :A in normal mode
+autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
+autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
+autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
+autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
+autocmd Filetype go command! -bang GD execute ":GoDecls"
+autocmd Filetype go command! -bang GDD execute ":GoDeclsDir"
+" :GoInfo
+" :GoImplements
+" :GoDescribe
+" :GoWhicherrs
+" :GoChannelPeers
+" :GoCallers
+" :GoRename
+setlocal omnifunc=go#complete#Complete
 " }}}
 
 " Unite ------------------------------------ {{{
@@ -440,6 +481,19 @@ augroup end
 
 " Rofi config file syntax
 autocmd BufNewFile,BufRead /*.rasi setfiletype css
+
+" Auto mkdir
+" https://vim-jp.org/vim-users-jp/2011/02/20/Hack-202.html
+augroup vimrc-auto-mkdir  " {{{
+  autocmd!
+  autocmd BufWritePre * call s:auto_mkdir(expand('<afile>:p:h'), v:cmdbang)
+  function! s:auto_mkdir(dir, force)  " {{{
+    if !isdirectory(a:dir) && (a:force ||
+    \    input(printf('"%s" does not exist. Create? [y/N]', a:dir)) =~? '^y\%[es]$')
+      call mkdir(iconv(a:dir, &encoding, &termencoding), 'p')
+    endif
+  endfunction  " }}}
+augroup END  " }}}
 
 " End of Vimrc ///////////////////////////////////////////////////////////
 
