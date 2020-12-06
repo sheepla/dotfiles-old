@@ -1,176 +1,179 @@
-/*
- *     ____        _____       ____          __                   
- *    / __ \____  / __(_)     /  _/_______  / /_  ___  _________ _
- *   / /_/ / __ \/ /_/ /_____ / // ___/ _ \/ __ \/ _ \/ ___/ __ `/
- *  / _, _/ /_/ / __/ /_____// // /__/  __/ /_/ /  __/ /  / /_/ / 
- * /_/ |_|\____/_/ /_/     /___/\___/\___/_.___/\___/_/   \__, /  
- *                                                       /____/   
- */
+/*******************************************************************************
+ * ROFI Color Theme
+ * User: Sheepla
+ * Copyleft: Sheepla
+ *******************************************************************************/
 
-/*
- * Color settings ------------------------------------------
- */
 * {
     highlight: bold italic;
     scrollbar: true;
 
-    /* Color palette
-     * inspired by: https://github.com/cocopon/iceberg.vim
+    /* Color palette from iceberg.vim and iceberg-dark
+     *    https://github.com/cocopon/iceberg.vim
+     *    https://github.com/gkeep/iceberg-dark
      */
-    iceberg-bg0:     #161821;
-    iceberg-bg1:     #1e2132;
-    iceberg-bg3:     #444b71;
-    iceberg-fg0:     #c6c8d1;
-    iceberg-fg1:     #aeb4cc;
-    iceberg-red:     #e27878;
-    iceberg-green:   #b4be82;
-    iceberg-yellow:  #e2a478;
-    iceberg-blue:    #84a0c6;
-    iceberg-purple:  #a093c7;
-    iceberg-cyan:    #89b8c2;
-    iceberg-gray:    #c0bfc9;
+    palette-bg0:     #161821;
+    palette-bg1:     #1e2132;
+    palette-bg2:     #444b71;
+    palette-fg0:     #c6c8d1;
+    palette-fg1:     #aeb4cc;
+    palette-red:     #e27878;
+    palette-green:   #b4be82;
+    palette-yellow:  #e2a478;
+    palette-blue:    #84a0c6;
+    palette-purple:  #a093c7;
+    palette-cyan:    #89b8c2;
+    palette-grey:    #c0bfc9;
 
     /* Base colors */
-    background:                  @iceberg-bg0;
+    background:                  @palette-bg0;
     background-color:            @background;
-    foreground:                  @iceberg-fg1;
+    foreground:                  @palette-fg1;
 
     /* Normal colors */
     normal-background:           @background;
     normal-foreground:           @foreground;
-    alternate-normal-background: @iceberg-bg1;
+    alternate-normal-background: @palette-bg1;
     alternate-normal-foreground: @foreground;
-    selected-normal-background:  @iceberg-bg3;
-    selected-normal-foreground:  @iceberg-fg0;
+    selected-normal-background:  @palette-bg2;
+    selected-normal-foreground:  @palette-fg0;
 
     /* Active window colors */
     active-background:           @normal-background;
-    active-foreground:           @iceberg-blue;
+    active-foreground:           @palette-blue;
     alternate-active-background: @alternate-normal-background;
     alternate-active-foreground: @active-foreground;
-    selected-active-background:  @iceberg-blue;
+    selected-active-background:  @palette-blue;
     selected-active-foreground:  @normal-background;
 
     /* Urgent colors */
     urgent-background:           @background;
-    urgent-foreground:           @iceberg-yellow;
+    urgent-foreground:           @palette-yellow;
     alternate-urgent-background: @alternate-normal-background;
     alternate-urgent-foreground: @urgent-foreground;
     selected-urgent-background:  @urgent-foreground;
     selected-urgent-foreground:  @normal-background;
 
     /* Other colors */
-    border-color:                @iceberg-bg1;
+    border-color:                @palette-bg2;
     separatorcolor:              @border-color;
-    scrollbar-handle:            @iceberg-bg3;
+    scrollbar-handle:            @palette-bg2;
 }
 
-/*
- * Other settings -------------------------------------------
- */
-window {
-    background-color: @background;
-    border:           2;
-    padding:          10;
+#window {
+    background-color:             @background-color;
+    children:                     [mainbox];
 }
 
-mainbox {
-    border:  0;
-    padding: 0;
+#mainbox {
+    border:      0;
+    orientation: vertical;
+    children:    [ entry, message, listview, mode-switcher ];
 }
 
-message {
-    border:       2px 0 0;
-    border-color: @separatorcolor;
-    padding:      1px;
+#entry {
+    expand:     false;
+    text-color: @normal-foreground;
+    /* Padding between 2 lines */
+    padding:      10px 0px 10px 10px;
+    border:       0 0 2px;
+    border-color: @palette-bg2;
+    margin:       10px;
 }
 
-textbox {
-    highlight:  @highlight;
-    text-color: @foreground;
+#sidebar {
+    expand: false;
 }
 
-listview {
-    border:       2px solid 0 0;
-    padding:      2px 0 0;
-    border-color: @separatorcolor;
-    spacing:      2px;
-    scrollbar:    @scrollbar;
+/* Message box */
+#textbox {
+    horizontal-align:  0;
+    background-color:  @palette-bg2;
+    padding:           10px 20px 10px 20px ;                 
+    text-color:        @palette-fg0;
 }
 
-element {
-    border:  0;
-    padding: 2px;
+#listview {
+    border:        0px 0px 0px ;
+    border-color:  @palette-bg2;
+    padding:       0px 0px 5px 0px;
+    scrollbar:     @scrollbar;
 }
 
-element.normal.normal {
-    background-color: @normal-background;
-    text-color:       @normal-foreground;
+
+#mode-switcher {
+    border:       3px 0px 0px 0px;
+    border-color: @palette-bg2;
 }
 
-element.normal.urgent {
-    background-color: @urgent-background;
-    text-color:       @urgent-foreground;
+button { 
+    padding: 5px; 
 }
 
-element.normal.active {
-    background-color: @active-background;
-    text-color:       @active-foreground;
-}
-
-element.selected.normal {
+#button.selected {
     background-color: @selected-normal-background;
     text-color:       @selected-normal-foreground;
 }
 
-element.selected.urgent {
+#element {
+    border:  0;
+    padding: 3px 10px 3px 10px ;                 
+}
+
+#element.normal.normal {
+    background-color: @normal-background;
+    text-color:       @normal-foreground;
+}
+
+#element.normal.urgent {
+    background-color: @urgent-background;
+    text-color:       @urgent-foreground;
+}
+
+#element.normal.active {
+    background-color: @active-background;
+    text-color:       @active-foreground;
+}
+
+#element.selected.normal {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+}
+
+#element.selected.urgent {
     background-color: @selected-urgent-background;
     text-color:       @selected-urgent-foreground;
 }
 
-element.selected.active {
+#element.selected.active {
     background-color: @selected-active-background;
     text-color:       @selected-active-foreground;
 }
 
-element.alternate.normal {
+#element.alternate.normal {
     background-color: @alternate-normal-background;
     text-color:       @alternate-normal-foreground;
 }
 
-element.alternate.urgent {
+#element.alternate.urgent {
     background-color: @alternate-urgent-background;
     text-color:       @alternate-urgent-foreground;
 }
 
-element.alternate.active {
+#element.alternate.active {
     background-color: @alternate-active-background;
     text-color:       @alternate-active-foreground;
-}
-
-scrollbar {
-    width:        4px;
-    border:       0;
-    handle-color: @scrollbar-handle;
-    handle-width: 8px;
-    padding:      0;
-}
-
-sidebar {
-    border:       2px 0 0;
-    border-color: @separatorcolor;
 }
 
 inputbar {
     spacing:    0;
     text-color: @normal-foreground;
     padding:    2px;
-    children:   [ prompt, textbox-prompt-sep, entry, case-indicator ];
+    children:   [ textbox-prompt-sep, entry, case-indicator ];
 }
 
 case-indicator,
 entry,
-prompt,
 button {
     spacing:    0;
     text-color: @normal-foreground;
@@ -186,4 +189,13 @@ textbox-prompt-sep {
     str:        ":";
     text-color: @normal-foreground;
     margin:     0 0.3em 0 0;
+}
+
+prompt {
+   padding:6px 9px;
+   background-color: @palette-bg2;
+}
+
+#element-icon {
+    size: 18;
 }
