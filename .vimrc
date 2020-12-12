@@ -210,6 +210,9 @@ set hlsearch
 nnoremap <Esc><Esc> :<C-u>set nohlsearch!<CR>
 " Redraw console and toggle highlight search
 nnoremap <C-l>       <C-l>:<C-u>set nohlsearch!<CR>
+
+" Search from clipboard text
+nnoremap g/ /\V<C-r>=join(map(getreg(v:register,1,1),{k,v->escape(v,'\/')}),'\n')<CR><CR>
 " }}}
 
 " Appearance----------------------------- {{{
