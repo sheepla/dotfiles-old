@@ -1,88 +1,115 @@
 #!/usr/bin/env bash
 
-# Check if the required command is vaild
-testcmd() {
-	command -v bat &>/dev/null || {
-		echo -e "Require bat.\n\thttps://github.com/sharkdp/bat" 1>&2
-		return 1
-	}
-	command -v textimg &>/dev/null || {
-		echo -e "Require textimg.\n\thttps://github.com/jiro4989/textimg" 1>&2
-		return 1
-	}
-	return 0
-}
-
 # Show how to use this command
 usage='
 Convert plain text file to image with color syntax highlighting.
 
 Usage:
-code2img [OPTIONS] <INPUT_FILE> <OUTPUT_IMAGE>
+    code2img [OPTIONS] <INPUT FILE> <OUTPUT IMAGE>
+
 Option:
--f FONT
-    Set font path.
--s FONT_SIZE
-    Set font size. (default: 20)
--t THEME
-    Set syntax theme. (default: MonokaiExtended Bright)
-    To check list of themes, run `bat --list-themes`.
--l LANGUAGE
-    Language for syntax highlighting.
-    To check list of languages, run `bat --list-languages`.
---help
-    Show this help and exit.
+    -f FONT
+        Set font path.
+    -s FONT_SIZE
+        Set font size. (default: 20)
+    -t THEME
+        Set syntax theme. (default: MonokaiExtended Bright)
+        To check list of themes, run `bat --list-themes`.
+    -l LANGUAGE
+        Language for syntax highlighting.
+        To check list of languages, run `bat --list-languages`.
+    --help
+        Show this help and exit.
 '
 
-# Main script ----------------------------------------------------------------
-testcmd || exit 1
+# Check if the required command is vaild
+test_cmd() {
+	command -v bat &>/dev/null || {
+		echo -e "Require bat.\n\thttps://github.com/sharkdp/bat" >&2
+		return 1
+	}
+	command -v textimg &>/dev/null || {
+		echo -e "Require textimg.\n\thttps://github.com/jiro4989/textimg" >&2
+		return 1
+	}
+	return 0
+}
 
-if [ $# -eq 0 -o "$1" = '--help' ]; then
-	echo $usage && exit 0
+# Main script ----------------------------------------------------------------
+test_cmd || exit 1
+
+# Show usage if no arguments
+if [ $# -eq 0 -o "$1" = "--help" ]; then
+	echo "$usage" && exit 0
 fi
 
 # Set default paramaters
 fontfile="/usr/share/fonts/TTF/Inconsolata-Regular.ttf"
 outimg="$HOME/Pictures/$(date +%Y%m%d_%H%M%S).png"
 
-# Set options to array
+# Store options in arrays
 declare -a bat_options
 declare -a textimg_options
-bat_options+=("--color='always'")
-textimg_options+=("--out $outimg")
+bat_options=("--color always")
+textimg_options=("--out $outimg")
 
 # Parse arguments
 while getopts f:s:t:l: option; do
 	case $option in
 	f)
 		[ -f $OPTARG ] || {
-			echo "$OPTARG: Font file not found." 1>&2
+			echo "$OPTARG: Font file not found." >&2
 			exit 1
 		}
 		fontfile="$OPTARG"
 		;;
 	s)
 		# Set font size
-		textimg_options+=("-fontsize $OPTARG")
+		textimg_options+=("--fontsize $OPTARG")
+		;;
+	t)
+		# Set theme for syntax highlighting
+		bat_options+=("--theme $OPTARG")
 		;;
 	l)
 		# Set language for syntax highlighting
-        bat_options+=("--language $OPTARG")
+		bat_options+=("--language $OPTARG")
 		;;
-	*)
-        # Show usage and exit
-        echo $usage
+	\?)
+		echo "Invalid option -- $option" >&2
+		echo "$usage"
 		exit 1
 		;;
 	esac
 done
-#shift $((OPTIND - 1))
 
-# To debug
-echo "bat options: $bat_options"
-echo "textimg options: $textimg_options"
+textimg_options+=("--fontfile $fontfile")
+
+echo ${bat_options[@]}
+echo ${textimg_options[@]}
+
+# Skip to non-option arguments
+shift $((OPTIND - 1))
+
+# Check the number of non-option arguments
+if [ "$#" -ne 2 ]; then
+	echo "Invalid arguments -- $@" >&2
+	echo "$usage"
+	exit 1
+fi
+
+if [ -f "$1" ]; then
+	inputfile="$1"
+else
+	echo "Input file not found. -- $1" >&2
+	exit 1
+fi
+
+#if [ -f "$2" ]; then
+#    echo "Output image file is already exist. -- $2" >&2
+#    exit 1
+#fi
 
 # Convert to image
-#echo bat --color="always"\
-#    \
-#	\| textimg -f $fontfile -o $outimg
+bat ${bat_options[@]} <"$inputfile" | cat >/dev/null
+#echo textimg ${textimg_options[@]}
