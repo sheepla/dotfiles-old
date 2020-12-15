@@ -241,10 +241,6 @@ vnoremap > >gv
 vnoremap < <gv
 " }}}
 
-" Help ----------------------------------- {{{
-cabbrev help tab help 
-" {{{
-
 " Terminal ------------------------------- {{{
 tnoremap <silent> <Esc><Esc> <C-\><C-n>
 tnoremap <silent> <C-;>  <C-\><C-n>
@@ -315,6 +311,9 @@ if dein#load_state('$HOME/.cache/dein')
 
     " Complete
     call dein#add('Shougo/deoplete.nvim')
+
+    " Git
+    call dein#add('lambdalisue/gina.vim')
 
     " }}}
     " ======================================================================
