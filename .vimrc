@@ -171,8 +171,8 @@ nnoremap sf :<C-u>set filetype=
 " nnoremap sV :<C-u>edit $MYVIMRC<CR>
 
 " Split
-nnoremap sS :<C-u>split<CR>
-nnoremap sv :<C-u>vsplit<CR>
+nnoremap sS :<C-u>new<CR>
+nnoremap sv :<C-u>vnew<CR>
 
 "
 
