@@ -65,7 +65,7 @@ inoremap ""    ""<Left>
 inoremap ()    ()<Left>
 
 " Replace
-" nnoremap S :<C-u>%s___cg<Left><Left><Left><Left>
+nnoremap <C-s> :<C-u>%s___cg<Left><Left><Left><Left>
 
 " Window --------------------------------- {{{
 let g:window_leader_key = 's'
@@ -159,7 +159,7 @@ vmap <Leader>p "+gp
 vmap <Leader>P "+gP
 
 " Other commands
-nnoremap s/ :<C-u>%s///cg<Left><Left><Left><Left>
+" nnoremap s/ :<C-u>%s///cg<Left><Left><Left><Left>
 nnoremap sr :<C-u>read!<Space>
 nnoremap sT :<C-u>terminal<CR>
 nnoremap sN :<C-u>setlocal relativenumber!<CR>
@@ -167,12 +167,14 @@ nnoremap s? :<C-u>help<Space>
 nnoremap sf :<C-u>set filetype=
 
 " Vimrc
-nnoremap sR :<C-u>source $MYVIMRC<CR>
-nnoremap sV :<C-u>edit $MYVIMRC<CR>
+" nnoremap sR :<C-u>source $MYVIMRC<CR>
+" nnoremap sV :<C-u>edit $MYVIMRC<CR>
 
 " Split
 nnoremap sS :<C-u>split<CR>
 nnoremap sv :<C-u>vsplit<CR>
+
+"
 
 " Scroll
 nnoremap J <C-e><C-e>
