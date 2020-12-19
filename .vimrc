@@ -20,7 +20,6 @@ set hidden
 " }}} 
 
 " Key bindings --------------------------- {{{
-
 " Leader
 " let mapleader = '\<Space>'
 map <Space> <Leader>
@@ -56,19 +55,19 @@ inoremap <C-l> <C-o>:set nohlsearch!<CR>
 " Brackets
 nnoremap <Tab> %
 vnoremap <Tab> %
-inoremap {     {}<Left>
-inoremap {}    {}<Left>
-inoremap {<CR> {}<Left><CR><Esc>O
-inoremap '     ''<Left>
-inoremap ''    ''<Left>
-inoremap ""    ""<Left>
-inoremap ()    ()<Left>
+"inoremap {     {}<Left>
+"inoremap {}    {}<Left>
+"inoremap {<CR> {}<Left><CR><Esc>O
+"inoremap '     ''<Left>
+"inoremap ''    ''<Left>
+"inoremap ""    ""<Left>
+"inoremap ()    ()<Left>
 
 " Replace
 nnoremap <C-s> :<C-u>%s___cg<Left><Left><Left><Left>
 
 " Window --------------------------------- {{{
-let g:window_leader_key = 's'
+"let g:window_leader_key = 's'
 nnoremap s <Nop>
 
 " Move
@@ -311,8 +310,14 @@ if dein#load_state('$HOME/.cache/dein')
     call dein#add('itspriddle/vim-shellcheck')
     call dein#add('z0mbix/vim-shfmt')
 
+    " PowerShell
+    call dein#add('zigford/vim-powershell')
+
     " Complete
     call dein#add('Shougo/deoplete.nvim')
+
+    " Auto close brackets
+    call dein#add('cohama/lexima.vim')
 
     " Git
     call dein#add('lambdalisue/gina.vim')
@@ -400,7 +405,8 @@ if has('gui_running')
 
     " GUI fonts
     if has('win32') || has('win64')
-        set guifont=HackGen\ Console\ for\ Powerline:h12:cDEFAULT
+        "set guifont=HackGen\ Console\ for\ Powerline:h12:cDEFAULT
+        set guifont=HackGenNerd:h12:cDEFAULT
     elseif has('unix')
         set guifont=HackGenNerd\ 10
         set guifontwide=HackGenNerd\ 10
@@ -412,8 +418,8 @@ if has('gui_running')
     set guiheadroom=0
 else
     colorscheme iceberg
-    " autocmd ColorScheme * highlight Normal ctermbg=none
-    " autocmd ColorScheme * highlight LineNr ctermbg=none
+    autocmd ColorScheme * highlight Normal ctermbg=none
+    autocmd ColorScheme * highlight LineNr ctermbg=none
 endif
 " }}}
 
