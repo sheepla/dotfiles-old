@@ -33,7 +33,7 @@ set $fg2     "#444b71"
 set $bg      "#161821"
 set $bg2     "#1e2132"
 set $bg3     "#262939"
-set $bg4     "#3f465f"
+set $bg4      #454B68
 set $red     "#e27878"
 set $yellow  "#e2a478"
 set $green   "#b4be82"
@@ -141,6 +141,7 @@ for_window [class="Manjaro Settings Manager"] floating enable border normal stic
 for_window [class="firefox"]                  move container to workspace $ws3, workspace $ws3, layout tabbed
 for_window [class="gvim"]                     move container to workspace $ws2, workspace $ws2, layout tabbed
 for_window [class="nvim-qt"]                  move container to workspace $ws2, workspace $ws2, layout tabbed
+for_window [class="Zathura"]                  move container to workspace $ws4
 
 # focus the parent container
 bindsym $mod+a focus parent exec --no-startup-id "notify-send 'Focused parent window'"
@@ -266,7 +267,7 @@ bar {
         # <class>          <border>   <bg>     <fg>
         background                   $bg          
         focused_workspace  $bg       $blue     $bg
-        active_workspace   $bg       $bg3      $fg
+        active_workspace   $bg       $bg4      $fg
         inactive_workspace $bg       $bg3      $fg
         urgent_workspace   $bg       $red      $bg
         binding_mode       $bg       $green    $bg
