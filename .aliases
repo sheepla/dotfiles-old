@@ -3,9 +3,9 @@ alias c='clear'
 alias cls='clear'
 alias mkd='mkdir -pv'
 mkcd() { mkdir -p "$1" && cd "$1" }
-mkfile() { mkdir -p "$(dirname "$1")" && touch "$1"; }
+newfile() { mkdir -p "$(dirname "$1")" && touch "$1"; }
 
-# 
+# Python
 alias py3='python3'
 alias ipy='ipython'
 
@@ -45,22 +45,27 @@ alias gl='git log --decorate --oneline'
 alias glg='git log --decorate --oneline --graph'
 alias gcom='git commit'
 alias gdf='git diff'
-
 clone() {
     git clone https://github.com/"$1"/"$2".git
 }
 
+# W3m
 if command -v w3m &>/dev/null
 then
-    # W3m
     alias w3mg='w3m www.google.com'
     alias w3md='w3m www.duckduckgo.com'
+fi
+
+# Ranger (TUI file manager)
+if command -v ranger &>/dev/null
+then
+    alias r='ranger'
 fi
 
 # archive extractor
 extract()
 {
-    if [ -f $1 ] ; then
+    if [ -f $1 ]; then
         case $1 in
             *.tar.bz2)   tar xjf $1   ;;
             *.tar.gz)    tar xzf $1   ;;
@@ -118,6 +123,9 @@ fi
 
 # gomi - cli trash
 command -v gomi &>/dev/null && alias rm='gomi'
+
+# xdg-open
+alias open='xdg-open'
 
 # pacman
 if command -v pacman &>/dev/null && command -v fzf &>/dev/null
