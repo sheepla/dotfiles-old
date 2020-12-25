@@ -26,6 +26,15 @@ fi
 
 alias v="$EDITOR"
 
+# Vim as filter command
+# http://auewe.hatenablog.com/entry/2016/12/03/001000
+vipe () {
+  COMMAND=$(echo "$*")
+  # コロン':'でESC入力を代替する場合はコメントを外す。^[はCtrl+vしてESC押して入力
+  # COMMAND=$(echo "$*" |sed -e 's/:/^[/g')
+  vim - -es +":norm gg" +":norm $COMMAND" +:%p +:q! | sed '1d'
+}
+
 # manpager wrapper with color
 man() {
     LESS_TERMCAP_md=$'\e[01;34m' \
