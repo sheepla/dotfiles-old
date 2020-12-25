@@ -322,6 +322,9 @@ if dein#load_state('$HOME/.cache/dein')
     " Git
     call dein#add('lambdalisue/gina.vim')
 
+    " Translate
+    call dein#add('koron/codic-vim')
+
     " }}}
     " ======================================================================
 
@@ -429,8 +432,14 @@ endif
 
 " Fern ------------------------------------ {{{
 nnoremap <Leader>f :<C-u>Fern .<CR>
-nnoremap <Leader>t :<C-u>Fern . -drawer -toggle -reveral=%<CR>
+nnoremap <Leader>t :<C-u>Fern . -drawer -toggle -reveral='%'<CR>
 " }}}
+
+" Gina ------------------------------------ {{{
+nnoremap <Leader>gs :<C-u>Gina status<CR>
+nnoremap <Leader>gc :<C-u>Gina commit<CR>
+" }}}
+
 
 " surround.vim ---------------------------- {{{
 nmap S ys
@@ -471,15 +480,15 @@ setlocal omnifunc=go#complete#Complete
 
 " Unite ------------------------------------ {{{
 " TODO: fix more good keybindings
-nnoremap <Leader>b        :<C-u>Unite<Space>buffer<CR>
-nnoremap <Leader>c        :<C-u>Unite<Space>command<CR>
-nnoremap <Leader>d        :<C-u>Unite<Space>dein<CR>
+nnoremap <Leader>ub        :<C-u>Unite<Space>buffer<CR>
+nnoremap <Leader>uc        :<C-u>Unite<Space>command<CR>
+nnoremap <Leader>ud        :<C-u>Unite<Space>dein<CR>
 nnoremap <Leader>ff       :<C-u>Unite<Space>file<CR>
 nnoremap <Leader>fn       :<C-u>Unite<Space>file/new<CR>
-nnoremap <Leader>j        :<C-u>Unite<Space>jump<CR>
-nnoremap <Leader>l        :<C-u>Unite<Space>launcher<CR>
-nnoremap <Leader>r        :<C-u>Unite<Space>register<CR>
-nnoremap <Leader>s        :<C-u>Unite<Space>source<CR>
+nnoremap <Leader>uj        :<C-u>Unite<Space>jump<CR>
+nnoremap <Leader>ul        :<C-u>Unite<Space>launcher<CR>
+nnoremap <Leader>ur        :<C-u>Unite<Space>register<CR>
+nnoremap <Leader>us        :<C-u>Unite<Space>source<CR>
 " }}}
 "
 " i3-config.vim ------------------------------ {{{
