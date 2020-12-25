@@ -202,6 +202,8 @@ esac
 
 source ~/dotfiles/.aliases
 
+source ~/bin/z.sh
+
 # Disable Ctrl-s, Ctrl-q
 stty -ixon
 
