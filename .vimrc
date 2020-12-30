@@ -283,6 +283,9 @@ if dein#load_state('$HOME/.cache/dein')
     " Text Edit
     call dein#add('tpope/vim-surround')
 
+    " Move cursor quickly
+    call dein#add('easymotion/vim-easymotion')
+
     " Interface
     call dein#add('Shougo/unite.vim') 
     " call dein#add('junegunn/fzf.vim')
@@ -432,12 +435,20 @@ endif
 
 " Fern ------------------------------------ {{{
 nnoremap <Leader>f :<C-u>Fern .<CR>
-nnoremap <Leader>t :<C-u>Fern . -drawer -toggle -reveral='%'<CR>
+nnoremap <Leader>t :<C-u>Fern . -drawer -toggle -reveral=%<CR>
 " }}}
 
 " Gina ------------------------------------ {{{
 nnoremap <Leader>gs :<C-u>Gina status<CR>
 nnoremap <Leader>gc :<C-u>Gina commit<CR>
+nnoremap <Leader>gl :<C-u>Gina commit<CR>
+cabbrev gstatus Gina<Space>status
+cabbrev gcommit Gina<Space>commit
+cabbrev glog Gina<Space>log
+cabbrev ggrep Gina<Space>grep
+cabbrev gls Gina<Space>ls
+cabbrev gdiff Gina<Space>diff
+cabbrev gshow Gina<Space>show
 " }}}
 
 
