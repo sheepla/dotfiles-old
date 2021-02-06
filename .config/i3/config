@@ -5,25 +5,8 @@
 # /_//____/|__/|__/_/ /_/ /_/   \___/\____/_/ /_/_/ /_/\__, /  
 #                                                     /____/   
 
-# Launch processes -------------------- {{{
-
-# Reload ~/.Xresources
-exec --no-startup-id "xrdb $HOME/.Xresources &"
-
-# Screen Layout
-exec_always --no-startup-id "$HOME/.screenlayout/layout.sh &"
-
-# Set wallpaper
-exec_always --no-startup-id "nitrogen --restore &"
-
-# Window transparency and shadow (picom)
-exec_always --no-startup-id "pkill picom ; picom --daemon --config ~/.config/picom/picom.conf &"
-
-# Sound volume icon on status bar
-exec --no-startup-id "volumeicon &"
-
-# Clipboard manager
-exec --no-startup-id "greenclip daemon &"
+# Run auto start script
+exec_always --no-startup-id "$HOME/.config/i3/autostart.sh"
 # }}}
 
 
@@ -59,11 +42,11 @@ floating_modifier $mod
 
 # Terminal
 #set $terminal "urxvtc; if [ $? -eq 2 ]; then urxvtd --quiet --opendisplay --fork; urxvtc; fi"
-set $terminal alacritty
+set $terminal "alacritty"
 
 bindsym $mod+Return       split h exec --no-startup-id $terminal
 bindsym $mod+Shift+Return split v exec --no-startup-id $terminal
-bindsym $mod+Ctrl+Return  exec --no-startup-id st -e ranger
+bindsym $mod+Ctrl+Return  exec --no-startup-id $terminal -e ranger
 
 # Rofi
 bindsym $mod+d    exec --no-startup-id "rofi -combi drun,run -modi drun,run -show drun &"
