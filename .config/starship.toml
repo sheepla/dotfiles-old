@@ -1,0 +1,5 @@
+[character]
+
+success_symbol = "[❯❯❯](bold white) "
+error_symbol = "[❯❯❯](bold red) "
+vicmd_symbol = "[❮❮❮](bold white) " 
