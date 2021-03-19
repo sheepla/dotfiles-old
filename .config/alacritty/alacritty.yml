@@ -109,7 +109,8 @@ font:
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
     #family: monospace
-    family: Iosevka Term Curly Extended
+    #family: Iosevka Term Curly Extended
+    family: Sarasa Fixed J
 
     # The `style` can be specified to pick a specific face.
     #style: Regular
@@ -121,7 +122,8 @@ font:
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
     #family: monospace
-    family: Iosevka Term Curly Extended
+    #family: Iosevka Term Curly Extended
+    family: Sarasa Fixed J
 
     # The `style` can be specified to pick a specific face.
     #style: Bold
@@ -133,7 +135,8 @@ font:
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
     #family: monospace
-    family: Iosevka Term Curly Extended
+    #family: Iosevka Term Curly Extended
+    family: Sarasa Fixed J
 
     # The `style` can be specified to pick a specific face.
     #style: Italic
@@ -150,9 +153,10 @@ font:
     #style: Bold Italic
     #family: monospace
     family: Iosevka Term Curly Extended
+    family: Sarasa Fixed J
 
   # Point size
-  size: 11.0
+  size: 11.5
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
