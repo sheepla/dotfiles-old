@@ -274,7 +274,7 @@ if dein#load_state('$HOME/.cache/dein')
     call dein#add('morhetz/gruvbox')
 
     " Color preview
-    call dein#add('gorodinskiy/vim-coloresque')
+    " call dein#add('gorodinskiy/vim-coloresque')
 
     " Status Line
     call dein#add('itchyny/lightline.vim')
@@ -510,7 +510,7 @@ augroup end
 " }}}
 
 " Rofi config file syntax
-autocmd BufNewFile,BufRead /*.rasi setfiletype css
+" autocmd BufNewFile,BufRead /*.rasi setfiletype css
 
 " Auto mkdir
 " https://vim-jp.org/vim-users-jp/2011/02/20/Hack-202.html
