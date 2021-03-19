@@ -13,9 +13,9 @@ then
 
     if [ -f $picom_conf ]
     then
-        picom --config $picom_conf --daemon &
+        picom --config $picom_conf --daemon --experimental-backends &
     else
-        picom --daemon &
+        picom --daemon --experimental-backends &
     fi 
 fi
 
@@ -27,6 +27,9 @@ command -v pulseaudio &>/dev/null && pgrep pulseaudio || pulseaudio --start &
 
 # Launch volume applet
 command -v volumeicon &>/dev/null && pgrep volumeicon || volumeicon &
+
+# Launch screenshot applet
+command -v flameshot &>/dev/null && pgrep flameshot || flameshot &
 
 # Set wallpaper
 command -v nitrogen &>/dev/null && nitrogen --restore &

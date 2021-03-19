@@ -114,7 +114,7 @@ bindsym $mod+space focus mode_toggle
 # Auto floating window
 for_window [window_role="pop-up"]             floating enable border normal
 for_window [window_role="task_dialog"]        floating enable border normal
-for_window [class="Lxappearance"]             floating enable border normal sticky disable
+for_window [class="Lxappearance"]             floating enable border normal 
 for_window [class="Nitrogen"]                 floating enable border normal sticky disable
 for_window [class="gcolor2"]                  floating enable border normal sticky enable
 for_window [class="Pavucontrol"]              floating enable border normal sticky enable
@@ -236,7 +236,7 @@ bar {
 	status_command bumblebee-status \
         -m title cmus cpu memory battery date time\
         -p time.format="%H:%M" date.format="%m/%d" memory.format="{percent:05.02f}%" title.max=30 title.scroll=True\
-        -t iceberg-dark-powerline
+        -t iceberg-darker-powerline
 
 # }}}
 
