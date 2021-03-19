@@ -209,6 +209,10 @@ command -v starship &>/dev/null && eval "$(starship init zsh)"
 # z.sh
 command -v z &>/dev/null && source $(which z)
 
+# fzf
+[ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh 
+[ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
+
 # Disable Ctrl-s, Ctrl-q
 stty -ixon
 
