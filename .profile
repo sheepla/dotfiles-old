@@ -5,7 +5,7 @@ export PATH=$PATH:$HOME/.local/bin/
 
 # Go
 #export PATH=$PATH:/usr/local/go/bin/ 
-#export GOPATH=$HOME/go 
+export GOPATH=$HOME/go 
 
 # Grep
 export GREP_COLOR="1;32"
