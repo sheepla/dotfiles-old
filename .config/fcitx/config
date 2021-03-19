@@ -1,11 +1,11 @@
 [Hotkey]
-# 入力メソッドのオンオフ
-TriggerKey=CTRL_SPACE ALT_`
-# アクティブでない時だけその他のトリガーキーを使用する
+# Trigger Input Method
+#TriggerKey=CTRL_SPACE
+# Use extra trigger key only after using it to inactivate
 # Available Value:
 # True False
 #UseExtraTriggerKeyOnlyWhenUseItToInactivate=True
-# 入力メソッド起動のその他のキー
+# Extra key for trigger input method
 # Available Value:
 # R_CTRL
 # R_SHIFT
@@ -28,119 +28,119 @@ TriggerKey=CTRL_SPACE ALT_`
 # Disabled
 # Custom
 #SwitchKey=L_SHIFT
-# カスタム切り替えキー
+# Custom switch key
 #CustomSwitchKey=
-# 入力メソッドをオンに
+# Activate input method
 #ActivateKey=
-# 入力メソッドをオフに
+# Inactivate Input Method
 #InactivateKey=
-# 入力メソッドの切換をホットキーで
+# Enable Hotkey to scroll Between Input Method
 # Available Value:
 # True False
 #IMSwitchKey=True
-# 入力メソッドの切換にオフも含む
+# Include Inactivate when scrolling between Input Method
 # Available Value:
 # True False
 #IMSwitchIncludeInactive=False
-# 入力メソッドの切換
+# Scroll between Input Method
 # Available Value:
 # CTRL_SHIFT
 # ALT_SHIFT
 # CTRL_SUPER
 # ALT_SUPER
 #IMSwitchHotkey=CTRL_SHIFT
-# 設定の再読み込み
+# Reload configuration
 #ReloadConfig=CTRL_5
-# 2つのキー入力の間隔
+# Interval of Two Key Input
 #TimeInterval=250
-# 仮想キーボードに切り替え
+# Switching Virtual Keyboard
 #VKSwitchKey=CTRL_ALT_B
-# リマインドモードの切り替え
+# Switching Remind Mode
 #RemindSwitchKey=
-# 全角文字モードに切り替え
+# Switching Full Width Character Mode
 #FullWidthSwitchKey=
-# 全角句読点モードに切り替え
+# Switch Full Width Punc Mode
 #PuncSwitchKey=CTRL_.
-# 前のページ
-PrevPageKey=; UP
-# 次のページ
-NextPageKey=' DOWN
-# 二番目と三番目の候補を選択
+# Prev Page
+PrevPageKey=; TAB
+# Next Page
+NextPageKey=' SHIFT_TAB
+# Choose Second and Third Candidate Word
 #SecondThirdCandWordKey=
-# すべての設定と入力履歴を保存
+# Saving All Config and Input History
 #SaveAllKey=CTRL_ALT_S
 # Switch Embedded Preedit
 #SwitchPreedit=CTRL_ALT_P
-# 前の候補
+# Previous Candidate Word
 #PrevWord=SHIFT_TAB
-# 次の候補
+# Next Candidate Word
 #NextWord=TAB
 
 [Program]
-# fcitxが本当に起動するまでのスリープ時間(秒)
+# Seconds sleep before fcitx really start
 #DelayStart=0
-# ウィンドウ間で状態を共有
+# Share State Among Window
 # Available Value:
 # No
 # All
 # PerProgram
 #ShareStateAmongWindow=No
-# 既定の入力メソッドの状態
+# Default Input Method State
 # Available Value:
 # Inactive
 # Active
 #DefaultInputMethodState=Inactive
 
 [Output]
-# 数字の後に半角句読点を入力
+# Type half width Punc After a Number
 # Available Value:
 # True False
 #HalfPuncAfterNumber=True
-# リマインドモードでページを無効に
+# Disable Paging in Remind Mode
 # Available Value:
 # True False
 #RemindModeDisablePaging=True
-# 状態を切り替えたら確定する
+# Commit when toggle state
 # Available Value:
 # True False
 #SendTextWhenSwitchEng=True
-# 候補の単語数
+# Candidate Word Number
 #CandidateWordNumber=5
-# Tipsのフレーズにヒントを与える
+# Give the tips of Phrase
 # Available Value:
 # True False
 #PhraseTips=True
-# フォーカスを外しても未確定文字をコミットしない
+# Do not commit preedit text when unfocus a window
 # Available Value:
 # True False
 #DontCommitPreeditWhenUnfocus=False
 
 [Appearance]
-# 入力メソッドを切換後に入力メソッドのヒントを表示
+# Show Input Method Hint After Input method changed
 # Available Value:
 # True False
 #ShowInputWindowAfterTriggering=True
-# 入力メソッドを切換え、フォーカスした際に入力メソッドのヒントを表示
+# Show Input Method Hint After Input method changed and Focus in
 # Available Value:
 # True False
 #ShowInputWindowWhenFocusIn=False
-# 有効の時だけ入力メソッドのヒントを表示
+# Input Method Hint will be only shown when state is active
 # Available Value:
 # True False
 #ShowInputWindowOnlyWhenActive=True
-# 入力速度の表示
+# Show Input Speed
 # Available Value:
 # True False
 #ShowInputSpeed=False
-# バージョンの表示
+# Show Version
 # Available Value:
 # True False
 #ShowVersion=False
-# プレエディットを表示している場合は入力ウィンドウを表示しない
+# Do not show input window if there is only preedit string
 # Available Value:
 # True False
 #HideInputWindowWhenOnlyPreeditString=False
-# 候補とプレエディットに1つの候補しか表示されていない場合は入力ウィンドウを表示しない
+# Do not show input window if there is only one candidate and preedit
 # Available Value:
 # True False
 #HideInputWindowWhenOnlyOneCandidate=False
