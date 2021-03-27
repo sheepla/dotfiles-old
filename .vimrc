@@ -266,6 +266,9 @@ if dein#load_state('$HOME/.cache/dein')
     " Add or remove your plugins here: =====================================
     " {{{
 
+    " Docs
+    call dein#add('vim-jp/vimdoc-ja')
+
     " Colorscheme
     call dein#add('cocopon/iceberg.vim')
     call dein#add('arcticicestudio/nord-vim')
