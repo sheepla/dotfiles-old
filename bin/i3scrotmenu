@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-delay='7'
+delay='5'
 
 if command -v rofi &>/dev/null; then
     menu='rofi -dmenu'
@@ -18,12 +18,12 @@ EOF
 
 case $mode in
     full-screen)
-        i3-scrot --desk $delay
+        sleep "$delay" && i3-scrot --desk
     ;;
     active-window)
-        i3-scrot --window $delay
+        sleep "$delay" && i3-scrot --window
     ;;
     selection)
-        i3-scrot --select $delay
+        sleep "$delay" && i3-scrot --select
     ;;
 esac

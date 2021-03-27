@@ -13,7 +13,7 @@ then
 
     if [ -f $picom_conf ]
     then
-        picom --config $picom_conf --daemon --experimental-backends &
+        picom --config "$picom_conf" --daemon --experimental-backends &
     else
         picom --daemon --experimental-backends &
     fi 
