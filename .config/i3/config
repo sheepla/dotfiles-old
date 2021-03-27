@@ -54,7 +54,7 @@ bindsym $mod+d    exec --no-startup-id "rofi -combi drun,run -modi drun,run -sho
 bindsym $mod+Tab  exec --no-startup-id "rofi -show window -modi window,drun,run &"
 
 # RofiMoji
-bindsym $mod+m exec --no-startup-id "rofimoji --copy-only &"
+bindsym $mod+m exec --no-startup-id "rofimoji --action clipboard --skin-tone neutral &"
 
 # ArandR
 bindsym $mod+Ctrl+p exec --no-startup-id "$HOME/bin/arandrmenu &"
@@ -125,7 +125,7 @@ for_window [class="Manjaro Settings Manager"] floating enable border normal stic
 for_window [class="firefox"]                  move container to workspace $ws3, workspace $ws3, layout tabbed
 for_window [class="gvim"]                     move container to workspace $ws2, workspace $ws2, layout tabbed
 for_window [class="nvim-qt"]                  move container to workspace $ws2, workspace $ws2, layout tabbed
-for_window [class="Zathura"]                  move container to workspace $ws4
+#for_window [class="Zathura"]                  move container to workspace $ws4
 
 # focus the parent container
 bindsym $mod+a focus parent exec --no-startup-id "notify-send 'Focused parent window'"
