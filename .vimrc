@@ -11,6 +11,10 @@ scriptencoding utf-8
 " Desable sound
 set belloff=all
 
+" Docs ----------------------------------- {{{
+" helpの言語を日本語に
+set helplang=ja,en
+" }}}
 " File ----------------------------------- {{{
 "set nobackup
 "set noswapfile
