@@ -2,7 +2,7 @@
 alias c='clear'
 alias cls='clear'
 alias mkd='mkdir -pv'
-mkcd() { mkdir -p "$1" && cd "$1" }
+mkcd() { mkdir -p "$1" && cd "$1"; }
 newfile() { mkdir -p "$(dirname "$1")" && touch "$1"; }
 
 # Python
