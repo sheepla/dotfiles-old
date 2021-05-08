@@ -1,4 +1,5 @@
 "     __  ___     _    ___                    
+"
 "    /  |/  /_  _| |  / (_)___ ___  __________
 "   / /|_/ / / / / | / / / __ `__ \/ ___/ ___/
 "  / /  / / /_/ /| |/ / / / / / / / /  / /__  
@@ -314,11 +315,14 @@ if dein#load_state('$HOME/.cache/dein')
     call dein#add('davidhalter/jedi-vim')
 
     " Go
-    call dein#add('fatih/vim-go')
+    "call dein#add('fatih/vim-go')
 
     " bash
     call dein#add('itspriddle/vim-shellcheck')
     call dein#add('z0mbix/vim-shfmt')
+    
+    " fish
+    call dein#add('dag/vim-fish')
 
     " PowerShell
     call dein#add('zigford/vim-powershell')
@@ -421,8 +425,10 @@ if has('gui_running')
         "set guifont=HackGen\ Console\ for\ Powerline:h12:cDEFAULT
         set guifont=HackGenNerd:h12:cDEFAULT
     elseif has('unix')
-        set guifont=HackGenNerd\ 10
-        set guifontwide=HackGenNerd\ 10
+        "set guifont=HackGenNerd\ 10
+        "set guifontwide=HackGenNerd\ 10
+        set guifont=Sarasa\ Term\ J\ 11
+        set guifontwide=Sarasa\ Term\ J\ 11
     endif
 
     " set ambiwidth=double
