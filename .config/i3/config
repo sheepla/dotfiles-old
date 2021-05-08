@@ -51,10 +51,10 @@ bindsym $mod+Ctrl+Return  exec --no-startup-id $terminal -e ranger
 
 # Rofi
 bindsym $mod+d    exec --no-startup-id "rofi -combi drun,run -modi drun,run -show drun &"
-bindsym $mod+Tab  exec --no-startup-id "rofi -show window -modi window,drun,run &"
+bindsym $mod+Tab  exec --no-startup-id "rofi -combi drun,run,window -modi drun,run -show window &"
 
 # RofiMoji
-bindsym $mod+m exec --no-startup-id "rofimoji --action clipboard --skin-tone neutral &"
+bindsym $mod+m exec --no-startup-id "rofimoji --action copy --skin-tone neutral &"
 
 # ArandR
 bindsym $mod+Ctrl+p exec --no-startup-id "$HOME/bin/arandrmenu &"
@@ -191,7 +191,7 @@ gaps outer $default_outer_gaps
 
 # }}}
 
-set $resize_mode " RESIZE "
+set $resize_mode "󿛃 RESIZE "
 mode $resize_mode {
 
     # Resize
@@ -224,29 +224,24 @@ mode $resize_mode {
 
 bindsym $mod+r mode $resize_mode exec --no-startup-id "notify-send 'Resize Mode'"
 
-# Status Bar ---------------------------------------------------{{{
-# Polybar --- {{{
-#exec --no-startup-id "~/.config/polybar/launch.sh"
-# }}}
-
 bar {
 
-# bumblebee-status --------------------------------------------- {{{
+	# font pango:Iosevka Term Curly Medium, pango:Cica 11
+	font pango:Sarasa Term J, pango:Cica 11
+	position top
+
+    ## i3status-rust
+    # status_command i3status-rs ~/.config/i3status-rust/config.toml
+
+    # bumblebee-status --------------------------------------------- {{{
     # format:
     #     bumblebee-status -m <modules...> -p <params...> -t <theme>
 	status_command bumblebee-status \
-        -m title cmus cpu memory battery date time\
-        -p time.format="%H:%M" date.format="%m/%d" memory.format="{percent:05.02f}%" title.max=30 title.scroll=True\
+        -m title spacer cmus cpu memory battery date time\
+        -p time.format="%H:%M" date.format="%m/%d" memory.format="{percent:05.02f}%" title.max=30 title.scroll=True spacer.text="I use rch BTW."\
         -t iceberg-darker-powerline
 
 # }}}
-
-# tint2 -------------------------------------------------------- {{{
-
-#}}}
-	#font pango:Iosevka Term Curly Medium, pango:Cica 11
-	font pango:Sarasa Term J Medium, pango:Cica 11
-	position top
 
     colors {
         # <class>          <border>   <bg>     <fg>
@@ -255,7 +250,7 @@ bar {
         active_workspace   $bg       $bg4      $fg
         inactive_workspace $bg       $bg3      $fg
         urgent_workspace   $bg       $red      $bg
-        binding_mode       $bg       $green    $bg
+        binding_mode       $bg       $purple    $bg
     }
 }
 
