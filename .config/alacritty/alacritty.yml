@@ -75,14 +75,14 @@ window:
   #title: Alacritty
 
   # Allow terminal applications to change Alacritty's window title.
-  #dynamic_title: true
+  dynamic_title: true
 
   # Window class (Linux/BSD only):
-  #class:
+  class:
     # Application instance name
-    #instance: Alacritty
+    instance: Alacritty
     # General application class
-    #general: Alacritty
+    general: Alacritty
 
   # GTK theme variant (Linux/BSD only)
   #
@@ -152,7 +152,7 @@ font:
     # The `style` can be specified to pick a specific face.
     #style: Bold Italic
     #family: monospace
-    family: Iosevka Term Curly Extended
+    #family: Iosevka Term Curly Extended
     family: Sarasa Fixed J
 
   # Point size
@@ -179,7 +179,7 @@ font:
   #use_thin_strokes: true
 
 # If `true`, bold text is drawn using the bright color variants.
-draw_bold_text_with_bright_colors: true
+draw_bold_text_with_bright_colors: false
 
 # Colors (Iceberg)
 colors:
