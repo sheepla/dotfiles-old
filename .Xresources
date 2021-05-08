@@ -28,10 +28,11 @@ URxvt.cursorBlink: true
 URxvt.cursorColor: #84a0c6
 
 !! Font
-URxvt*font: xft:HackGenNerd Console:size=11, xft:Cica:size=11
+!URxvt*font: xft:HackGenNerd Console:size=11, xft:Cica:size=11
+URxvt*font: xft:Sarasa Term J:medium:size=11, xft:Cica:size=11
 !URxvt*font:     xft:monospace:medium:size=10
 !URxvt.font: xft:monospace:size=12
-URxvt.letterSpace: -1
+URxvt.letterSpace: -6
 URxvt.lineSpace: -4
 
 !! Prevent TUI applications from slowing down
@@ -122,7 +123,7 @@ URxvt.keysym.C-R: perl:keyboard-select:search
 !URxvt.tabbed.tab-numbers: false
 
 ! sxiv ------------------------------- {{{
-Sxiv.foreground: #84a0c6
-Sxiv.background: #161821
-Sxiv.font: monospace 9
+Sxiv.foreground: #444b71
+Sxiv.background: #c6c8d1
+Sxiv.font: Sarasa Term J:size=9
 ! }}}
