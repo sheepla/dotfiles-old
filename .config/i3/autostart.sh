@@ -6,6 +6,9 @@
 # Set display layout and resolution (Using ArandR)
 [ -f "$HOME/.screenlayout/layout.sh" ] && source "$HOME/.screenlayout/layout.sh"
 
+# Launch pulseaudio
+pulseaudio --kill && pulseaudio --start
+
 # Launch composite manger
 if command -v picom &>/dev/null && ! pgrep picom
 then
