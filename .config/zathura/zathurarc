@@ -45,4 +45,5 @@ set window-title-basename true
 set guioptions cshv
 
 # Fonts
-set font Iosevka\ Term\ Curly\ 11
+#set font Iosevka\ Term\ Curly\ 11
+set font Sarasa\ Term\ J\ 11
