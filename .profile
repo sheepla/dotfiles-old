@@ -22,7 +22,7 @@ command -v nvim &>/dev/null && {
 }
 
 # ddgr
-export BROWSER=w3m ddgr query
+#export BROWSER=w3m ddgr query
 export DDGR_COLORS=dEfdxY
 
 # tldr
