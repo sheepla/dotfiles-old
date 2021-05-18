@@ -1,6 +1,6 @@
 configuration {
 	columns: 2;
-	font: "Sarasa Term J 11";
+	font: "Sarasa Term J 12";
 	show-icons: true;
 	kb-mode-next: "Control+o";
 	kb-mode-previous: "Control+i";
