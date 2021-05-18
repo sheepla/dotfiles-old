@@ -202,7 +202,6 @@ esac
 
 [ -f ~/.aliases ] && source ~/.aliases
 
-
 # Prompt 
 command -v starship &>/dev/null && eval "$(starship init zsh)"
 
