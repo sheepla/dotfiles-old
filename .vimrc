@@ -24,8 +24,7 @@ set autoread
 set hidden
 " }}} 
 
-" Key bindings --------------------------- {{{
-" Leader
+" Key bindings --------------------------- {{{ Leader
 " let mapleader = '\<Space>'
 map <Space> <Leader>
 
@@ -298,9 +297,10 @@ if dein#load_state('$HOME/.cache/dein')
     call dein#add('Shougo/unite.vim') 
     " call dein#add('junegunn/fzf.vim')
     call dein#add('ctrlpvim/ctrlp.vim')
+    call dein#add('mattn/ctrlp-ghq')
 
     " File Manager
-    call dein#add('preservim/nerdtree')
+    "call dein#add('preservim/nerdtree')
     call dein#add('lambdalisue/fern.vim')
     " call dein#add('Shougo/defx.nvim')
     " if !has('nvim')
@@ -338,6 +338,9 @@ if dein#load_state('$HOME/.cache/dein')
 
     " Translate
     call dein#add('koron/codic-vim')
+
+    " HTML/CSS
+    call dein#add('mattn/emmet-vim')
 
     " }}}
     " ======================================================================
