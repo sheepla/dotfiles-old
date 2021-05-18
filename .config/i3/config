@@ -16,7 +16,7 @@ set $fg2     "#444b71"
 set $bg      "#161821"
 set $bg2     "#1e2132"
 set $bg3     "#262939"
-set $bg4      #454B68
+set $bg4     "#454B68"
 set $red     "#e27878"
 set $yellow  "#e2a478"
 set $green   "#b4be82"
@@ -47,7 +47,7 @@ set $terminal "alacritty"
 
 bindsym $mod+Return       split h exec --no-startup-id $terminal
 bindsym $mod+Shift+Return split v exec --no-startup-id $terminal
-bindsym $mod+Ctrl+Return  exec --no-startup-id $terminal -e ranger
+#bindsym $mod+Ctrl+Return  exec --no-startup-id $terminal -e ranger
 
 # Rofi
 bindsym $mod+d    exec --no-startup-id "rofi -combi drun,run -modi drun,run -show drun &"
