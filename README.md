@@ -2,7 +2,7 @@
 
 <p align="center">My dotfiles for Linux</p>
 
-<img src="./img/screenshot1.png" width="70%" />
+<div align="center"><img src="./img/screenshot1.png" width="80%" /></div>
 
 ## Environment & Apps
 
