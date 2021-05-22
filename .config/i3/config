@@ -50,8 +50,8 @@ bindsym $mod+Shift+Return split v exec --no-startup-id $terminal
 #bindsym $mod+Ctrl+Return  exec --no-startup-id $terminal -e ranger
 
 # Rofi
-bindsym $mod+d    exec --no-startup-id "rofi -combi drun,run -modi drun,run -show drun &"
-bindsym $mod+Tab  exec --no-startup-id "rofi -combi drun,run,window -modi drun,run -show window &"
+bindsym $mod+d    exec --no-startup-id "LANG=C rofi -combi drun,run -modi drun,run -show drun &"
+bindsym $mod+Tab  exec --no-startup-id "LANG=C rofi -combi drun,run,window -modi drun,run -show window &"
 
 # RofiMoji
 bindsym $mod+m exec --no-startup-id "rofimoji --action copy --skin-tone neutral &"
