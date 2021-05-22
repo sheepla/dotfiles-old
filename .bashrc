@@ -2,6 +2,9 @@
 # ~/.bashrc
 #
 
+# Desable Ctrl-s, Ctrl-q
+stty -ixon
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
