@@ -1,0 +1,65 @@
+# This file contains fish universal variable definitions.
+# VERSION: 3.0
+SETUVAR --export BROWSER:firefox
+SETUVAR --export ENHANCD_COMMAND:cd
+SETUVAR --export ENHANCD_COMPLETION_BEHAVIOR:default
+SETUVAR --export ENHANCD_COMPLETION_DEFAULT:1
+SETUVAR --export ENHANCD_COMPLETION_KEYBIND:\x5eI
+SETUVAR --export ENHANCD_DIR:/home/sheepla/\x2eenhancd
+SETUVAR --export ENHANCD_DISABLE_DOT:0
+SETUVAR --export ENHANCD_DISABLE_HOME:0
+SETUVAR --export ENHANCD_DISABLE_HYPHEN:0
+SETUVAR --export ENHANCD_DOT_ARG:\x2e\x2e
+SETUVAR --export ENHANCD_FILTER:fzy\x3afzf\x2dtmux\x3afzf\x3apeco\x3apercol\x3agof\x3apick\x3aicepick\x3asentaku\x3aselecta
+SETUVAR --export ENHANCD_HOME_ARG:
+SETUVAR --export ENHANCD_HYPHEN_ARG:\x2d
+SETUVAR --export ENHANCD_HYPHEN_NUM:10
+SETUVAR --export ENHANCD_ROOT:/home/sheepla/\x2econfig/fish/functions/enhancd
+SETUVAR --export ENHANCD_USE_FUZZY_MATCH:1
+SETUVAR FZF_DEFAULT_OPTS:\x2d\x2dheight\x2040\x25\x20\x2d\x2dcolor\x3dbg\x2b\x3a\x23404040\x2cbg\x3a\x23383838\x2cspinner\x3a\x2393e0e3\x2chl\x3a\x237cb8bb\x20\x2d\x2dcolor\x3dfg\x3a\x23808080\x2cheader\x3a\x237cb8bb\x2cinfo\x3a\x23e0cf9f\x2cpointer\x3a\x2393e0e3\x20\x2d\x2dcolor\x3dmarker\x3a\x2393e0e3\x2cfg\x2b\x3a\x23c0c0c0\x2cprompt\x3a\x23e0cf9f\x2chl\x2b\x3a\x237cb8bb
+SETUVAR FZF_DISABLE_KEYBINDINGS:0
+SETUVAR FZF_LEGACY_KEYBINDINGS:0
+SETUVAR FZF_PREVIEW_DIR_CMD:ls
+SETUVAR FZF_PREVIEW_FILE_CMD:head\x20\x2dn\x2010
+SETUVAR FZF_REVERSE_ISEARCH_OPTS:\x2d\x2dreverse\x20\x2d\x2dheight\x3d50\x25
+SETUVAR FZF_TMUX_HEIGHT:40\x25
+SETUVAR --path PATH:/usr/local/bin\x1e/usr/bin\x1e/bin\x1e/usr/local/sbin\x1e/usr/bin/site_perl\x1e/usr/bin/vendor_perl\x1e/usr/bin/core_perl\x1e/home/sheepla/bin\x1e/home/sheepla/\x2elocal/bin/\x1e/home/sheepla/go\x1e\x7e/go/bin/
+SETUVAR Z_DATA_DIR:/home/sheepla/\x2elocal/share/z
+SETUVAR --export _ENHANCD_FAILURE:60
+SETUVAR --export _ENHANCD_SUCCESS:0
+SETUVAR --export _ENHANCD_VERSION:2\x2e2\x2e4
+SETUVAR __fish_initialized:3100
+SETUVAR _fisher_0rax_2F_fish_2D_bd_files:/home/sheepla/\x2econfig/fish/functions/bd\x2efish\x1e/home/sheepla/\x2econfig/fish/functions/uninstall\x2efish\x1e/home/sheepla/\x2econfig/fish/completions/bd\x2efish
+SETUVAR _fisher_b4b4r07_2F_enhancd_files:/home/sheepla/\x2econfig/fish/functions/_enhancd_alias\x2efish\x1e/home/sheepla/\x2econfig/fish/functions/_enhancd_cd_after\x2efish\x1e/home/sheepla/\x2econfig/fish/functions/_enhancd_cd_before\x2efish\x1e/home/sheepla/\x2econfig/fish/functions/_enhancd_cd_builtin\x2efish\x1e/home/sheepla/\x2econfig/fish/functions/_enhancd_command_awk\x2efish\x1e/home/sheepla/\x2econfig/fish/functions/_enhancd_command_grep\x2efish\x1e/home/sheepla/\x2econfig/fish/functions/_enhancd_command_nl\x2efish\x1e/home/sheepla/\x2econfig/fish/functions/_enhancd_command_run\x2efish\x1e/home/sheepla/\x2econfig/fish/functions/_enhancd_command_which\x2efish\x1e/home/sheepla/\x2econfig/fish/functions/_enhancd_complete\x2efish\x1e/home/sheepla/\x2econfig/fish/functions/_enhancd_entry_git_root\x2efish\x1e/home/sheepla/\x2econfig/fish/functions/_enhancd_filepath_abs\x2efish\x1e/home/sheepla/\x2econfig/fish/functions/_enhancd_filepath_current_dir\x2efish\x1e/home/sheepla/\x2econfig/fish/functions/_enhancd_filepath_list_step\x2efish\x1e/home/sheepla/\x2econfig/fish/functions/_enhancd_filepath_split\x2efish\x1e/home/sheepla/\x2econfig/fish/functions/_enhancd_filepath_split_list\x2efish\x1e/home/sheepla/\x2econfig/fish/functions/_enhancd_filepath_walk\x2efish\x1e/home/sheepla/\x2econfig/fish/functions/_enhancd_filter_exclude\x2efish\x1e/home/sheepla/\x2econfig/fish/functions/_enhancd_filter_exclude_commented\x2efish\x1e/home/sheepla/\x2econfig/fish/functions/_enhancd_filter_exclude_gitignore\x2efish\x1e/home/sheepla/\x2econfig/fish/functions/_enhancd_filter_exists\x2efish\x1e/home/sheepla/\x2econfig/fish/functions/_enhancd_filter_fuzzy\x2efish\x1e/home/sheepla/\x2econfig/fish/functions/_enhancd_filter_interactive\x2efish\x1e/home/sheepla/\x2econfig/fish/functions/_enhancd_filter_join\x2efish\x1e/home/sheepla/\x2econfig/fish/functions/_enhancd_filter_limit\x2efish\x1e/home/sheepla/\x2econfig/fish/functions/_enhancd_filter_replace\x2efish\x1e/home/sheepla/\x2econfig/fish/functions/_enhancd_filter_reverse\x2efish\x1e/home/sheepla/\x2econfig/fish/functions/_enhancd_filter_trim\x2efish\x1e/home/sheepla/\x2econfig/fish/functions/_enhancd_filter_unique\x2efish\x1e/home/sheepla/\x2econfig/fish/functions/_enhancd_flag_is_default\x2efish\x1e/home/sheepla/\x2econfig/fish/functions/_enhancd_flag_parse\x2efish\x1e/home/sheepla/\x2econfig/fish/functions/_enhancd_flag_print_help\x2efish\x1e/home/sheepla/\x2econfig/fish/functions/_enhancd_help\x2efish\x1e/home/sheepla/\x2econfig/fish/functions/_enhancd_history_list\x2efish\x1e/home/sheepla/\x2econfig/fish/functions/_enhancd_history_open\x2efish\x1e/home/sheepla/\x2econfig/fish/functions/_enhancd_history_update\x2efish\x1e/home/sheepla/\x2econfig/fish/functions/_enhancd_ltsv_get\x2efish\x1e/home/sheepla/\x2econfig/fish/functions/_enhancd_ltsv_open\x2efish\x1e/home/sheepla/\x2econfig/fish/functions/_enhancd_ltsv_parse\x2efish\x1e/home/sheepla/\x2econfig/fish/functions/_enhancd_source_argument\x2efish\x1e/home/sheepla/\x2econfig/fish/functions/_enhancd_source_default\x2efish\x1e/home/sheepla/\x2econfig/fish/functions/_enhancd_source_go_up\x2efish\x1e/home/sheepla/\x2econfig/fish/functions/_enhancd_source_is_available\x2efish\x1e/home/sheepla/\x2econfig/fish/functions/_enhancd_source_mru\x2efish\x1e/home/sheepla/\x2econfig/fish/functions/enhancd\x1e/home/sheepla/\x2econfig/fish/functions/enhancd\x2efish\x1e/home/sheepla/\x2econfig/fish/conf\x2ed/enhancd\x2efish
+SETUVAR _fisher_decors_2F_fish_2D_ghq_files:/home/sheepla/\x2econfig/fish/functions/__ghq_repository_search\x2efish\x1e/home/sheepla/\x2econfig/fish/conf\x2ed/ghq_key_bindings\x2efish\x1e/home/sheepla/\x2econfig/fish/completions/ghq\x2efish
+SETUVAR _fisher_jethrokuan_2F_fzf_files:/home/sheepla/\x2econfig/fish/functions/__fzf_cd\x2efish\x1e/home/sheepla/\x2econfig/fish/functions/__fzf_complete\x2efish\x1e/home/sheepla/\x2econfig/fish/functions/__fzf_complete_preview\x2efish\x1e/home/sheepla/\x2econfig/fish/functions/__fzf_find_file\x2efish\x1e/home/sheepla/\x2econfig/fish/functions/__fzf_get_dir\x2efish\x1e/home/sheepla/\x2econfig/fish/functions/__fzf_open\x2efish\x1e/home/sheepla/\x2econfig/fish/functions/__fzf_parse_commandline\x2efish\x1e/home/sheepla/\x2econfig/fish/functions/__fzf_reverse_isearch\x2efish\x1e/home/sheepla/\x2econfig/fish/functions/__fzfcmd\x2efish\x1e/home/sheepla/\x2econfig/fish/conf\x2ed/fzf\x2efish
+SETUVAR _fisher_plugins:0rax/fish\x2dbd\x1ejethrokuan/fzf\x1edecors/fish\x2dghq\x1eb4b4r07/enhancd\x1ebigH/git\x2dfuzzy
+SETUVAR fish_color_autosuggestion:4c566a
+SETUVAR fish_color_cancel:\x2dr
+SETUVAR fish_color_command:81a1c1
+SETUVAR fish_color_comment:434c5e
+SETUVAR fish_color_cwd:blue
+SETUVAR fish_color_cwd_root:red
+SETUVAR fish_color_end:88c0d0
+SETUVAR fish_color_error:ebcb8b
+SETUVAR fish_color_escape:00a6b2
+SETUVAR fish_color_history_current:\x2d\x2dbold
+SETUVAR fish_color_host:normal
+SETUVAR fish_color_host_remote:yellow
+SETUVAR fish_color_match:\x2d\x2dbackground\x3dbrblue
+SETUVAR fish_color_normal:normal
+SETUVAR fish_color_operator:00a6b2
+SETUVAR fish_color_param:eceff4
+SETUVAR fish_color_quote:a3be8c
+SETUVAR fish_color_redirection:b48ead
+SETUVAR fish_color_search_match:bryellow\x1e\x2d\x2dbackground\x3dbrblack
+SETUVAR fish_color_selection:white\x1e\x2d\x2dbold\x1e\x2d\x2dbackground\x3dbrblack
+SETUVAR fish_color_status:red
+SETUVAR fish_color_user:brgreen
+SETUVAR fish_color_valid_path:\x2d\x2dunderline
+SETUVAR fish_greeting:\x1d
+SETUVAR fish_key_bindings:fish_default_key_bindings
+SETUVAR fish_pager_color_completion:normal
+SETUVAR fish_pager_color_description:B3A06D\x1eyellow
+SETUVAR fish_pager_color_prefix:white\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
+SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
