@@ -8,14 +8,14 @@ export PATH=$PATH:$HOME/go/bin
 #export PATH=$PATH:/usr/local/go/bin/ 
 export GOPATH=$HOME/go 
 
-# Grep
+# grep
 export GREP_COLOR="1;32"
 
-# Less
+# less
 #export LESS='-R'
 #export LESSOPEN='| $HOME/.local/bin/src-hilite-lesspipe.sh %s'
 
-# Editor
+# editor
 command -v nvim &>/dev/null && {
     export EDITOR=nvim
 } || command -v vim &>/dev/null && {
@@ -57,19 +57,8 @@ export EXA_COLORS=\
 'gn=37:'\
 'da=37'
 
-# fzf
-
 # fzf colors
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
 --color fg:#c6c8d1,bg:#161821,hl:#84a0c6,fg+:#c6c8d1,bg+:#1e2132,hl+:#84a0c6
 --color pointer:#e27878,info:#e2a478,spinner:#89b8c2,header:#b4be82,prompt:#84a0c6,marker:#b4be82'
-
-
-# Desable Ctrl-s, Ctrl-q
-stty -ixon
-
-# Qt, GTK
-export QT_QPA_PLATFORMTHEME="qt5ct"
-export QT_AUTO_SCREEN_SCALE_FACTOR=0
-export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 
