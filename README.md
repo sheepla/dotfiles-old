@@ -1,6 +1,8 @@
-<h1 align="cener">🍚 dotfiles</h1>
+<h1 align="center">🍚 dotfiles</h1>
 
 <p align="center">My dotfiles for Linux</p>
+
+<img src="./img/screenshot1.png" />
 
 ## Environment & Apps
 
