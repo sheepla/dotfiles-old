@@ -2,6 +2,7 @@
 
 <p align="center">My dotfiles for Linux</p>
 
+<<<<<<< HEAD
 <div align=center><img src="./img/screenshot1.png" width="70%" /></div>
 <h1 align="center">🧊 dotfiles</h1>
 
@@ -33,6 +34,9 @@
 ## Color Theme
 
 Color palette from [cocopon/iceberg.vim](https://github.com/cocopon/iceberg.vim) and [gkeep/iceberg-dark](https://github.com/gkeep/iceberg-dark)
+=======
+<div align="center"><img src="./img/screenshot1.png" width="80%" /></div>
+>>>>>>> 0f70c678975f401f88600085a37a2bba26503108
 
 ## Environment & Apps
 
