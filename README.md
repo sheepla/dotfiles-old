@@ -8,10 +8,10 @@
 
 - OS                  : Arch Linux 
 - WM                  : i3-gaps 
-- Bar                 : bumblebee-status 
+- Bar                 : [bumblebee-status](https://github.com/tobi-wan-kenobi/bumblebee-status)
 - Editor              : Vim/Neovim 
 - Shell               : bash/fish 
-- Composite Manager   : picom-jonaburg-git
+- Composite Manager   : [picom-jonaburg-git](https://github.com/jonaburg/picom)
 - Launcher            : rofi [self-made themes!](https://github.com/sheepla/rofi-themes) 
 - PDF Viewer          : Zathura( `zathura-pdf-mupdf` )
 - Image Viewer        : sxiv 
@@ -21,7 +21,7 @@
 - Prompt              : starship 
 - TUI File Manager    : ranger 
 - Input Mehod         : fcitx-mozc 
-- Screenshot Tool     : flameshot 
+- Screenshot Tool     : [flameshot](https://github.com/flameshot-org/flameshot)
 - Sound Volue Icon    : volumeicon 
 - Wallpaper           : [self-made wallpapers!](https://github.com/sheepla/wallpapers) 
 
