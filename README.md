@@ -22,6 +22,8 @@
 - Input Mehod         : fcitx-mozc 
 - Screenshot Tool     : [flameshot](https://github.com/flameshot-org/flameshot)
 - Sound Volue Icon    : volumeicon 
+- Emoji Selecter      : [rofimoji](https://github.com/fdw/rofimoji)
+- Calculator          : [rofi-calc](https://github.com/svenstaro/rofi-calc)
 
 ## CLI
 
