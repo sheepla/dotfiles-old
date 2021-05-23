@@ -1,13 +1,17 @@
 #!/usr/bin/env bash
 
 # Reload ~/.Xresources for urxvt and other
-[ -f "$HOME/.Xresources " ] && xrdb "$HOME/.Xresources"
+xresources="$HOME/.Xresources"
+[ -f "$xresources" ] && xrdb "$xresources"
 
 # Set display layout and resolution (Using ArandR)
-[ -f "$HOME/.screenlayout/layout.sh" ] && source "$HOME/.screenlayout/layout.sh"
+layout_config="$HOME/.config/xrandr/layout.sh"
+[ -f "$layout_config" ] && "$layout_config"
 
 # Launch pulseaudio
-pulseaudio --kill && pulseaudio --start
+command -v pulseaudio &>/dev/null && {
+    pulseaudio --kill && pulseaudio --start
+}
 
 # Launch composite manger
 if command -v picom &>/dev/null && ! pgrep picom
