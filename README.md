@@ -32,7 +32,7 @@
 ## Misc
 
 - Fetch               : [uwufetch](https://github.com/TheDarkBug/uwufetch)
-- Monospace Font      : [Sarasa Term J](https://github.com/be5invis/Sarasa-Gothic) / [Cica](https://github.com/miiton/Cica)
+- Monospace Font      : [Sarasa Term J](https://github.com/be5invis/Sarasa-Gothic) / [Cica](https://github.com/miiton/Cica) : `ttf-cica`
 - Wallpaper           : [self-made wallpapers!](https://github.com/sheepla/wallpapers) 
 
 ## Color Theme
