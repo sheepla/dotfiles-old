@@ -19,7 +19,7 @@ unknown_indicator = "[?]"
 
 [directory]
 style = "bold blue underline"
-read_only_style = "white"
+read_only_style = "blue"
 fish_style_pwd_dir_length = 2
 format = "[$read_only]($read_only_style)[$path]($style) "
 truncation_length = 8 
