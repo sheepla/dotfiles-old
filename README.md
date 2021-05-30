@@ -1,6 +1,6 @@
 <h1 align="center">🧊 dotfiles</h1>
 
-<p align="center">*My rice for Arch Linux*</p>
+<p align="center">My rice for Arch Linux</p>
 
 <p align="center">
 <img src="https://img.shields.io/static/v1?label=OS&message=Arch%20Linux&color=blue&style=flat-square"/> 
