@@ -37,10 +37,6 @@ nnoremap <C-k> K
 nnoremap x "_x
 "nnoremap s "_s
 
-" New line
-nnoremap <CR>   o
-nnoremap <S-CR> O
-
 " Insert mode
 " BackSpace
 set backspace=indent,eol,start
@@ -315,7 +311,7 @@ if dein#load_state('$HOME/.cache/dein')
     call dein#add('davidhalter/jedi-vim')
 
     " Go
-    "call dein#add('fatih/vim-go')
+    call dein#add('fatih/vim-go')
 
     " bash
     call dein#add('itspriddle/vim-shellcheck')
