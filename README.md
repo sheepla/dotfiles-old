@@ -3,9 +3,9 @@
 <p align="center">My rice for Arch Linux</p>
 
 <p align="center">
-<img src="https://img.shields.io/static/v1?label=OS&message=Arch%20Linux&color=blue&style=flat-square"/> 
-<img src="https://img.shields.io/static/v1?label=WM&message=i3-gaps&color=lightgray&style=flat-square"/> 
-<img src="https://img.shields.io/static/v1?label=Editor&message=Neovim&color=green&style=flat-square"/> 
+  <img src="https://img.shields.io/static/v1?label=OS&message=Arch%20Linux&color=blue&style=flat-square"/> 
+  <img src="https://img.shields.io/static/v1?label=WM&message=i3-gaps&color=lightgray&style=flat-square"/> 
+  <img src="https://img.shields.io/static/v1?label=Editor&message=Neovim&color=green&style=flat-square"/> 
 </p>
 
 <div align=center><img src="./img/screenshot1.png" width="80%" /></div>
@@ -15,20 +15,22 @@
 
 ### GUI
 
-- Bar                 : [bumblebee-status](https://github.com/tobi-wan-kenobi/bumblebee-status)
-- Editor              : Vim / Neovim 
-- Composite Manager   : [picom-jonaburg-git](https://github.com/jonaburg/picom)
-- Launcher            : [rofi]( https://github.com/DaveDavenport/rofi) [MY THEMES!](https://github.com/sheepla/rofi-themes) 
-- PDF Viewer          : [zathura](https://pwmt.org/projects/zathura/): `zathura-pdf-mupdf`
-- Image Viewer        : [sxiv](https://github.com/muennich/sxiv)
-- Terminal            : [alacritty](https://github.com/alacritty/alacritty)
-- Nortification Daemon: [dunst](https://dunst-project.org/)
-- Input Mehod         : fcitx-mozc 
-- Screenshot Tool     : [flameshot](https://github.com/flameshot-org/flameshot)
-- Sound Volue Icon    : [volumeicon](https://softwarebakery.com/maato/volumeicon.html)
-- Emoji Selecter      : [rofimoji](https://github.com/fdw/rofimoji)
+- Bar                 : 
+  - [bumblebee-status](https://github.com/tobi-wan-kenobi/bumblebee-status)
+  - [i3status-rust](https://github.com/greshake/i3status-rust)
 - Calculator          : [rofi-calc](https://github.com/svenstaro/rofi-calc)
 - Clipboard Manager   : [rofi-greenclip](https://github.com/erebe/greenclip)
+- Composite Manager   : [jonaburg/picom](https://github.com/jonaburg/picom) `picom-jonaburg-git`
+- Editor              : Vim / Neovim 
+- Emoji Selecter      : [rofimoji](https://github.com/fdw/rofimoji)
+- Image Viewer        : [sxiv](https://github.com/muennich/sxiv)
+- Input Mehod         : fcitx-mozc 
+- Launcher            : [rofi]( https://github.com/DaveDavenport/rofi) [MY THEMES!](https://github.com/sheepla/rofi-themes) 
+- Nortification Daemon: [dunst](https://dunst-project.org/)
+- PDF Viewer          : [zathura](https://pwmt.org/projects/zathura/): `zathura-pdf-mupdf`
+- Screenshot Tool     : [flameshot](https://github.com/flameshot-org/flameshot)
+- Sound Volue Icon    : [volumeicon](https://softwarebakery.com/maato/volumeicon.html)
+- Terminal            : [alacritty](https://github.com/alacritty/alacritty)
 
 ### CLI
 
@@ -38,6 +40,7 @@
 - `cat` with syntax   : [bat](https://github.com/sharkdp/bat)
 - TUI File Manager    : [ranger](https://ranger.github.io)
 - Clock               : [tty-clock](http://github.com/xorg62/tty-clock)
+- Audio Visualizer    : [cava](https://github.com/karlstav/cava)
 - Fetch               : [uwufetch](https://github.com/TheDarkBug/uwufetch)
 
 ## Misc
@@ -57,3 +60,10 @@
 ## Color Theme
 
 Color palette from [cocopon/iceberg.vim](https://github.com/cocopon/iceberg.vim) and [gkeep/iceberg-dark](https://github.com/gkeep/iceberg-dark)
+
+## TODO
+
+- Add more config files
+- Add installer script
+- Make code more cleaner
+
