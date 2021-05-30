@@ -13,6 +13,8 @@
 
 ## Apps & Tools
 
+### GUI
+
 - Bar                 : [bumblebee-status](https://github.com/tobi-wan-kenobi/bumblebee-status)
 - Editor              : Vim / Neovim 
 - Composite Manager   : [picom-jonaburg-git](https://github.com/jonaburg/picom)
@@ -23,12 +25,12 @@
 - Nortification Daemon: xfce4-notifyd / [dunst](https://dunst-project.org/)
 - Input Mehod         : fcitx-mozc 
 - Screenshot Tool     : [flameshot](https://github.com/flameshot-org/flameshot)
-- Sound Volue Icon    : volumeicon 
+- Sound Volue Icon    : [volumeicon](https://softwarebakery.com/maato/volumeicon.html)
 - Emoji Selecter      : [rofimoji](https://github.com/fdw/rofimoji)
 - Calculator          : [rofi-calc](https://github.com/svenstaro/rofi-calc)
 - Clipboard Manager   : [rofi-greenclip](https://github.com/erebe/greenclip)
 
-## CLI
+### CLI
 
 - Shell               : bash / fish / zsh
 - Prompt              : [starship](https://starship.rs/)
