@@ -1,0 +1,20 @@
+icons = "awesome"
+
+[theme]
+name = "solarized-dark"
+[theme.overrides]
+idle_bg = "#161821"
+idle_fg = "#2e3244"
+critical_bg = "#161821"
+critical_fg = "e27878"
+good_bg = "#b4be82"
+good_fg = "#161821"
+idle_bg = "#161821"
+idle_fg = "#84a0c6"
+info_bg = "#161821"
+info_fg = "#161821"
+separator_bg = "#2e3244"
+separator_fg = "#161821"
+separator = "#2e3244"
+warning_bg = "#161821"
+warning_fg = "e2a478"
