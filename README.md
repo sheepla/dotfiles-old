@@ -1,6 +1,6 @@
 <h1 align="center">🧊 dotfiles</h1>
 
-<p align="center">My rice for Arch Linux</p>
+<p align="center">*My rice for Arch Linux*</p>
 
 <p align="center">
 <img src="https://img.shields.io/static/v1?label=OS&message=Arch%20Linux&color=blue&style=flat-square"/> 
@@ -42,7 +42,7 @@
 ## Misc
 
 - GTK Theme           : [Matcha Dark Azul](https://vinceliuice.github.io/theme-matcha)
-- Icon Theme          : [Papirus Dark](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) / [Vimix Icon Theme] (https://github.com/vinceliuice/vimix-icon-theme)
+- Icon Theme          : [Papirus Dark](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) / [Vimix Icon Theme](https://github.com/vinceliuice/vimix-icon-theme)
 - Cursor Theme        : [Qogir Cursors](https://www.pling.com/p/1499852) `qogir-cursor-theme-git`
 - Monospace Font      : [Sarasa Term J](https://github.com/be5invis/Sarasa-Gothic) / [Cica](https://github.com/miiton/Cica) : `ttf-cica`
 - Wallpaper           : [self-made wallpapers!](https://github.com/sheepla/wallpapers) 
@@ -50,6 +50,3 @@
 ## Color Theme
 
 Color palette from [cocopon/iceberg.vim](https://github.com/cocopon/iceberg.vim) and [gkeep/iceberg-dark](https://github.com/gkeep/iceberg-dark)
-
-
-
