@@ -5,7 +5,8 @@
 " /_/  /_/\__, / |___/_/_/ /_/ /_/_/   \___/  
 "        /____/                               
 " ////////////////////////////////////////////////////////////////////////
-" Encoding set encoding=utf-8 
+" Encoding 
+set encoding=utf-8 
 scriptencoding utf-8
 
 " Desable sound
