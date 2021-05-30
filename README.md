@@ -21,8 +21,8 @@
 - Launcher            : [rofi]( https://github.com/DaveDavenport/rofi) [self-made themes!](https://github.com/sheepla/rofi-themes) 
 - PDF Viewer          : [zathura](https://pwmt.org/projects/zathura/): `zathura-pdf-mupdf`
 - Image Viewer        : [sxiv](https://github.com/muennich/sxiv)
-- Terminal            : [alacritty](https://github.com/alacritty/alacritty) / xfce4-terminal 
-- Nortification Daemon: xfce4-notifyd / [dunst](https://dunst-project.org/)
+- Terminal            : [alacritty](https://github.com/alacritty/alacritty)
+- Nortification Daemon: [dunst](https://dunst-project.org/)
 - Input Mehod         : fcitx-mozc 
 - Screenshot Tool     : [flameshot](https://github.com/flameshot-org/flameshot)
 - Sound Volue Icon    : [volumeicon](https://softwarebakery.com/maato/volumeicon.html)
@@ -41,10 +41,10 @@
 
 ## Misc
 
-- GTK Theme           : [Matcha Dark Azul](https://vinceliuice.github.io/theme-matcha) `matcha-gtk-theme`
-- Icon Theme          :
-    - [Papirus Dark](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) `papirus-icon-theme`
-    - [Vimix Icon Theme] (https://github.com/vinceliuice/vimix-icon-theme) `vimix-icon-theme`
+- GTK Theme           : [Matcha Dark Azul](https://vinceliuice.github.io/theme-matcha)
+- Icon Theme          : 
+    - [Papirus Dark](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) 
+    - [Vimix Icon Theme](https://github.com/vinceliuice/vimix-icon-theme)
 
 - Cursor Theme        : [Qogir Cursors](https://www.pling.com/p/1499852) `qogir-cursor-theme-git`
 - Monospace Font      : 
@@ -56,6 +56,3 @@
 ## Color Theme
 
 Color palette from [cocopon/iceberg.vim](https://github.com/cocopon/iceberg.vim) and [gkeep/iceberg-dark](https://github.com/gkeep/iceberg-dark)
-
-
-
