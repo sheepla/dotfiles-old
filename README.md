@@ -18,17 +18,20 @@
 - PDF Viewer          : [zathura](https://pwmt.org/projects/zathura/): `zathura-pdf-mupdf`
 - Image Viewer        : [sxiv](https://github.com/muennich/sxiv)
 - Terminal            : [alacritty](https://github.com/alacritty/alacritty) / xfce4-terminal 
-- Nortification Daemon: xfce4-notifyd / dunst
+- Nortification Daemon: xfce4-notifyd / [dunst](https://dunst-project.org/)
 - Input Mehod         : fcitx-mozc 
 - Screenshot Tool     : [flameshot](https://github.com/flameshot-org/flameshot)
 - Sound Volue Icon    : volumeicon 
 - Emoji Selecter      : [rofimoji](https://github.com/fdw/rofimoji)
 - Calculator          : [rofi-calc](https://github.com/svenstaro/rofi-calc)
+- Clipboard Manager   : [rofi-greenclip](https://github.com/erebe/greenclip)
 
 ## CLI
 
 - Shell               : bash / fish / zsh
 - Prompt              : [starship](https://starship.rs/)
+- `ls` alternative    : [exa](https://the.exa/website)
+- `cat` with syntax   : [bat](https://github.com/sharkdp/bat)
 - TUI File Manager    : [ranger](https://ranger.github.io)
 
 ## Misc
