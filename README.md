@@ -2,12 +2,13 @@
 
 <p align="center">My rice for Arch Linux</p>
 
+<p align="center">
+<img src="https://img.shields.io/static/v1?label=OS&message=Arch%20Linux&color=blue&style=flat-square"/> 
+<img src="https://img.shields.io/static/v1?label=WM&message=i3-gaps&color=lightgray&style=flat-square"/> 
+</p>
+
 <div align=center><img src="./img/screenshot1.png" width="80%" /></div>
 
-## Environment
-
-- OS                  : Arch Linux 
-- WM                  : i3-gaps 
 
 ## Apps & Tools
 
@@ -33,10 +34,10 @@
 - `ls` alternative    : [exa](https://the.exa/website)
 - `cat` with syntax   : [bat](https://github.com/sharkdp/bat)
 - TUI File Manager    : [ranger](https://ranger.github.io)
+- Fetch               : [uwufetch](https://github.com/TheDarkBug/uwufetch)
 
 ## Misc
 
-- Fetch               : [uwufetch](https://github.com/TheDarkBug/uwufetch)
 - Monospace Font      : [Sarasa Term J](https://github.com/be5invis/Sarasa-Gothic) / [Cica](https://github.com/miiton/Cica) : `ttf-cica`
 - Wallpaper           : [self-made wallpapers!](https://github.com/sheepla/wallpapers) 
 
