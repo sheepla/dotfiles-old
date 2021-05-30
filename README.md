@@ -41,6 +41,9 @@
 
 ## Misc
 
+- GTK Theme           : [Matcha Dark Azul](https://vinceliuice.github.io/theme-matcha)
+- Icon Theme          : [Papirus Dark](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) / [Vimix Icon Theme] (https://github.com/vinceliuice/vimix-icon-theme)
+- Cursor Theme        : [Qogir Cursors](https://www.pling.com/p/1499852) `qogir-cursor-theme-git`
 - Monospace Font      : [Sarasa Term J](https://github.com/be5invis/Sarasa-Gothic) / [Cica](https://github.com/miiton/Cica) : `ttf-cica`
 - Wallpaper           : [self-made wallpapers!](https://github.com/sheepla/wallpapers) 
 
