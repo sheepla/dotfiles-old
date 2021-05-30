@@ -9,7 +9,6 @@
 exec_always --no-startup-id "$HOME/.config/i3/autostart.sh"
 # }}}
 
-
 # colorscheme 
 set $fg      "#c6c8d1"
 set $fg2     "#444b71"
@@ -50,8 +49,9 @@ bindsym $mod+Shift+Return split v exec --no-startup-id $terminal
 #bindsym $mod+Ctrl+Return  exec --no-startup-id $terminal -e ranger
 
 # Rofi
-bindsym $mod+d    exec --no-startup-id "LANG=C rofi -combi drun,run -modi drun,run -show drun &"
-bindsym $mod+Tab  exec --no-startup-id "LANG=C rofi -combi drun,run,window -modi drun,run -show window &"
+bindsym $mod+d      exec --no-startup-id "LANG=C rofi -combi drun,run -modi drun,run -show drun"
+bindsym $mod+Tab    exec --no-startup-id "LANG=C rofi -show window -modi window"
+bindsym $mod+space  exec --no-startup-id "LANG=C rofi -combi window,drun,run -modi drun,run -show window"
 
 # RofiMoji
 bindsym $mod+m exec --no-startup-id "rofimoji --action copy --skin-tone neutral &"
@@ -101,16 +101,16 @@ bindsym $mod+s split h exec --no-startup-id "notify-send 'Horizontal Layout'"
 bindsym $mod+v split v exec --no-startup-id "notify-send 'Vertical Layout'"
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+bindsym $mod+ctrl+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+Shift+s layout stacking exec --no-startup-id "notify-send 'Stacking Layout'"
+bindsym $mod+shift+s layout stacking exec --no-startup-id "notify-send 'Stacking Layout'"
 bindsym $mod+w layout tabbed         exec --no-startup-id "notify-send 'Tabbed Layout'"
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
-bindsym $mod+space focus mode_toggle
+bindsym $mod+Shift+f floating toggle
+bindsym $mod+f focus mode_toggle
 
 # Auto floating window
 for_window [window_role="pop-up"]             floating enable border normal
@@ -238,7 +238,7 @@ bar {
     #     bumblebee-status -m <modules...> -p <params...> -t <theme>
 	status_command bumblebee-status \
         -m title spacer cmus cpu memory battery date time\
-        -p time.format="%H:%M" date.format="%m/%d" memory.format="{percent:05.02f}%" title.max=30 title.scroll=True spacer.text="I use rch BTW."\
+        -p time.format="%H:%M" date.format="%m/%d" memory.format="{percent:05.02f}%" title.max=50 title.scroll=True spacer.text="I use rch BTW."\
         -t iceberg-darker-powerline
 
 # }}}
@@ -247,10 +247,10 @@ bar {
         # <class>          <border>   <bg>     <fg>
         background                   $bg          
         focused_workspace  $bg       $blue     $bg
-        active_workspace   $bg       $bg4      $fg
+        active_workspace   $bg       $blue     $fg
         inactive_workspace $bg       $bg3      $fg
         urgent_workspace   $bg       $red      $bg
-        binding_mode       $bg       $purple    $bg
+        binding_mode       $bg       $purple   $bg
     }
 }
 
@@ -287,7 +287,4 @@ bindsym $mod+minus    exec --no-startup-id "amixer -q sset Master 4%- unmute"
 bindsym $mod+slash    exec --no-startup-id "amixer -q sset Master toggle"
 
 # }}}
-
-# Import local config
-exec --no-startup-id importi3config ~/.config/i3/config.local
 
