@@ -5,6 +5,7 @@
 <p align="center">
 <img src="https://img.shields.io/static/v1?label=OS&message=Arch%20Linux&color=blue&style=flat-square"/> 
 <img src="https://img.shields.io/static/v1?label=WM&message=i3-gaps&color=lightgray&style=flat-square"/> 
+<img src="https://img.shields.io/static/v1?label=WM&message=Neovim&color=green&style=flat-square"/> 
 </p>
 
 <div align=center><img src="./img/screenshot1.png" width="80%" /></div>
