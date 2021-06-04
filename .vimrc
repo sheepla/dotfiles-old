@@ -453,7 +453,10 @@ nnoremap <Leader>t :<C-u>Fern . -drawer -toggle -reveral=%<CR>
 " Gina ------------------------------------ {{{
 nnoremap <Leader>gs :<C-u>Gina status<CR>
 nnoremap <Leader>gc :<C-u>Gina commit<CR>
-nnoremap <Leader>gl :<C-u>Gina commit<CR>
+nnoremap <Leader>gd :<C-u>Gina diff<CR>
+nnoremap <Leader>gl :<C-u>Gina log<CR>
+nnoremap <Leader>gp :<C-u>Gina push
+nnoremap <Leader>gh :<C-u>Gina show<CR>
 cabbrev gstatus Gina<Space>status
 cabbrev gcommit Gina<Space>commit
 cabbrev glog Gina<Space>log
