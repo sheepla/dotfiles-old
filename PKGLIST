@@ -10,6 +10,7 @@ bc
 binutils
 bison
 ccze
+cmake
 cmatrix
 cmus
 dhcpcd
@@ -18,6 +19,7 @@ dmenu
 docker
 docker-compose
 dosfstools
+dunst
 efibootmgr
 etckeeper
 exa
@@ -96,6 +98,7 @@ ranger
 rofi
 rofi-calc
 rofimoji
+screenkey
 sed
 shfmt
 simplescreenrecorder
@@ -121,10 +124,10 @@ w3m
 wget
 which
 xdotool
-xfce4-notifyd
 xfce4-terminal
 xorg-server
 xorg-server-xephyr
+xorg-xdpyinfo
 xorg-xrdb
 xsel
 yq
