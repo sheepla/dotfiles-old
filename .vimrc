@@ -136,10 +136,10 @@ nnoremap sC :<C-u>close!<CR>
 nnoremap so :<C-u>only<CR>
 
 " Buffer
-nnoremap sb :<C-w>buffer<Space>
-nnoremap sB :<C-w>ls<CR>
-nnoremap s. :<C-w>bnext<CR>
-nnoremap s, :<C-w>bprev<CR>
+"nnoremap sb :<C-w>buffer<Space>
+"nnoremap sB :<C-w>ls<CR>
+"nnoremap s. :<C-w>bnext<CR>
+"nnoremap s, :<C-w>bprev<CR>
 
 " Clipboards
 nnoremap sa :<C-u>append!<CR>
@@ -290,7 +290,7 @@ if dein#load_state('$HOME/.cache/dein')
     call dein#add('easymotion/vim-easymotion')
 
     " Interface
-    call dein#add('Shougo/unite.vim') 
+    "call dein#add('Shougo/unite.vim') 
     " call dein#add('junegunn/fzf.vim')
     call dein#add('ctrlpvim/ctrlp.vim')
     call dein#add('mattn/ctrlp-ghq')
@@ -306,7 +306,6 @@ if dein#load_state('$HOME/.cache/dein')
 
     " i3-wm
     call dein#add('mboughaba/i3config.vim')
-
     " Python
     call dein#add('davidhalter/jedi-vim')
 
@@ -450,7 +449,7 @@ nnoremap <Leader>f :<C-u>Fern .<CR>
 nnoremap <Leader>t :<C-u>Fern . -drawer -toggle -reveral=%<CR>
 " }}}
 
-" Gina ------------------------------------ {{{
+" gina.vim ------------------------------------ {{{
 nnoremap <Leader>gs :<C-u>Gina status<CR>
 nnoremap <Leader>gc :<C-u>Gina commit<CR>
 nnoremap <Leader>gd :<C-u>Gina diff<CR>
@@ -466,6 +465,15 @@ cabbrev gdiff Gina<Space>diff
 cabbrev gshow Gina<Space>show
 " }}}
 
+" ctrlp.vim
+
+nnoremap <Leader>cb :<C-u>CtrlPBuffer<CR>
+nnoremap sb         :<C-u>CtrlPBuffer<CR>
+nnoremap <Leader>cg :<C-u>CtrlPGhq<CR>
+nnoremap <Leader>cr :<C-u>CtrlPRoot<CR>
+nnoremap <Leader>cm :<C-u>CtrlPMRU<CR>
+nnoremap sm         :<C-u>CtrlPMRU<CR>
+nnoremap <Leader>cl :<C-u>CtrlPLastMode<CR>
 
 " surround.vim ---------------------------- {{{
 nmap S ys
@@ -506,15 +514,15 @@ setlocal omnifunc=go#complete#Complete
 
 " Unite ------------------------------------ {{{
 " TODO: fix more good keybindings
-nnoremap <Leader>ub        :<C-u>Unite<Space>buffer<CR>
-nnoremap <Leader>uc        :<C-u>Unite<Space>command<CR>
-nnoremap <Leader>ud        :<C-u>Unite<Space>dein<CR>
-nnoremap <Leader>ff       :<C-u>Unite<Space>file<CR>
-nnoremap <Leader>fn       :<C-u>Unite<Space>file/new<CR>
-nnoremap <Leader>uj        :<C-u>Unite<Space>jump<CR>
-nnoremap <Leader>ul        :<C-u>Unite<Space>launcher<CR>
-nnoremap <Leader>ur        :<C-u>Unite<Space>register<CR>
-nnoremap <Leader>us        :<C-u>Unite<Space>source<CR>
+" nnoremap <Leader>ub        :<C-u>Unite<Space>buffer<CR>
+" nnoremap <Leader>uc        :<C-u>Unite<Space>command<CR>
+" nnoremap <Leader>ud        :<C-u>Unite<Space>dein<CR>
+" nnoremap <Leader>ff       :<C-u>Unite<Space>file<CR>
+" nnoremap <Leader>fn       :<C-u>Unite<Space>file/new<CR>
+" nnoremap <Leader>uj        :<C-u>Unite<Space>jump<CR>
+" nnoremap <Leader>ul        :<C-u>Unite<Space>launcher<CR>
+" nnoremap <Leader>ur        :<C-u>Unite<Space>register<CR>
+" nnoremap <Leader>us        :<C-u>Unite<Space>source<CR>
 " }}}
 "
 " i3-config.vim ------------------------------ {{{
