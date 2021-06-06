@@ -24,11 +24,11 @@ ignore_null_img_alt 1
 view_unseenobject 1
 display_image 1
 pseudo_inlines 1
-auto_image 0
+auto_image 1
 max_load_image 4
 ext_image_viewer 1
 image_scale 100
-imgdisplay w3mimgdisplay
+imgdisplay ueberzug
 image_map_list 1
 fold_line 0
 show_lnum 0
