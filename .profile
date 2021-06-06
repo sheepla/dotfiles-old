@@ -8,6 +8,7 @@ export PATH=$PATH:$HOME/relma/bin/
 export PATH=$PATH:$HOME/go/bin
 #export PATH=$PATH:/usr/local/go/bin/ 
 export GOPATH=$HOME/go 
+export GO111MODULE=auto
 
 # grep
 export GREP_COLOR="1;32"
