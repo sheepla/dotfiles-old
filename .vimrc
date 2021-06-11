@@ -185,8 +185,8 @@ nnoremap <Up> <C-y><C-y>
 set scrolloff=5
 
 " EX mode(Q) <-> Format the lines(gq)
-nnoremap Q gq
-nnoremap gQ Q
+nmap Q gq
+nmap gQ Q
 " }}}
 
 " Indent --------------------------------- {{{
@@ -306,11 +306,20 @@ if dein#load_state('$HOME/.cache/dein')
 
     " i3-wm
     call dein#add('mboughaba/i3config.vim')
+
+    " LSP
+    call dein#add('prabishrestha/vim-lsp')
+    call dein#add('mattn/vim-lsp-settings')
+
     " Python
     call dein#add('davidhalter/jedi-vim')
 
     " Go
     "call dein#add('fatih/vim-go')
+    call dein#add('prabishrestha/async.vim')
+    call dein#add('prabishrestha/asyncomplete.vim')
+    call dein#add('prabishrestha/asyncomplete-lsp.vim')
+    call dein#add('mattn/vim-goimports')
 
     " bash
     call dein#add('itspriddle/vim-shellcheck')
@@ -446,7 +455,7 @@ endif
 
 " Fern ------------------------------------ {{{
 nnoremap <Leader>f :<C-u>Fern .<CR>
-nnoremap <Leader>t :<C-u>Fern . -drawer -toggle -reveral=%<CR>
+nnoremap <Leader>t :<C-u>Fern . -drawer -toggle -reveal=%<CR>
 " }}}
 
 " gina.vim ------------------------------------ {{{
@@ -473,6 +482,7 @@ nnoremap <Leader>cg :<C-u>CtrlPGhq<CR>
 nnoremap <Leader>cr :<C-u>CtrlPRoot<CR>
 nnoremap <Leader>cm :<C-u>CtrlPMRU<CR>
 nnoremap sm         :<C-u>CtrlPMRU<CR>
+nnoremap <Leader>cw :<C-u>CtrlPCurWD
 nnoremap <Leader>cl :<C-u>CtrlPLastMode<CR>
 
 " surround.vim ---------------------------- {{{
