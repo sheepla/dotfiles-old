@@ -5,6 +5,7 @@
 " /_/  /_/\__, / |___/_/_/ /_/ /_/_/   \___/  
 "        /____/                               
 " ////////////////////////////////////////////////////////////////////////
+
 " Encoding 
 set encoding=utf-8 
 scriptencoding utf-8
@@ -12,10 +13,6 @@ scriptencoding utf-8
 " Desable sound
 set belloff=all
 
-" Docs ----------------------------------- {{{
-" helpの言語を日本語に
-set helplang=ja,en
-" }}}
 " File ----------------------------------- {{{
 "set nobackup
 "set noswapfile
@@ -511,6 +508,11 @@ augroup end
 
 " Rofi config file syntax
 " autocmd BufNewFile,BufRead /*.rasi setfiletype css
+
+" Help ----------------------------------- {{{
+" helpの言語を日本語に
+set helplang=ja,en
+" }}}
 
 " Auto mkdir
 " https://vim-jp.org/vim-users-jp/2011/02/20/Hack-202.html
