@@ -38,5 +38,8 @@ command -v volumeicon &>/dev/null && pgrep volumeicon || volumeicon &
 # Launch screenshot applet
 command -v flameshot &>/dev/null && pgrep flameshot || flameshot &
 
+# Launch network applet
+command -v nm-applet &>/dev/null && pgrep nm-applet || nm-applet &
+
 # Set wallpaper
 command -v nitrogen &>/dev/null && nitrogen --restore &
