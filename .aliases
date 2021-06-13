@@ -49,7 +49,6 @@ man() {
 # Git
 alias g='git'
 alias ga='git add'
-alias gst='git status'
 alias gl='git log --decorate --oneline'
 alias glg='git log --decorate --oneline --graph'
 alias gcom='git commit'
