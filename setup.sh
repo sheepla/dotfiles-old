@@ -9,15 +9,15 @@ readonly SRC_FILES=(
 )
 readonly DEST_DIR="${HOME}/.config"
 
-_install_dein() {
+function _install_dein() {
 	readonly DEIN_CACHE_DIR="${HOME}/.cache/dein"
 	readonly DEIN_INSTALLER="/tmp/dein_installer.sh"
-	curl -L https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh >"${DEIN_INSTALLER}"
+	curl -sL https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh >"${DEIN_INSTALLER}"
 	chmod +x "${DEIN_INSTALLER}"
 	"${DEIN_INSTALLER}" "${DEIN_CACHE_DIR}"
 }
 
-_install_packages() {
+function _install_packages() {
     :
 	#sudo pacman -S --needed - <"${CURRENT_DIR}/PKGLIST"
 }
