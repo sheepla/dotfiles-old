@@ -5,6 +5,9 @@
 # Desable Ctrl-s, Ctrl-q
 stty -ixon
 
+shopt -s checkwinsize
+shopt -s expand_aliases
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -13,8 +16,10 @@ stty -ixon
 
 source ~/.aliases &>/dev/null
 
-#command -v starship &>/dev/null && eval "$(starship init bash)"
-command -v gh &>/dev/null && eval "$(gh completion -s bash)"
+_set_gh_completion() {
+    command -v gh &>/dev/null && eval "$(gh completion -s bash)"
+
+}
 
 # bash-completion
 _set_completion() {
@@ -22,7 +27,6 @@ _set_completion() {
     src='/usr/share/bash-completion/bash_completion'
     [ -f "${src}" ] && source "${src}"
 }
-_set_completion
 
 # enhancd
 _set_enhancd() {
@@ -30,7 +34,6 @@ _set_enhancd() {
     src="${HOME}/ghq/github.com/b4b4r07/enhancd/init.sh"
     [ -f "${src}" ] && source "${src}"
 }
-_set_enhancd
 
 # fzf-tab-completion
 _set_fzf_tab_completion() {
@@ -38,7 +41,6 @@ _set_fzf_tab_completion() {
     src="${HOME}/ghq/github.com/lincheney/fzf-tab-completion/bash/fzf-bash-completion.sh"
     [ -f "${src}" ] && source "${src}" && bind -x '"\C-t": fzf_bash_completion'
 }
-_set_fzf_tab_completion
 
 # fzf-extras
 _set_fzf_completion() {
@@ -47,10 +49,15 @@ _set_fzf_completion() {
     local keybings='/usr/share/fzf/key-bindings.bash'
     [ -f "${keybings}" ] && source "${keybings}"
 }
-_set_fzf_completion
 
 # prompt
 _set_prompt() {
     command -v starship &>/dev/null && eval "$(starship init bash)"
 }
+
+_set_completion
 _set_prompt
+_set_enhancd
+_set_gh_completion
+_set_fzf_tab_completion
+_set_fzf_completion
