@@ -110,7 +110,7 @@ font:
     #   - (Windows) Consolas
     #family: monospace
     #family: Iosevka Term Curly Extended
-    family: Sarasa Fixed J
+    family: Sarasa Mono J
 
     # The `style` can be specified to pick a specific face.
     #style: Regular
@@ -123,7 +123,7 @@ font:
     # value specified for the normal font.
     #family: monospace
     #family: Iosevka Term Curly Extended
-    family: Sarasa Fixed J
+    family: Sarasa Mono J
 
     # The `style` can be specified to pick a specific face.
     #style: Bold
@@ -136,7 +136,7 @@ font:
     # value specified for the normal font.
     #family: monospace
     #family: Iosevka Term Curly Extended
-    family: Sarasa Fixed J
+    family: Sarasa Mono J
 
     # The `style` can be specified to pick a specific face.
     #style: Italic
@@ -153,17 +153,17 @@ font:
     #style: Bold Italic
     #family: monospace
     #family: Iosevka Term Curly Extended
-    family: Sarasa Fixed J
+    family: Sarasa Mono J
 
   # Point size
-  size: 11.5
+  size: 12
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
   # spacing.
-  #offset:
-  #  x: 0
-  #  y: 0
+  offset:
+    x: 0
+    y: -1
 
   # Glyph offset determines the locations of the glyphs within their cells with
   # the default being at the bottom. Increasing `x` moves the glyph to the
