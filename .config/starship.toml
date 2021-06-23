@@ -18,25 +18,25 @@ bash_indicator = "$_"
 unknown_indicator = "[?]"
 
 [directory]
-style = "bold blue underline"
+style = "bold blue"
 read_only_style = "blue"
-fish_style_pwd_dir_length = 2
-format = "[$read_only]($read_only_style)[$path]($style) "
+fish_style_pwd_dir_length = 3
+format = "[$read_only]($read_only_style)[  ]($style)[$path]($style) "
 truncation_length = 8 
 truncation_symbol = ".../"
 
 [git_status]
-conflicted = "="
+conflicted = " "
 untracked  = "?"
 stashed    = "$"
-modified   = "!"
-staged     = "+"
-renamed    = "~"
-deleted    = "✘"
+modified   = " "
+staged     = " "
+renamed    = " "
+deleted    = "✘ "
 style = "bold yellow"
-ahead = "▲${count}"
-behind = "▼${count}"
-diverged = "♦ ▲${ahead_count} ▼${behind_count}"
+ahead = "▲ ${count}"
+behind = "▼ ${count}"
+diverged = "♦ ▲ ${ahead_count} ▼ ${behind_count}"
 
 [cmd_duration]
 format = "took [$duration](bold white)"
