@@ -1,6 +1,9 @@
+# Disable Ctrl-s, Ctrl-q
+stty -ixon
+
 ## Options section
 setopt correct                                                  # Auto correct mistakes
-setopt extendedglob                                             # Extended globbing. Allows using regular expressions with *
+#setopt extendedglob                                             # Extended globbing. Allows using regular expressions with *
 setopt nocaseglob                                               # Case insensitive globbing
 setopt rcexpandparam                                            # Array expension with parameters
 setopt nocheckjobs                                              # Don't warn about running processes when exiting
@@ -200,19 +203,63 @@ esac
 # My settings
 ##############################
 
+# aliases
 [ -f ~/.aliases ] && source ~/.aliases
 
 # Prompt 
 command -v starship &>/dev/null && eval "$(starship init zsh)"
 
-# z.sh
-command -v z &>/dev/null && source $(which z)
-
 # fzf
 [ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh 
 [ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
 
-# Disable Ctrl-s, Ctrl-q
-stty -ixon
 
+# ghq-fzf
+function _ghq-fzf() {
+    local root="$(ghq root)"
+    local repo="$(ghq list | fzf --reverse --height="50%" --preview="ls -AF --color=always ${root}/{1}")"
+    local dir="${root}/${repo}"
+    if [ -n "${repo}" ]; then
+        cd "${dir}"
+        zle accept-line
+        zle reset-prompt
+    else
+        zle reset-prompt
+        return 0
+    fi
+}
 
+zle -N _ghq-fzf
+bindkey "^g^g" _ghq-fzf
+
+function _dotconfig-fzf() {
+    local dir="$(find ~/.config -type d -not -name ".git" | fzf --reverse --height="50%" --preview="ls -AF --color=always {1}")"
+    if [ -n "${dir}" ]; then
+        cd "${dir}"
+        zle accept-line
+        zle reset-prompt
+    else
+        zle reset-prompt
+    fi
+}
+zle -N _dotconfig-fzf
+bindkey "^gc" _dotconfig-fzf
+
+# zoxide
+command -v zoxide &>/dev/null && eval "$(zoxide init zsh)"
+
+# zsh-syntax-highlighting
+#   https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/docs/highlighters/main.md
+typeset -A ZSH_HIGHLIGHT_STYLES
+ZSH_HIGHLIGHT_STYLES[command]='fg=white,bold'
+
+# fzf-tab-completion
+#   https://github.com/lincheney/fzf-tab-completion
+for src in "${HOME}/ghq/github.com/lincheney/fzf-tab-completion/zsh/fzf-zsh-completion.sh" "/usr/share/fzf-tab-completion/zsh/fzf-zsh-completion.sh"; do
+    if [ -f "${src}" ]; then
+        source "${src}"
+        #$include function rl_custom_complete /usr/lib/librl_custom_complete.so
+        bindkey '^o' fzf_completion
+        break
+    fi
+done
