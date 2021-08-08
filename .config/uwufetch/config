@@ -1,3 +1,4 @@
+distro=arch
 ascii=true
 user=true
 kernel=true
@@ -9,4 +10,4 @@ shell=true
 pkgs=true
 uptime=true
 colors=true
-
+host=false
