@@ -1,34 +1,42 @@
 format = """
-[┌── ](bold white)$shell$time$directory$git_branch$git_status$go$python$cmd_duration
+[┌── ](bold white)$shlvl$status$username$directory$git_branch$git_status$git_commit$go$python$cmd_duration$memory_usage$battery$time
 [└─](bold white)$character"""
 
 scan_timeout = 10
 
 [character]
-success_symbol = "[❯❯❯](bold white) "
-error_symbol =   "[❯❯❯](bold red) "
+#success_symbol = "[❯❯❯](bold white) "
+#error_symbol =   "[❯❯❯](bold red) "
+success_symbol = "[➤ ](bold white) "
+error_symbol =   "[➤ ](bold red) "
 
 [shell]
 disabled = false
-format = "${indicator}"
-fish_indicator = "><>"
-powershell_indicator = ">_"
-zsh_indicator = "[z]"
-bash_indicator = "$_"
-unknown_indicator = "[?]"
+
+[shlvl]
+disabled = false
+format = "[ Lv.$shlvl ](bold white)"
+threshold = 2
+
+[username]
+disabled = true
+show_always = true
+style_user = "bold green"
+style_root = "bold red"
+format = "[ $user]($style) "
 
 [directory]
 style = "bold blue"
-read_only_style = "blue"
+read_only_style = "white"
 fish_style_pwd_dir_length = 3
 format = "[$read_only]($read_only_style)[  ]($style)[$path]($style) "
-truncation_length = 8 
+truncation_length = 4 
 truncation_symbol = ".../"
 
 [git_status]
 conflicted = " "
-untracked  = "?"
-stashed    = "$"
+untracked  = "？"
+stashed    = " "
 modified   = " "
 staged     = " "
 renamed    = " "
@@ -36,24 +44,44 @@ deleted    = "✘ "
 style = "bold yellow"
 ahead = "▲ ${count}"
 behind = "▼ ${count}"
-diverged = "♦ ▲ ${ahead_count} ▼ ${behind_count}"
+diverged = "▲ ${ahead_count} ▼ ${behind_count}"
+
+[git_branch]
+style = "bold underline purple"
 
 [cmd_duration]
-format = "took [$duration](bold white)"
+format = "took [ $duration](bold white)"
 
 [time]
 disabled = true
-format = '[\[$time\]](bold white) '
+format = 'at [ $time](underline white) '
 time_format = "%T"
 utc_time_offset = "+9"
 
 [status]
 style = "red"
-symbol = "✖"
+symbol = " "
 not_executable_symbol = "🚫"
-not_found_symbol = "🔍"
-sigint_symbol = "⚡"
-signal_symbol = "⚡"
+not_found_symbol = " "
+sigint_symbol = " "
+signal_symbol = " "
 format = '[\[$symbol $common_meaning$signal_name$maybe_int\]]($style) '
 map_symbol = true
 disabled = false
+
+[memory_usage]
+disabled = true
+threshold = -1
+symbol = " "
+style = "bold underline white"
+
+[[battery.display]]
+threshold = 10
+style = "bold red"
+
+[python]
+style = "bold green"
+
+[go]
+style = "bold green"
+
