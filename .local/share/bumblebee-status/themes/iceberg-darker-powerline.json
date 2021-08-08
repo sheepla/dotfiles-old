@@ -39,7 +39,7 @@
     "battery": {
         "charged": {
             "fg": "#0f1117",
-            "bg": "#b4be82"
+            "bg": "#a3be8c"
         },
         "charging": {
             "fg": "#0f1117",
