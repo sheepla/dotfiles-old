@@ -2,14 +2,14 @@
 # ~/.bashrc
 #
 
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
 # Desable Ctrl-s, Ctrl-q
 stty -ixon
 
 shopt -s checkwinsize
 shopt -s expand_aliases
-
-# If not running interactively, don't do anything
-[[ $- != *i* ]] && return
 
 #alias ls='ls --color=auto'
 #PS1='[\e[32m\u@\h\e[m: \e[34m\w\e[m]\$ '
@@ -34,6 +34,9 @@ _set_enhancd() {
     src="${HOME}/ghq/github.com/b4b4r07/enhancd/init.sh"
     [ -f "${src}" ] && source "${src}"
 }
+
+# zoxide
+command -v zoxide &>/dev/null && eval "$(zoxide init bash)"
 
 # fzf-tab-completion
 _set_fzf_tab_completion() {
