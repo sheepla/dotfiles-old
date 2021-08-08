@@ -272,6 +272,7 @@ if dein#load_state('$HOME/.cache/dein')
     call dein#add('altercation/vim-colors-solarized')
     call dein#add('fcpg/vim-orbital')
     call dein#add('morhetz/gruvbox')
+    call dein#add('sainnhe/edge')
 
     " Color preview
     " call dein#add('gorodinskiy/vim-coloresque')
@@ -283,6 +284,9 @@ if dein#load_state('$HOME/.cache/dein')
     " Text Edit
     call dein#add('tpope/vim-surround')
 
+    " cd
+    call dein#add('nanotee/zoxide.vim')
+
     " Move cursor quickly
     call dein#add('easymotion/vim-easymotion')
 
@@ -291,6 +295,7 @@ if dein#load_state('$HOME/.cache/dein')
     " call dein#add('junegunn/fzf.vim')
     call dein#add('ctrlpvim/ctrlp.vim')
     call dein#add('mattn/ctrlp-ghq')
+    call dein#add('kuuote/vim-fuzzyhistory')
 
     " File Manager
     "call dein#add('preservim/nerdtree')
@@ -301,21 +306,27 @@ if dein#load_state('$HOME/.cache/dein')
     "     call dein#add('roxma/vim-hug-neovim-rpc')
     " endif
 
+    " sudo
+    call dein#add('lambdalisue/suda.vim')
+
     " i3-wm
     call dein#add('mboughaba/i3config.vim')
 
+
     " LSP
-    call dein#add('prabishrestha/vim-lsp')
+    call dein#add('hrsh7th/vim-vsnip')
+    call dein#add('hrsh7th/vim-vsnip-integ')
+    call dein#add('mattn/vim-lsp-icons')
     call dein#add('mattn/vim-lsp-settings')
+    call dein#add('prabirshrestha/asyncomplete-lsp.vim')
+    call dein#add('prabirshrestha/asyncomplete.vim')
+    call dein#add('prabirshrestha/vim-lsp')
 
     " Python
     call dein#add('davidhalter/jedi-vim')
 
     " Go
     "call dein#add('fatih/vim-go')
-    call dein#add('prabishrestha/async.vim')
-    call dein#add('prabishrestha/asyncomplete.vim')
-    call dein#add('prabishrestha/asyncomplete-lsp.vim')
     call dein#add('mattn/vim-goimports')
 
     " bash
