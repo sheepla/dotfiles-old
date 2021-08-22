@@ -51,7 +51,7 @@ bindsym $mod+Shift+Return split v exec --no-startup-id $terminal
 # Rofi
 bindsym $mod+d     exec --no-startup-id "LANG=C rofi -combi drun,run -modi drun,run -show drun"
 bindsym $mod+Tab   exec --no-startup-id "LANG=C rofi -combi drun,run -modi drun,run -show window"
-bindsym $mod+Space exec --no-startup-id "LANG=C rofi -combi drun,run -modi drun,run -show drun"
+bindsym $mod+space exec --no-startup-id "LANG=C rofi -combi drun,run -modi drun,run -show drun"
 
 # RofiMoji
 bindsym $mod+m exec --no-startup-id "rofimoji --action copy --skin-tone neutral &"
@@ -123,6 +123,7 @@ for_window [class="pulseaudio-equalizer-gtk"] floating enable border normal stic
 for_window [class="Pamac-manager"]            floating enable border normal sticky disable
 for_window [class="Manjaro Settings Manager"] floating enable border normal sticky disable
 for_window [class="firefox"]                  move container to workspace $ws3, workspace $ws3, layout tabbed
+for_window [class="vivaldi-stable"]           move container to workspace $ws3, workspace $ws3, layout tabbed
 for_window [class="gvim"]                     move container to workspace $ws2, workspace $ws2, layout tabbed
 for_window [class="nvim-qt"]                  move container to workspace $ws2, workspace $ws2, layout tabbed
 #for_window [class="Zathura"]                  move container to workspace $ws4
@@ -260,8 +261,8 @@ bar {
 # $mod+{, $mod+} -> move   workspace prev/next
 bindsym $mod+braceleft          workspace prev
 bindsym $mod+braceright         workspace next
-bindsym $mod+shift+bracketleft  move container to workspace prev
-bindsym $mod+shift+bracketright move container to workspace next
+bindsym $mod+shift+bracketleft  move container to workspace prev  workspace prev
+bindsym $mod+shift+bracketright move container to workspace next  workspace next
 # $mod+Mouse wheel up/down -> switch workspace prev/next
 bindsym $mod+button4 workspace prev
 bindsym $mod+button5 workspace next
