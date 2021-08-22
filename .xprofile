@@ -12,4 +12,4 @@ export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 fcitx-autostart &
 
 # keyboard rate
-xset r rate 280 40
+xset r rate 200 50
