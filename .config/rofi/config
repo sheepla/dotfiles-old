@@ -1,4 +1,5 @@
-rofi.font: Sarasa Term J 12, Noto Color Emoji 12
+# rofi.font: Sarasa Term J 12, Noto Color Emoji 12
+rofi.font: Plemol JP 12, Twemoji 12
 rofi.columns: 2
 rofi.show-icons: true
 rofi.kb-mode-next: Control+o
