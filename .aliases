@@ -9,6 +9,8 @@ newfile() { mkdir -p "$(dirname "$1")" && touch "$1"; }
 alias py3='python3'
 alias ipy='ipython'
 
+alias grep='grep --color=auto'
+
 # Setting files
 alias rebash='source ~/.bashrc'
 alias bashrc='$EDITOR ~/.bashrc'
@@ -70,37 +72,12 @@ then
     alias r='ranger'
 fi
 
-# archive extractor
-extract()
-{
-    if [ -f $1 ]; then
-        case $1 in
-            *.tar.bz2)   tar xjf $1   ;;
-            *.tar.gz)    tar xzf $1   ;;
-            *.bz2)       bunzip2 $1   ;;
-            *.rar)       unrar x $1     ;;
-            *.gz)        gunzip $1    ;;
-            *.tar)       tar xf $1    ;;
-            *.tbz2)      tar xjf $1   ;;
-            *.tgz)       tar xzf $1   ;;
-            *.zip)       unzip $1     ;;
-            *.Z)         uncompress $1;;
-            *.7z)        7z x $1      ;;
-            *)           echo "'$1' cannot be extracted via extract()" ;;
-        esac
-    else
-        echo "'$1' is not a valid file"
-    fi
-}
-
-
 # translate-shell (trans)
 if command -v trans &>/dev/null
 then
-    alias en2ja='trans en:ja -brief -shell -e google'
-    alias ja2en='trans ja:en -brief -shell -e google'
-    alias eiwa='trans en:ja -dictionary -e google'
-    alias waei='trans ja:en -dictionary -e google'
+    alias en2ja='trans en:ja -brief -shell -e google 2>/dev/null'
+    alias ja2en='trans ja:en -brief -shell -e google 2>/dev/null'
+    alias eiwa='trans en:ja -dictionary -e google' alias waei='trans ja:en -dictionary -e google 2>/dev/null'
 fi
 
 # bat - cat with syntax highlight
@@ -130,7 +107,8 @@ fi
 #alias lt='exa --long --all --git --tree --classify'
 
 # gomi - cli trash
-command -v gomi &>/dev/null && alias rm='gomi'
+#command -v gomi &>/dev/null && alias rm='gomi'
+command -v rip &>/dev/null && alias rm=rip
 
 # xdg-open
 alias open='xdg-open'
