@@ -255,11 +255,11 @@ ZSH_HIGHLIGHT_STYLES[command]='fg=white,bold'
 
 # fzf-tab-completion
 #   https://github.com/lincheney/fzf-tab-completion
-for src in "${HOME}/ghq/github.com/lincheney/fzf-tab-completion/zsh/fzf-zsh-completion.sh" "/usr/share/fzf-tab-completion/zsh/fzf-zsh-completion.sh"; do
-    if [ -f "${src}" ]; then
-        source "${src}"
-        #$include function rl_custom_complete /usr/lib/librl_custom_complete.so
-        bindkey '^o' fzf_completion
-        break
-    fi
-done
+#for src in "${HOME}/ghq/github.com/lincheney/fzf-tab-completion/zsh/fzf-zsh-completion.sh" "/usr/share/fzf-tab-completion/zsh/fzf-zsh-completion.sh"; do
+#    if [ -f "${src}" ]; then
+#        source "${src}"
+#        #$include function rl_custom_complete /usr/lib/librl_custom_complete.so
+#        bindkey '^i^i' fzf_completion
+#        break
+#    fi
+#done
