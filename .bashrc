@@ -40,9 +40,16 @@ command -v zoxide &>/dev/null && eval "$(zoxide init bash)"
 
 # fzf-tab-completion
 _set_fzf_tab_completion() {
-    local src
-    src="${HOME}/ghq/github.com/lincheney/fzf-tab-completion/bash/fzf-bash-completion.sh"
-    [ -f "${src}" ] && source "${src}" && bind -x '"\C-t": fzf_bash_completion'
+    local srcpath
+    srcpath=(
+        "${HOME}/ghq/github.com/lincheney/fzf-tab-completion/bash/fzf-bash-completion.sh"
+        "/usr/share/fzf-tab-completion/bash/fzf-bash-completion.sh"
+    )
+    for src in "${srcpath[@]}"; do
+        if [ -f "${src}" ]; then
+            source "${src}" && bind -x '"\C-i\C-i\C-i": fzf_bash_completion'
+        fi
+    done
 }
 
 # fzf-extras
