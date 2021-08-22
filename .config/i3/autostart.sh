@@ -33,7 +33,7 @@ command -v greenclip &>/dev/null && pgrep greenclip || greenclip daemon &
 command -v pulseaudio &>/dev/null && pgrep pulseaudio || pulseaudio --start &
 
 # Launch volume applet
-command -v volumeicon &>/dev/null && pgrep volumeicon || volumeicon &
+command -v volumeicon &>/dev/null && pgrep pulseaudio && pgrep volumeicon || volumeicon &
 
 # Launch screenshot applet
 command -v flameshot &>/dev/null && pgrep flameshot || flameshot &
