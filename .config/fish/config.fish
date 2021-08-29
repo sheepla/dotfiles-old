@@ -32,5 +32,5 @@ set -U FZF_LEGACY_KEYBINDINGS 0
 set -U FZF_REVERSE_ISEARCH_OPTS "--reverse --height=50%"
 
 if which enhancd &>/dev/null
-    alisa cd enhancd
+    alisa ecd enhancd
 end
