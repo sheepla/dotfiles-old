@@ -238,8 +238,8 @@ bar {
     # format:
     #     bumblebee-status -m <modules...> -p <params...> -t <theme>
 	status_command bumblebee-status \
-        -m title spacer cmus cpu memory battery date time\
-        -p time.format="%H:%M" date.format="%m/%d" memory.format="{percent:05.02f}%" title.max=50 title.scroll=True spacer.text="I use rch BTW."\
+        -m title cmus cpu memory battery date time spacer\
+        -p time.format="%H:%M" date.format="%m/%d" memory.format="{percent:05.02f}%" title.max=50 title.scroll=True spacer.text="  "\
         -t iceberg-darker-powerline
 
 # }}}
