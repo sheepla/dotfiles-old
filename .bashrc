@@ -69,5 +69,5 @@ _set_completion
 _set_prompt
 _set_enhancd
 _set_gh_completion
-_set_fzf_tab_completion
+#_set_fzf_tab_completion
 _set_fzf_completion
