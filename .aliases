@@ -56,9 +56,8 @@ alias gl='git log --decorate --oneline'
 alias glg='git log --decorate --oneline --graph'
 alias gcom='git commit'
 alias gdf='git diff'
-clone() {
-    git clone https://github.com/"$1"/"$2".git
-}
+alias cdg='cd "$(git rev-parse --show-toplevel)"'
+
 
 # W3m
 if command -v w3m &>/dev/null
@@ -87,6 +86,10 @@ then
     alias rebat='bat cache --build'
     alias cat='bat --wrap auto'
 fi
+
+whichbat() {
+    bat "$(which "${1}")"
+}
 
 # exa - ls alternative
 if command -v exa &>/dev/null

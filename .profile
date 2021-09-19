@@ -35,6 +35,10 @@ export TLDR_DESCRIPTION='normal'
 export TLDR_CODE='yellow'
 export TLDR_PARAM='magenta'
 
+# howdoi
+#   https://github.com/gleitz/howdoi
+HOWDOI_SEARCH_ENGINE=duckduckgo
+
 # bat
 export BAT_THEME="base16"
 
