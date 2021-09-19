@@ -21,6 +21,7 @@ funnychar-git
 fzf-tab-completion-git
 fzpac
 germanium
+getoptions
 ghq-bin
 git-ignore-bin
 globe-cli-bin
@@ -28,16 +29,24 @@ glow-bin
 gluelang
 gore
 gotop-bin
+grex-bin
+howdoi
+htmlq-bin
+jo
 joplin-appimage
 makefontpkg
 memo-bin
+neovide-bin
 nkf
 nordzy-cursor-theme
+nvui
 nyxt
 ojichat-rs-bin
+otf-inter-ui
 pandoc-bin
 paperview-git
 paru-bin
+paruz
 pastel-bin
 peco-bin
 picom-jonaburg-git
@@ -72,3 +81,4 @@ uniutils
 visual-studio-code-bin
 ytfzf
 zoxide-bin
+zsh-autocomplete-git
