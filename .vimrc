@@ -266,6 +266,9 @@ if dein#load_state('$HOME/.cache/dein')
     " Docs
     call dein#add('vim-jp/vimdoc-ja')
 
+    " Directory
+    call dein#add('mattn/vim-makedir-for')
+
     " Colorscheme
     call dein#add('cocopon/iceberg.vim')
     call dein#add('arcticicestudio/nord-vim')
@@ -353,6 +356,9 @@ if dein#load_state('$HOME/.cache/dein')
 
     " HTML/CSS
     call dein#add('mattn/emmet-vim')
+
+    " Japanese input
+    call dein#add('vim-skk/skkleton')
 
     " }}}
     " ======================================================================
