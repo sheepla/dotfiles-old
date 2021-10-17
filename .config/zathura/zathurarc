@@ -46,5 +46,5 @@ set guioptions cshv
 
 # Fonts
 #set font Iosevka\ Term\ Curly\ 11
-set font Sarasa\ Term\ J\ 11
-#set font monospace
+#set font Sarasa\ Term\ J\ 11
+set font monospace
