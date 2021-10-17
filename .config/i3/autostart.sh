@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Set wallpaper
+command -v nitrogen &>/dev/null && nitrogen --restore &
+
 # Reload ~/.Xresources for urxvt and other
 xresources="$HOME/.Xresources"
 [ -f "$xresources" ] && xrdb "$xresources"
@@ -33,7 +36,7 @@ command -v greenclip &>/dev/null && pgrep greenclip || greenclip daemon &
 command -v pulseaudio &>/dev/null && pgrep pulseaudio || pulseaudio --start &
 
 # Launch volume applet
-command -v volumeicon &>/dev/null && pgrep pulseaudio && pgrep volumeicon || volumeicon &
+command -v volumeicon &>/dev/null && pgrep pulseaudio && pgrep volumeicon || sleep 3 && volumeicon &
 
 # Launch screenshot applet
 command -v flameshot &>/dev/null && pgrep flameshot || flameshot &
@@ -41,5 +44,3 @@ command -v flameshot &>/dev/null && pgrep flameshot || flameshot &
 # Launch network applet
 command -v nm-applet &>/dev/null && pgrep nm-applet || nm-applet &
 
-# Set wallpaper
-command -v nitrogen &>/dev/null && nitrogen --restore &
