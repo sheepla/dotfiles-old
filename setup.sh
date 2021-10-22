@@ -5,7 +5,7 @@ readonly CURRENT_DIR="$(
 )"
 readonly SRC_DIR="${CURRENT_DIR}/.config"
 readonly SRC_FILES=(
-	"$(find "${SRC_DIR}" -type f)"
+    "$(find "${SRC_DIR}" -type f -or -type l)"
 )
 readonly DEST_DIR="${HOME}/.config"
 
