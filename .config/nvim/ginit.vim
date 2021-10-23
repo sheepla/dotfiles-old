@@ -11,19 +11,3 @@ if exists('g:nvim-qt')
     GuiLinespace -1
 endif
 " Other configuration
-if exists('g:nvui')
-    NvuiCmdBg #444b71
-    NvuiCmdBigFontScaleFactor 1.0
-    NvuiCmdFg #abb0c9
-    NvuiCmdFontFamily PlemolJP Console
-    NvuiCmdFontSize 12
-    NvuiCmdFontSize 25.0
-    NvuiCmdPadding 10 
-    NvuiCmdTopPos 0.8
-    NvuiOpacity 0.9
-    NvuiPopupMenuBorderColor #444b71
-    NvuiPopupMenuBorderWidth 5
-    NvuiScrollAnimationDuration 0.2
-    NvuiTitlebarFontSize 11
-    NvuiToggleFrameless
-endif

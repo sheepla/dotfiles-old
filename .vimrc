@@ -358,7 +358,7 @@ if dein#load_state('$HOME/.cache/dein')
     call dein#add('mattn/emmet-vim')
 
     " Japanese input
-    call dein#add('vim-skk/skkleton')
+    call dein#add('vim-skk/skkeleton')
 
     " }}}
     " ======================================================================
@@ -420,6 +420,9 @@ endfunction
 
 " Appearance ----------------------------- {{{
 
+" Font
+set guifont=PlemolJP:h12
+
 " Colorsceme
 colorscheme iceberg
 set background=dark
@@ -441,19 +444,6 @@ if has('gui_running')
     set lines=40
     set columns=150
 
-    " GUI fonts
-    if has('win32') || has('win64')
-        "set guifont=HackGen\ Console\ for\ Powerline:h12:cDEFAULT
-        set guifont=HackGenNerd:h12:cDEFAULT
-    elseif has('unix')
-        "set guifont=HackGenNerd\ 10
-        "set guifontwide=HackGenNerd\ 10
-        set guifont=Sarasa\ Term\ J\ 11
-        set guifontwide=Sarasa\ Term\ J\ 11
-    endif
-
-    " set ambiwidth=double
-
     set cursorline
     set guiheadroom=0
 else
@@ -461,10 +451,6 @@ else
     autocmd ColorScheme * highlight Normal ctermbg=none
     autocmd ColorScheme * highlight LineNr ctermbg=none
 endif
-" }}}
-
-" NERDTree --------------------------------- {{{
-" nnoremap <Leader>t :<C-u>NERDTreeToggle<CR>
 " }}}
 
 " Fern ------------------------------------ {{{
@@ -503,26 +489,6 @@ nnoremap <Leader>cl :<C-u>CtrlPLastMode<CR>
 nmap S ys
 " }}}
 
-" Unite ------------------------------------ {{{
-" TODO: fix more good keybindings
-" nnoremap <Leader>ub        :<C-u>Unite<Space>buffer<CR>
-" nnoremap <Leader>uc        :<C-u>Unite<Space>command<CR>
-" nnoremap <Leader>ud        :<C-u>Unite<Space>dein<CR>
-" nnoremap <Leader>ff       :<C-u>Unite<Space>file<CR>
-" nnoremap <Leader>fn       :<C-u>Unite<Space>file/new<CR>
-" nnoremap <Leader>uj        :<C-u>Unite<Space>jump<CR>
-" nnoremap <Leader>ul        :<C-u>Unite<Space>launcher<CR>
-" nnoremap <Leader>ur        :<C-u>Unite<Space>register<CR>
-" nnoremap <Leader>us        :<C-u>Unite<Space>source<CR>
-" }}}
-"
-" i3-config.vim ------------------------------ {{{
-augroup i3config_ft_detection
-    autocmd!
-    autocmd BufNewFile,BufRead ~/.config/i3/config set filetype=i3config
-augroup end
-" }}}
-
 " Rofi config file syntax
 " autocmd BufNewFile,BufRead /*.rasi setfiletype css
 
@@ -531,18 +497,27 @@ augroup end
 set helplang=ja,en
 " }}}
 
-" Auto mkdir
-" https://vim-jp.org/vim-users-jp/2011/02/20/Hack-202.html
-augroup vimrc-auto-mkdir  " {{{
-  autocmd!
-  autocmd BufWritePre * call s:auto_mkdir(expand('<afile>:p:h'), v:cmdbang)
-  function! s:auto_mkdir(dir, force)  " {{{
-    if !isdirectory(a:dir) && (a:force ||
-    \    input(printf('"%s" does not exist. Create? [y/N]', a:dir)) =~? '^y\%[es]$')
-      call mkdir(iconv(a:dir, &encoding, &termencoding), 'p')
-    endif
-  endfunction  " }}}
-augroup END  " }}}
+" Nvui ----------------------------------- {{{
+if exists('g:nvui')
+    NvuiCmdBg #161821
+    NvuiCmdBigFontScaleFactor 1.0
+    NvuiCmdFg #abb0c9
+    NvuiCmdFontFamily PlemolJP
+    NvuiCmdFontSize 18
+    NvuiCmdPadding 10 
+    NvuiCmdTopPos 0.8
+    NvuiOpacity 0.9
+    NvuiPopupMenuBorderColor #444b71
+    NvuiPopupMenuBorderWidth 5
+    NvuiScrollAnimationDuration 0.2
+    NvuiTitlebarFontSize 11
+    NvuiFrameless v:false
+endif
+" }}}
+
+" Skkeleton
+imap <C-y> <Plug>(skkeleton-toggle)
+cmap <C-y> <Plug>(skkeleton-toggle)
 
 " End of Vimrc ///////////////////////////////////////////////////////////
 
