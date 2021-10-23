@@ -126,6 +126,7 @@ for_window [class="firefox"]                  move container to workspace $ws3, 
 for_window [class="vivaldi-stable"]           move container to workspace $ws3, workspace $ws3, layout tabbed
 for_window [class="gvim"]                     move container to workspace $ws2, workspace $ws2, layout tabbed
 for_window [class="nvim-qt"]                  move container to workspace $ws2, workspace $ws2, layout tabbed
+for_window [class="neovide"]                  move container to workspace $ws2, workspace $ws2, layout tabbed
 #for_window [class="Zathura"]                  move container to workspace $ws4
 
 # focus the parent container
