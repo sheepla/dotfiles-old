@@ -18,3 +18,4 @@ aliases:
   l: repo list
   gv: gist view
   gw: gist view --web
+  open: repo view --web
