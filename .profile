@@ -4,6 +4,7 @@ export PATH=$PATH:$HOME/bin
 export PATH=$PATH:$HOME/.local/bin/
 export PATH=$PATH:$HOME/relma/bin/
 export PATH=$PATH:$HOME/.deno/bin
+export PATH=$PATH:/home/sheepla/.nodebrew/current/bin/
 
 # Go
 export PATH=$PATH:$HOME/go/bin
