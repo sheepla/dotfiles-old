@@ -8,7 +8,7 @@
 
 " Encoding 
 set encoding=utf-8 
-scriptencoding utf-8
+"scriptencoding utf-8
 
 " Desable sound
 set belloff=all
@@ -59,7 +59,6 @@ vnoremap <Tab> %
 "inoremap ''    ''<Left>
 "inoremap ""    ""<Left>
 "inoremap ()    ()<Left>
-
 " Replace
 nnoremap <C-s> :<C-u>%s___cg<Left><Left><Left><Left>
 
@@ -406,35 +405,42 @@ command! DeinCheckInstall call dein#check_install()
 " Lightline ------------------------------ {{{
 set laststatus=2
 set noshowmode
-let g:lightline = {
-            \ 'colorscheme': 'icebergDark',
-            \ 'component': {
-            \   'lineinfo': ' %3l:%-2v',
-            \ },
-            \ 'component_function': {
-            \   'readonly': 'LightlineReadonly',
-            \ },
-            \ 'separator': { 'left': '', 'right': '' },
-            \ 'subseparator': { 'left': '', 'right': '' }
-            \ }
+let g:lightline = {}
+let g:lightline.colorscheme = 'icebergDark'
 
-function! LightlineReadonly()
-    return &readonly ? '' : ''
-endfunction
 
-"function! LightlineFugitive()
-"    if exists('*FugitiveHead')
-"        let branch = FugitiveHead()
-"        return branch !=# '' ? ''.branch : ''
-"    endif
-"    return ''
-"endfunction
+let g:lightline.active = {}
+let g:lightline.active.left = [
+    \ ['mode', 'paste'], 
+    \ ['skk_mode', 'filename', 'modified'],
+    \ ]
+
+let g:lightline.component = {}
+let g:lightline.component_function = {}
+let g:lightline.component_function.skk_mode = 'g:LightlineSkkeleton'
 
 command! -bar LightlineUpdate
     \ call lightline#init()|
     \ call lightline#colorscheme()|
     \ call lightline#update()
 
+function! g:LightlineSkkeleton() abort
+    if get(g:, 'loaded_skkeleton') == 0
+        return ''
+    endif
+
+    if lightline#mode() == 'INSERT' || lightline#mode() == 'COMMAND'
+        if skkeleton#mode() == 'hira'
+            return 'あ'
+        elseif skkeleton#mode() == 'kata'
+            return 'ア'
+        else
+            return 'Aa'
+        endif
+    else
+        return ''
+    endif
+endfunction
 " }}}
 
 " Appearance ----------------------------- {{{
@@ -552,6 +558,7 @@ endif
 " Skkeleton
 imap <silent> <C-l> <Plug>(skkeleton-toggle)
 cmap <silent> <C-l> <Plug>(skkeleton-toggle)
+autocmd User skkeleton-mode-changed redrawstatus
 
 " dps-dial.vim
 nmap  <C-a>  <Plug>(dps-dial-increment)
