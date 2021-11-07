@@ -47,7 +47,7 @@ inoremap <C-f> <Right>
 inoremap <C-b> <Left>
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
-inoremap <C-l> <C-o>:set nohlsearch!<CR>
+"inoremap <C-l> <C-o>:set nohlsearch!<CR>
 
 " Brackets
 nnoremap <Tab> %
@@ -62,6 +62,10 @@ vnoremap <Tab> %
 
 " Replace
 nnoremap <C-s> :<C-u>%s___cg<Left><Left><Left><Left>
+
+" `[`, `]` prefix
+nnoremap <silent> [t :<C-u>tabprevious<CR>
+nnoremap <silent> ]t :<C-u>tabnext<CR>
 
 " Window --------------------------------- {{{
 "let g:window_leader_key = 's'
@@ -181,9 +185,6 @@ nnoremap <Up> <C-y><C-y>
 " nnoremap <C-d> <C-e><C-e><C-e><C-e>
 set scrolloff=5
 
-" EX mode(Q) <-> Format the lines(gq)
-nmap Q gq
-nmap gQ Q
 " }}}
 
 " Indent --------------------------------- {{{
@@ -242,6 +243,7 @@ vnoremap < <gv
 " Terminal ------------------------------- {{{
 tnoremap <silent> <Esc><Esc> <C-\><C-n>
 tnoremap <silent> <C-;>  <C-\><C-n>
+autocmd TermOpen * setlocal nonumber
 " }}}
 
 " Dein Scripts ======================================================== {{{
@@ -357,8 +359,21 @@ if dein#load_state('$HOME/.cache/dein')
     " HTML/CSS
     call dein#add('mattn/emmet-vim')
 
+    " Denops
+    call dein#add('vim-denops/denops.vim')
+    call dein#add('vim-denops/denops-helloworld.vim')
+
+    " Increment / Decriment
+    call dein#add('monaqa/dps-dial.vim')
+
+    " Markdown preview
+    call dein#add('kat0h/bufpreview.vim')
+
     " Japanese input
     call dein#add('vim-skk/skkeleton')
+
+    " PaizaIO
+    call dein#add("Omochice/dps-paiza-io-vim")
 
     " }}}
     " ======================================================================
@@ -384,8 +399,8 @@ endif
 " }}}
 
 " Dein ----------------------------------- {{{
-cabbrev dinstall  call dein#install()
-cabbrev dupdate   call dein#update()
+command! DeinUpdate call dein#update()
+command! DeinCheckInstall call dein#check_install()
 " }}}
 
 " Lightline ------------------------------ {{{
@@ -398,7 +413,6 @@ let g:lightline = {
             \ },
             \ 'component_function': {
             \   'readonly': 'LightlineReadonly',
-            \   'fugitive': 'LightlineFugitive'
             \ },
             \ 'separator': { 'left': '', 'right': '' },
             \ 'subseparator': { 'left': '', 'right': '' }
@@ -408,13 +422,18 @@ function! LightlineReadonly()
     return &readonly ? '' : ''
 endfunction
 
-function! LightlineFugitive()
-    if exists('*FugitiveHead')
-        let branch = FugitiveHead()
-        return branch !=# '' ? ''.branch : ''
-    endif
-    return ''
-endfunction
+"function! LightlineFugitive()
+"    if exists('*FugitiveHead')
+"        let branch = FugitiveHead()
+"        return branch !=# '' ? ''.branch : ''
+"    endif
+"    return ''
+"endfunction
+
+command! -bar LightlineUpdate
+    \ call lightline#init()|
+    \ call lightline#colorscheme()|
+    \ call lightline#update()
 
 " }}}
 
@@ -424,8 +443,20 @@ endfunction
 set guifont=PlemolJP:h12
 
 " Colorsceme
+set termguicolors
 colorscheme iceberg
 set background=dark
+
+function! BackgroundToggle()
+    if &background == 'light'
+        set background=dark
+    elseif &background == 'dark'
+        set background=light
+    endif
+endfunction
+
+
+command! BackgroundToggle call BackgroundToggle()
 
 if has('gui_running')
     " Fullscreen
@@ -497,6 +528,9 @@ nmap S ys
 set helplang=ja,en
 " }}}
 
+" Emmet
+let g:emmet_leader_key = '<C-t>'
+
 " Nvui ----------------------------------- {{{
 if exists('g:nvui')
     NvuiCmdBg #161821
@@ -516,8 +550,16 @@ endif
 " }}}
 
 " Skkeleton
-imap <C-y> <Plug>(skkeleton-toggle)
-cmap <C-y> <Plug>(skkeleton-toggle)
+imap <silent> <C-l> <Plug>(skkeleton-toggle)
+cmap <silent> <C-l> <Plug>(skkeleton-toggle)
+
+" dps-dial.vim
+nmap  <C-a>  <Plug>(dps-dial-increment)
+nmap  <C-x>  <Plug>(dps-dial-decrement)
+xmap  <C-a>  <Plug>(dps-dial-increment)
+xmap  <C-x>  <Plug>(dps-dial-decrement)
+xmap g<C-a> g<Plug>(dps-dial-increment)
+xmap g<C-x> g<Plug>(dps-dial-decrement)
 
 " End of Vimrc ///////////////////////////////////////////////////////////
 
