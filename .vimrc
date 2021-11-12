@@ -205,9 +205,9 @@ set incsearch
 set ignorecase
 set hlsearch
 " Toggle highlight search
-nnoremap <Esc><Esc> :<C-u>set nohlsearch!<CR>
+nnoremap <silent> <Esc><Esc> :<C-u>set nohlsearch!<CR>
 " Redraw console and toggle highlight search
-nnoremap <C-l>       <C-l>:<C-u>set nohlsearch!<CR>
+nnoremap <silent> <C-l>       <C-l>:<C-u>set nohlsearch!<CR>
 
 " Search from clipboard text
 nnoremap g/ /\V<C-r>=join(map(getreg(v:register,1,1),{k,v->escape(v,'\/')}),'\n')<CR><CR>
@@ -321,7 +321,6 @@ if dein#load_state('$HOME/.cache/dein')
     " i3-wm
     call dein#add('mboughaba/i3config.vim')
 
-
     " LSP
     call dein#add('hrsh7th/vim-vsnip')
     call dein#add('hrsh7th/vim-vsnip-integ')
@@ -420,6 +419,7 @@ let g:lightline.active.left = [
     \ ['skkeleton', 'modified'],
     \ ]
 let g:lightline.active.right = [
+    \ ['gitbranch'],
     \ ['filename'],
     \ ['percent'],
     \ ['fileformat', 'fileencoding', 'filetype'],
@@ -428,7 +428,7 @@ let g:lightline.active.right = [
 let g:lightline.component = {}
 let g:lightline.component_function = {}
 let g:lightline.component_function.skkeleton = 'g:LightlineSkkeleton'
-"let g:lightline.component_function.gitbranch = 'gitbranch#name'
+let g:lightline.component_function.gitbranch = 'g:GitCurrentBranch'
 
 command! -bar LightlineUpdate
     \ call lightline#init()|
@@ -451,6 +451,13 @@ function! g:LightlineSkkeleton() abort
     else
         return ''
     endif
+endfunction
+
+function! g:GitCurrentBranch()
+    if exists(':Gina') == 2
+        let branch = gina#component#repo#branch()
+    endif
+    return branch
 endfunction
 " }}}
 
