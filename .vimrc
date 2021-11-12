@@ -176,10 +176,10 @@ nnoremap sS :<C-u>new<CR>
 nnoremap sv :<C-u>vnew<CR>
 
 " Scroll
-nnoremap J <C-e><C-e>
-nnoremap K <C-y><C-y>
-nnoremap <Down> <C-e><C-e>
-nnoremap <Up> <C-y><C-y>
+nnoremap <silent> J <C-e><C-e>
+nnoremap <silent> K <C-y><C-y>
+nnoremap <silent> <Down> <C-e><C-e>
+nnoremap <silent> <Up> <C-y><C-y>
 " nnoremap <C-u> <C-y><C-y><C-y><C-y>
 " nnoremap <C-d> <C-e><C-e><C-e><C-e>
 set scrolloff=5
