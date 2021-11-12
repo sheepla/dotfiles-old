@@ -165,7 +165,7 @@ font:
   # spacing.
   offset:
     x: 0
-    y: -4
+    y: -2
 
   # Glyph offset determines the locations of the glyphs within their cells with
   # the default being at the bottom. Increasing `x` moves the glyph to the
