@@ -168,12 +168,12 @@ nnoremap sf :<C-u>set filetype=
 " Vimrc
 " nnoremap sR :<C-u>source $MYVIMRC<CR>
 " nnoremap sV :<C-u>edit $MYVIMRC<CR>
+command! VimrcEdit :edit $MYVIMRC
+command! VimrcReload :source $MYVIMRC
 
 " Split
 nnoremap sS :<C-u>new<CR>
 nnoremap sv :<C-u>vnew<CR>
-
-"
 
 " Scroll
 nnoremap J <C-e><C-e>
@@ -277,13 +277,18 @@ if dein#load_state('$HOME/.cache/dein')
     call dein#add('fcpg/vim-orbital')
     call dein#add('morhetz/gruvbox')
     call dein#add('sainnhe/edge')
+    call dein#add('tyrannicaltoucan/vim-deep-space')
+    call dein#add('arzg/vim-substrata')
+    call dein#add('ulwlu/abyss.vim')
+    call dein#add('eskilop/NorthernLights.vim')
+    call dein#add('pgdouyon/vim-alayas')
 
     " Color preview
     " call dein#add('gorodinskiy/vim-coloresque')
 
     " Status Line
     call dein#add('itchyny/lightline.vim')
-    call dein#add('gkeep/iceberg-dark')
+    "call dein#add('gkeep/iceberg-dark')
 
     " Text Edit
     call dein#add('tpope/vim-surround')
@@ -296,7 +301,7 @@ if dein#load_state('$HOME/.cache/dein')
 
     " Interface
     "call dein#add('Shougo/unite.vim') 
-    " call dein#add('junegunn/fzf.vim')
+    "call dein#add('junegunn/fzf.vim')
     call dein#add('ctrlpvim/ctrlp.vim')
     call dein#add('mattn/ctrlp-ghq')
     call dein#add('kuuote/vim-fuzzyhistory')
@@ -351,6 +356,7 @@ if dein#load_state('$HOME/.cache/dein')
 
     " Git
     call dein#add('lambdalisue/gina.vim')
+    "call dein#add('itchyny/vim-gitbranch')
 
     " Translate
     call dein#add('koron/codic-vim')
@@ -408,16 +414,21 @@ set noshowmode
 let g:lightline = {}
 let g:lightline.colorscheme = 'icebergDark'
 
-
 let g:lightline.active = {}
 let g:lightline.active.left = [
     \ ['mode', 'paste'], 
-    \ ['skk_mode', 'filename', 'modified'],
+    \ ['skkeleton', 'modified'],
+    \ ]
+let g:lightline.active.right = [
+    \ ['filename'],
+    \ ['percent'],
+    \ ['fileformat', 'fileencoding', 'filetype'],
     \ ]
 
 let g:lightline.component = {}
 let g:lightline.component_function = {}
-let g:lightline.component_function.skk_mode = 'g:LightlineSkkeleton'
+let g:lightline.component_function.skkeleton = 'g:LightlineSkkeleton'
+"let g:lightline.component_function.gitbranch = 'gitbranch#name'
 
 command! -bar LightlineUpdate
     \ call lightline#init()|
