@@ -288,7 +288,7 @@ if dein#load_state('$HOME/.cache/dein')
 
     " Status Line
     call dein#add('itchyny/lightline.vim')
-    "call dein#add('gkeep/iceberg-dark')
+    call dein#add('gkeep/iceberg-dark')
 
     " Text Edit
     call dein#add('tpope/vim-surround')
@@ -331,7 +331,7 @@ if dein#load_state('$HOME/.cache/dein')
     call dein#add('prabirshrestha/vim-lsp')
 
     " Python
-    call dein#add('davidhalter/jedi-vim')
+    "call dein#add('davidhalter/jedi-vim')
 
     " Go
     "call dein#add('fatih/vim-go')
@@ -377,7 +377,10 @@ if dein#load_state('$HOME/.cache/dein')
     call dein#add('vim-skk/skkeleton')
 
     " PaizaIO
-    call dein#add("Omochice/dps-paiza-io-vim")
+    call dein#add('Omochice/dps-paiza-io-vim')
+
+    " Shell commands
+    call dein#add('skanehira/command.vim')
 
     " }}}
     " ======================================================================
@@ -417,10 +420,10 @@ let g:lightline.active = {}
 let g:lightline.active.left = [
     \ ['mode', 'paste'], 
     \ ['skkeleton', 'modified'],
+    \ ['filename'],
     \ ]
 let g:lightline.active.right = [
     \ ['gitbranch'],
-    \ ['filename'],
     \ ['percent'],
     \ ['fileformat', 'fileencoding', 'filetype'],
     \ ]
@@ -520,13 +523,6 @@ nnoremap <Leader>gd :<C-u>Gina diff<CR>
 nnoremap <Leader>gl :<C-u>Gina log<CR>
 nnoremap <Leader>gp :<C-u>Gina push
 nnoremap <Leader>gh :<C-u>Gina show<CR>
-cabbrev gstatus Gina<Space>status
-cabbrev gcommit Gina<Space>commit
-cabbrev glog Gina<Space>log
-cabbrev ggrep Gina<Space>grep
-cabbrev gls Gina<Space>ls
-cabbrev gdiff Gina<Space>diff
-cabbrev gshow Gina<Space>show
 " }}}
 
 " ctrlp.vim
@@ -572,6 +568,14 @@ if exists('g:nvui')
     NvuiFrameless v:false
 endif
 " }}}
+
+" Denops
+command! DenopsServerStatus echo denops#server#status()
+command! DenopsServerStart call denops#server#start()
+command! DenopsServerStop call denops#server#stop()
+command! DenopsServerRestart call denops#server#restart()
+command! DenopsDebugEnable let g:denops#debug = 1
+command! DenopsDebugDisable let g:denops#debug = 0
 
 " Skkeleton
 imap <silent> <C-l> <Plug>(skkeleton-toggle)
