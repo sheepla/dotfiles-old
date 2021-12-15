@@ -106,15 +106,15 @@ nnoremap s] :<C-u>tabnext<CR>
 nnoremap s{ :<C-u>tabmove -<CR>
 nnoremap s} :<C-u>tabmove +<CR>
 nnoremap s0 :<C-u>tablast<CR>
-nnoremap s1 :<C-u>tabnext1<CR>
-nnoremap s2 :<C-u>tabnext2<CR>
-nnoremap s3 :<C-u>tabnext3<CR>
-nnoremap s4 :<C-u>tabnext4<CR>
-nnoremap s5 :<C-u>tabnext5<CR>
-nnoremap s6 :<C-u>tabnext6<CR>
-nnoremap s7 :<C-u>tabnext7<CR>
-nnoremap s8 :<C-u>tabnext8<CR>
-nnoremap s9 :<C-u>tabnext9<CR>
+nnoremap s1 :<C-u>tabnext 1<CR>
+nnoremap s2 :<C-u>tabnext 2<CR>
+nnoremap s3 :<C-u>tabnext 3<CR>
+nnoremap s4 :<C-u>tabnext 4<CR>
+nnoremap s5 :<C-u>tabnext 5<CR>
+nnoremap s6 :<C-u>tabnext 6<CR>
+nnoremap s7 :<C-u>tabnext 7<CR>
+nnoremap s8 :<C-u>tabnext 8<CR>
+nnoremap s9 :<C-u>tabnext 9<CR>
 " To command mode
 nnoremap <Leader>w :<C-u>w<CR>
 nnoremap <Leader>; :
@@ -297,7 +297,7 @@ if dein#load_state('$HOME/.cache/dein')
     call dein#add('nanotee/zoxide.vim')
 
     " Move cursor quickly
-    call dein#add('easymotion/vim-easymotion')
+    "call dein#add('easymotion/vim-easymotion')
 
     " Interface
     "call dein#add('Shougo/unite.vim') 
@@ -316,7 +316,10 @@ if dein#load_state('$HOME/.cache/dein')
     " endif
 
     " sudo
-    call dein#add('lambdalisue/suda.vim')
+    call dein#add('lkambdalisue/suda.vim')
+
+    " Gist
+    call dein#add('lambdalisue/vim-gista')
 
     " i3-wm
     call dein#add('mboughaba/i3config.vim')
@@ -381,6 +384,15 @@ if dein#load_state('$HOME/.cache/dein')
 
     " Shell commands
     call dein#add('skanehira/command.vim')
+
+    " Deno
+    call dein#add('uki00a/vim-deno')
+
+    " Vim help generator
+    call dein#add('LeafCage/vimhelpgenerator')
+
+    " My plugins...................
+    call dein#add('sheepla/mayano.vim')
 
     " }}}
     " ======================================================================

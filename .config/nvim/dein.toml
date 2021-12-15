@@ -1,0 +1,149 @@
+[[plugins]]
+repo = 'sheepla/mayano.vim'
+
+[[plugins]]
+repo = 'haya14busa/dein-command.vim'
+
+[[plugins]]
+repo = 'wsdjeg/dein-ui.vim'
+
+[[plugins]]
+repo = 'cocopon/iceberg.vim'
+hook_add = '''
+colorscheme iceberg
+'''
+
+#[[plugins]]
+#repo = 'arcticicestudio/nord-vim'
+#
+#[[plugins]]
+#repo = 'altercation/vim-colors-solarized'
+#
+#[[plugins]]
+#repo = 'fcpg/vim-orbital'
+#
+#[[plugins]]
+#repo = 'morhetz/gruvbox'
+#
+#[[plugins]]
+#repo = 'sainnhe/edge'
+#
+#[[plugins]]
+#repo = 'tyrannicaltoucan/vim-deep-space'
+#
+#[[plugins]]
+#repo = 'arzg/vim-substrata'
+#
+#[[plugins]]
+#repo = 'ulwlu/abyss.vim'
+#
+#[[plugins]]
+#repo = 'eskilop/NorthernLights.vim'
+#
+#[[plugins]]
+#repo = 'pgdouyon/vim-alayas'
+
+[[plugins]]
+repo = 'vim-jp/vimdoc-ja'
+
+[[plugins]]
+repo = 'cohama/lexima.vim'
+
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+depends = ['vim-skk/skkeleton']
+hook_add = '''
+set laststatus=2
+set noshowmode
+let g:lightline = {}
+
+let g:lightline.active = {}
+let g:lightline.active.left = [
+    \ ['mode', 'paste'], 
+    \ ['skkeleton', 'modified'],
+    \ ['filename'],
+    \ ]
+let g:lightline.active.right = [
+    \ ['gitbranch'],
+    \ ['percent'],
+    \ ['fileformat', 'fileencoding', 'filetype'],
+    \ ]
+
+let g:lightline.component = {}
+let g:lightline.component_function = {}
+let g:lightline.component_function.skkeleton = 'g:LightlineSkkeleton'
+let g:lightline.component_function.gitbranch = 'g:GitCurrentBranch'
+
+command! -bar LightlineUpdate
+    \ call lightline#init()|
+    \ call lightline#colorscheme()|
+    \ call lightline#update()
+
+function! g:LightlineSkkeleton() abort
+    if get(g:, 'loaded_skkeleton') == 0
+        return ''
+    endif
+
+    if lightline#mode() == 'INSERT' || lightline#mode() == 'COMMAND'
+        if skkeleton#mode() == 'hira'
+            return 'あ'
+        elseif skkeleton#mode() == 'kata'
+            return 'ア'
+        else
+            return 'Aa'
+        endif
+    else
+        return ''
+    endif
+endfunction
+
+function! g:GitCurrentBranch()
+    if exists(':Gina') == 2
+        return gina#component#repo#branch()
+    else
+        return ''
+    endif
+endfunction
+'''
+
+[[plugins]]
+repo = 'gkeep/iceberg-dark'
+depends = ['itchyny/lightline.vim']
+hook_add = '''
+let g:lightline.colorscheme = 'icebergDark'
+'''
+
+[[plugins]]
+repo = 'lambdalisue/suda.vim'
+
+[[plugins]]
+repo = 'lambdalisue/gina.vim'
+
+[[plugins]]
+repo = 'codeindulgence/vim-tig'
+
+[[plugins]]
+repo = 'vim-denops/denops.vim'
+
+[[plugins]]
+repo = 'ctrlpvim/ctrlp.vim'
+
+[[plugins]]
+repo = 'mattn/ctrlp-ghq'
+
+[[plugins]]
+repo = 'mattn/vim-makedir-for'
+
+[[plugins]]
+repo = 'vim-denops/denops-helloworld.vim'
+
+[[plugins]]
+repo = 'vim-skk/skkeleton'
+hook_add = '''
+imap <silent> <C-l> <Plug>(skkeleton-toggle)
+cmap <silent> <C-l> <Plug>(skkeleton-toggle)
+autocmd User skkeleton-mode-changed redrawstatus
+'''
+
+[[plugins]]
+repo = 'kat0h/bufpreview.vim'
