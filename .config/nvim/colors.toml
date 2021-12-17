@@ -1,0 +1,39 @@
+[[plugins]]
+repo = 'cocopon/iceberg.vim'
+hook_add = '''
+colorscheme iceberg
+'''
+
+[[plugins]]
+repo = 'arcticicestudio/nord-vim'
+
+[[plugins]]
+repo = 'altercation/vim-colors-solarized'
+
+[[plugins]]
+repo = 'fcpg/vim-orbital'
+
+#[[plugins]]
+#repo = 'morhetz/gruvbox'
+
+[[plugins]]
+repo = 'sainnhe/edge'
+
+[[plugins]]
+repo = 'elianiva/icy.nvim'
+
+[[plugins]]
+repo = 'tyrannicaltoucan/vim-deep-space'
+
+[[plugins]]
+repo = 'arzg/vim-substrata'
+
+#[[plugins]]
+#repo = 'ulwlu/abyss.vim'
+
+[[plugins]]
+repo = 'eskilop/NorthernLights.vim'
+
+[[plugins]]
+repo = 'pgdouyon/vim-alayas'
+

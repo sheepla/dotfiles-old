@@ -1,5 +1,13 @@
+
 [[plugins]]
-repo = 'sheepla/mayano.vim'
+repo = 'machakann/vim-sandwich'
+
+#[[plugins]]
+#repo = 'rhysd/accelerated-jk'
+#hook_add = '''
+#nmap j <Plug>(accelerated_jk_gj_position)
+#nmap k <Plug>(accelerated_jk_gk_position)
+#'''
 
 [[plugins]]
 repo = 'haya14busa/dein-command.vim'
@@ -8,43 +16,13 @@ repo = 'haya14busa/dein-command.vim'
 repo = 'wsdjeg/dein-ui.vim'
 
 [[plugins]]
-repo = 'cocopon/iceberg.vim'
-hook_add = '''
-colorscheme iceberg
-'''
-
-#[[plugins]]
-#repo = 'arcticicestudio/nord-vim'
-#
-#[[plugins]]
-#repo = 'altercation/vim-colors-solarized'
-#
-#[[plugins]]
-#repo = 'fcpg/vim-orbital'
-#
-#[[plugins]]
-#repo = 'morhetz/gruvbox'
-#
-#[[plugins]]
-#repo = 'sainnhe/edge'
-#
-#[[plugins]]
-#repo = 'tyrannicaltoucan/vim-deep-space'
-#
-#[[plugins]]
-#repo = 'arzg/vim-substrata'
-#
-#[[plugins]]
-#repo = 'ulwlu/abyss.vim'
-#
-#[[plugins]]
-#repo = 'eskilop/NorthernLights.vim'
-#
-#[[plugins]]
-#repo = 'pgdouyon/vim-alayas'
+repo = 'vim-jp/vimdoc-ja'
 
 [[plugins]]
-repo = 'vim-jp/vimdoc-ja'
+repo = '4513ECHO/vim-readme-viewer'
+hook_add = '''
+let g:readme_viewer#plugin_manager = 'dein.vim' 
+'''
 
 [[plugins]]
 repo = 'cohama/lexima.vim'
@@ -120,6 +98,13 @@ repo = 'lambdalisue/suda.vim'
 repo = 'lambdalisue/gina.vim'
 
 [[plugins]]
+repo = 'lambdalisue/fern.vim'
+
+[[plugins]]
+repo = 'lambdalisue/guise.vim'
+depends = ['vim-denops/denops.vim']
+
+[[plugins]]
 repo = 'codeindulgence/vim-tig'
 
 [[plugins]]
@@ -135,10 +120,15 @@ repo = 'mattn/ctrlp-ghq'
 repo = 'mattn/vim-makedir-for'
 
 [[plugins]]
+repo = 'mattn/vim-maketable'
+
+[[plugins]]
 repo = 'vim-denops/denops-helloworld.vim'
+depends = ['vim-denops/denops.vim']
 
 [[plugins]]
 repo = 'vim-skk/skkeleton'
+depends = ['vim-denops/denops.vim']
 hook_add = '''
 imap <silent> <C-l> <Plug>(skkeleton-toggle)
 cmap <silent> <C-l> <Plug>(skkeleton-toggle)
@@ -147,3 +137,4 @@ autocmd User skkeleton-mode-changed redrawstatus
 
 [[plugins]]
 repo = 'kat0h/bufpreview.vim'
+depends = ['vim-denops/denops.vim']

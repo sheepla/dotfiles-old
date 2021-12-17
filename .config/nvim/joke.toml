@@ -1,0 +1,8 @@
+[[plugins]]
+repo = 'sheepla/mayano.vim'
+
+[[plugins]]
+repo = 'mattn/vim-sl'
+
+[[plugins]]
+repo = 'unkontributors/super_unko.vim'
