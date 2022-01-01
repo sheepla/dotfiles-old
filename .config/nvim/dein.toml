@@ -1,6 +1,10 @@
 
 [[plugins]]
 repo = 'machakann/vim-sandwich'
+hoook_add = '''
+nmap s <Nop>
+tmap s <Nop>
+'''
 
 #[[plugins]]
 #repo = 'rhysd/accelerated-jk'
@@ -31,57 +35,7 @@ repo = 'cohama/lexima.vim'
 repo = 'itchyny/lightline.vim'
 depends = ['vim-skk/skkeleton']
 hook_add = '''
-set laststatus=2
-set noshowmode
-let g:lightline = {}
-
-let g:lightline.active = {}
-let g:lightline.active.left = [
-    \ ['mode', 'paste'], 
-    \ ['skkeleton', 'modified'],
-    \ ['filename'],
-    \ ]
-let g:lightline.active.right = [
-    \ ['gitbranch'],
-    \ ['percent'],
-    \ ['fileformat', 'fileencoding', 'filetype'],
-    \ ]
-
-let g:lightline.component = {}
-let g:lightline.component_function = {}
-let g:lightline.component_function.skkeleton = 'g:LightlineSkkeleton'
-let g:lightline.component_function.gitbranch = 'g:GitCurrentBranch'
-
-command! -bar LightlineUpdate
-    \ call lightline#init()|
-    \ call lightline#colorscheme()|
-    \ call lightline#update()
-
-function! g:LightlineSkkeleton() abort
-    if get(g:, 'loaded_skkeleton') == 0
-        return ''
-    endif
-
-    if lightline#mode() == 'INSERT' || lightline#mode() == 'COMMAND'
-        if skkeleton#mode() == 'hira'
-            return 'あ'
-        elseif skkeleton#mode() == 'kata'
-            return 'ア'
-        else
-            return 'Aa'
-        endif
-    else
-        return ''
-    endif
-endfunction
-
-function! g:GitCurrentBranch()
-    if exists(':Gina') == 2
-        return gina#component#repo#branch()
-    else
-        return ''
-    endif
-endfunction
+source $HOME/.config/nvim/lightlinerc.vim
 '''
 
 [[plugins]]
@@ -104,8 +58,6 @@ repo = 'lambdalisue/fern.vim'
 repo = 'lambdalisue/guise.vim'
 depends = ['vim-denops/denops.vim']
 
-[[plugins]]
-repo = 'codeindulgence/vim-tig'
 
 [[plugins]]
 repo = 'vim-denops/denops.vim'
@@ -130,11 +82,31 @@ depends = ['vim-denops/denops.vim']
 repo = 'vim-skk/skkeleton'
 depends = ['vim-denops/denops.vim']
 hook_add = '''
-imap <silent> <C-l> <Plug>(skkeleton-toggle)
-cmap <silent> <C-l> <Plug>(skkeleton-toggle)
-autocmd User skkeleton-mode-changed redrawstatus
+source $HOME/.config/nvim/skkeletonrc.vim
 '''
 
 [[plugins]]
 repo = 'kat0h/bufpreview.vim'
 depends = ['vim-denops/denops.vim']
+
+[[plugins]]
+repo = 'nvim-lua/plenary.nvim'
+
+[[plugins]]
+repo = 'nvim-telescope/telescope.nvim'
+depends = 'nvim-lua/plenary.nvim'
+
+[[plugins]]
+repo = 'nanotee/zoxide.vim'
+
+[[plugins]]
+repo = 'iberianpig/tig-explorer.vim'
+depends = ['rbgrouleff/bclose.vim']
+
+[[plugins]]
+repo = 'iberianpig/ranger-explorer.vim'
+depends = ['rbgrouleff/bclose.vim']
+
+[[plugins]]
+repo = 'mattn/vim-goimports'
+
