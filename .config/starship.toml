@@ -1,21 +1,21 @@
 format = """
-[┌── ](bold white)$shlvl$status$username$directory$git_branch$git_status$git_commit$go$python$cmd_duration$memory_usage$battery$time
+[┌── ](bold white)$shlvl$status$username$directory$git_branch$git_status$git_commit$go$python$deno$cmd_duration$memory_usage$battery$time
 [└─](bold white)$character"""
 
 scan_timeout = 10
 
 [character]
-#success_symbol = "[❯❯❯](bold white) "
-#error_symbol =   "[❯❯❯](bold red) "
-success_symbol = "[➤ ](bold white) "
-error_symbol =   "[➤ ](bold red) "
+success_symbol = "[❯](bold white)[❯](bold blue)[❯](bold cyan) "
+error_symbol =   "[❯❯❯](bold red) "
+#success_symbol = "[➤ ](bold white) "
+#error_symbol =   "[➤ ](bold red) "
 
 [shell]
 disabled = false
 
 [shlvl]
 disabled = false
-format = "[ Lv.$shlvl ](bold white)"
+format = "[ Lv.$shlvl ](bold black)"
 threshold = 2
 
 [username]
@@ -47,14 +47,14 @@ behind = "▼ ${count}"
 diverged = "▲ ${ahead_count} ▼ ${behind_count}"
 
 [git_branch]
-style = "bold underline purple"
+format = "on [$symbol$branch](bold purple) "
 
 [cmd_duration]
-format = "took [ $duration](bold white)"
+format = "took [ $duration](bold black)"
 
 [time]
 disabled = true
-format = 'at [ $time](underline white) '
+format = 'at [ $time](gray) '
 time_format = "%T"
 utc_time_offset = "+9"
 
@@ -83,5 +83,5 @@ style = "bold red"
 style = "bold green"
 
 [go]
-style = "bold green"
+disabled = false
 
