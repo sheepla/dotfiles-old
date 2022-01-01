@@ -44,3 +44,5 @@ command -v flameshot &>/dev/null && pgrep flameshot || flameshot &
 # Launch network applet
 command -v nm-applet &>/dev/null && pgrep nm-applet || nm-applet &
 
+# Launch input method
+command -v fcitx5 &>/dev/null && fcitx5 &
