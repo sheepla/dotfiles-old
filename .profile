@@ -3,6 +3,7 @@
 export PATH=$PATH:$HOME/bin
 export PATH=$PATH:$HOME/.local/bin/
 export PATH=$PATH:$HOME/relma/bin/
+export PATH="${PATH}:$(ghg bin)"
 export PATH=$PATH:$HOME/.deno/bin
 export PATH=$PATH:/home/sheepla/.nodebrew/current/bin/
 
@@ -61,11 +62,10 @@ export EXA_COLORS=\
 'gn=37:'\
 'da=37'
 
-# fzf
+# fzf (iceberg theme)
 export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
---reverse \
 --color fg:#c6c8d1,hl:#84a0c6,fg+:#c6c8d1,bg+:#1e2132,hl+:#84a0c6 \
---color pointer:#84a0c6,info:#e2a478,spinner:#89b8c2,header:#b4be82,prompt:#84a0c6,marker:#b4be82"
+--color pointer:#84a0c6,border:#444b71,info:#e2a478,spinner:#89b8c2,header:#b4be82,prompt:#84a0c6,marker:#b4be82"
 
 # enhancd
 ENHANCD_DOT_ARG="_"
