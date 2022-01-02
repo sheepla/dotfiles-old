@@ -4,25 +4,25 @@
 set fish_greeting
 
 # プロンプトを設定
-if which starship &>/dev/null
+if command -v starship &>/dev/null
     eval (starship init fish)
 end
 
-if which exa &>/dev/null
+if command -v exa &>/dev/null
     alias ls 'exa --classify --icons'
     alias l  'exa -all --classify --icons'
     alias ll 'exa -all --long --classify --icons'
     alias lt 'exa -all --tree --classify --icons'
 end
 
-if which bat &>/dev/null
+if command -v bat &>/dev/null
     alias cat 'bat'
 end
 
 alias cls clear
 alias c clear
 
-if which ranger &>/dev/null
+if command -v ranger &>/dev/null
     alias r 'ranger'
 end
 
@@ -31,6 +31,7 @@ set -U FZF_LEGACY_KEYBINDINGS 0
 # set -U FZF_REVERSE_ISEARCH_OPTS "--reverse --height=100%"
 set -U FZF_REVERSE_ISEARCH_OPTS "--reverse --height=50%"
 
-if which enhancd &>/dev/null
-    alisa ecd enhancd
+# zoxide
+if command -v zoxide &>/dev/null
+    zoxide init fish | source
 end
