@@ -1,10 +1,4 @@
 [[plugins]]
-repo = 'cocopon/iceberg.vim'
-hook_add = '''
-colorscheme iceberg
-'''
-
-[[plugins]]
 repo = 'arcticicestudio/nord-vim'
 
 [[plugins]]
@@ -36,4 +30,7 @@ repo = 'eskilop/NorthernLights.vim'
 
 [[plugins]]
 repo = 'pgdouyon/vim-alayas'
+
+[[plugins]]
+repo = 'cocopon/pgmnt.vim'
 

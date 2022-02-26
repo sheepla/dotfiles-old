@@ -12,3 +12,6 @@ repo = 'unkontributors/super_unko.vim'
 
 #[[plugins]]
 #repo = 'skanehira/christmas.vim'
+
+[[plugins]]
+repo = 'pocke/sushibar.vim'

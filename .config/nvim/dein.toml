@@ -1,3 +1,8 @@
+[[plugins]]
+repo = 'cocopon/iceberg.vim'
+hook_add = '''
+colorscheme iceberg
+'''
 
 [[plugins]]
 repo = 'machakann/vim-sandwich'
@@ -52,15 +57,10 @@ repo = 'lambdalisue/suda.vim'
 repo = 'lambdalisue/gina.vim'
 
 [[plugins]]
+repo = 'airblade/vim-gitgutter'
+
+[[plugins]]
 repo = 'lambdalisue/fern.vim'
-
-[[plugins]]
-repo = 'lambdalisue/guise.vim'
-depends = ['vim-denops/denops.vim']
-
-
-[[plugins]]
-repo = 'vim-denops/denops.vim'
 
 [[plugins]]
 repo = 'ctrlpvim/ctrlp.vim'
@@ -73,21 +73,6 @@ repo = 'mattn/vim-makedir-for'
 
 [[plugins]]
 repo = 'mattn/vim-maketable'
-
-[[plugins]]
-repo = 'vim-denops/denops-helloworld.vim'
-depends = ['vim-denops/denops.vim']
-
-[[plugins]]
-repo = 'vim-skk/skkeleton'
-depends = ['vim-denops/denops.vim']
-hook_add = '''
-source $HOME/.config/nvim/skkeletonrc.vim
-'''
-
-[[plugins]]
-repo = 'kat0h/bufpreview.vim'
-depends = ['vim-denops/denops.vim']
 
 [[plugins]]
 repo = 'nvim-lua/plenary.nvim'
@@ -109,4 +94,19 @@ depends = ['rbgrouleff/bclose.vim']
 
 [[plugins]]
 repo = 'mattn/vim-goimports'
+hook_add = '''
+let g:goimports = 1
+let g:goimports_simplify = 1
+let g:goimports_simplify_cmd = 'gofumpt'
+'''
+
+[[plugins]]
+repo = 'mattn/emmet-vim'
+
+[[plugins]]
+repo = 'tyru/open-browser.vim'
+
+[[plugins]]
+repo = 'syusui-s/scrapbox-vim'
+
 
