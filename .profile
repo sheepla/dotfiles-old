@@ -6,12 +6,13 @@ export PATH=$PATH:$HOME/relma/bin/
 export PATH="${PATH}:$(ghg bin)"
 export PATH=$PATH:$HOME/.deno/bin
 export PATH=$PATH:/home/sheepla/.nodebrew/current/bin/
+export PATH="${PATH}:${HOME}/node_modules/.bin"
 
 # Go
-export PATH=$PATH:$HOME/go/bin
 #export PATH=$PATH:/usr/local/go/bin/ 
 export GOPATH=$HOME/go 
-export GO111MODULE=auto
+export PATH=$PATH:$HOME/go/bin
+#export GO111MODULE=auto
 
 # grep
 export GREP_COLOR="1;32"
@@ -68,4 +69,6 @@ export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
 --color pointer:#84a0c6,border:#444b71,info:#e2a478,spinner:#89b8c2,header:#b4be82,prompt:#84a0c6,marker:#b4be82"
 
 # enhancd
-ENHANCD_DOT_ARG="_"
+#ENHANCD_DOT_ARG="_"
+
+export FZWIKI_LANG="ja"

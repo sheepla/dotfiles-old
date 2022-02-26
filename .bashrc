@@ -27,13 +27,13 @@ _set_completion() {
     src='/usr/share/bash-completion/bash_completion'
     [ -f "${src}" ] && source "${src}"
 }
-
-# enhancd
-_set_enhancd() {
-    local src
-    src="${HOME}/ghq/github.com/b4b4r07/enhancd/init.sh"
-    [ -f "${src}" ] && source "${src}"
-}
+#
+## enhancd
+#_set_enhancd() {
+#    local src
+#    src="${HOME}/ghq/github.com/b4b4r07/enhancd/init.sh"
+#    [ -f "${src}" ] && source "${src}"
+#}
 
 # zoxide
 command -v zoxide &>/dev/null && eval "$(zoxide init bash)"
@@ -67,7 +67,7 @@ _set_prompt() {
 
 _set_completion
 _set_prompt
-_set_enhancd
+#_set_enhancd
 _set_gh_completion
 #_set_fzf_tab_completion
 _set_fzf_completion
