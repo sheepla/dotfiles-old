@@ -206,7 +206,7 @@ esac
 ##############################
 
 # aliases
-[ -f ~/.aliases ] && source ~/.aliases
+[ -f "${HOME}/.aliases" ] && source "${HOME}/.aliases"
 
 # Prompt 
 command -v starship &>/dev/null && eval "$(starship init zsh)"
